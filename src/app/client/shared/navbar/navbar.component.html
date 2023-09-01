@@ -1,0 +1,19 @@
+<div class="navbar-container">
+    <div class="navbar-container__logo">
+        <a routerLink="'/'">
+            <img src="./assets/imgs/mutual-logo.png" alt="">
+        </a>
+    </div>
+    <div class="navbar-container__items">
+        <ul>
+            <li *ngFor="let item of items">
+                <a [routerLink]="[item.path]" routerLinkActive="selected" >
+                    {{ item.text }}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-container__button">
+        <button>Home Mutual</button>
+    </div>
+</div>
