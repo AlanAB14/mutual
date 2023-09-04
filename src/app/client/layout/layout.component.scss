@@ -1,6 +1,7 @@
 .client-layout {
 
     .ellipse {
+        pointer-events: none;
         position: absolute;
         top: -12rem;
         left: -10rem;
@@ -9,21 +10,34 @@
         flex-shrink: 0;
         opacity: 0.3;
         background: rgb(0,165,120);
-        z-index: 20;
         filter: blur(18.75rem);
         background: radial-gradient(circle, rgba(0,165,120,1) 0%, rgba(255,255,255,1) 100%);
+        z-index: 100;
     }
+
+    .home-page-ellipse {
+        pointer-events: none;
+        z-index: 100;
+        filter: blur(14rem);
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 30.1875rem;
+        height: 5.625rem;
+        background: linear-gradient(to right, rgba(0,165,120,1) 0%, rgba(255,255,255,1) 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
     &__navbar {
         position: fixed;
         top: 0;
-        bottom: 0;
         left: 0;
         right: 0;
-        z-index: 10;
+        z-index: 50;
     }
 
     &__content {
         margin-top: 5.4375rem;
-        z-index: 30;
     }
 }

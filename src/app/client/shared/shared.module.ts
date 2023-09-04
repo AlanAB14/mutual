@@ -4,13 +4,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedGlobalModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,191 @@
+.prestamo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 0;
+    }
+
+    &__box {
+        display: flex;
+        padding: 7.5rem 0;
+
+        &__image {
+            position: relative;
+            .prestamo-img {
+                border-radius: 1rem;
+                width: 29.3125rem;
+                box-shadow: -2.5rem 2.5rem 5rem 0px rgba(145, 158, 171, 0.40);
+            }
+
+            .money-img {
+                position: absolute;
+                left: 2.875rem;
+                top: -2.71rem;
+                filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
+            }
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5.375rem;
+
+            &--title {
+                display: flex;
+                flex-direction: column;
+
+                .title-verde-oscuro {
+                    color: #176449;
+                    font-family: Roboto-Regular;
+                    font-size: 3.375rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 101%; /* 54.54px */
+                    letter-spacing: -0.81px;
+                }
+                .title-verde-claro {
+                    color: #A5C367;
+                    font-family: Roboto-Bold;
+                    font-size: 3.375rem;
+                    font-style: normal;
+                    line-height: 101%;
+                    letter-spacing: -0.27px;
+                }
+            }
+
+            &--text {
+                margin-top: 1.875rem;
+                width: 30.1875rem;
+
+                .text-prestamo {
+                    color: #4E4E4E;
+                    text-align: justify;
+                    font-family: Roboto-Regular;
+                    font-size: 1.25rem;
+                    font-style: normal;
+                    line-height: 160%; /* 32px */
+                }
+            }
+
+            hr {
+                border: none;
+                width: 30.1875rem;
+                margin: 3.4375rem 0;
+                height: 1px;
+                background-color: #D8D8D8;
+            }
+
+            &--button {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .btn-play-text {
+                    margin-left: 1.3125rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    .text-bold-btn {
+                        color: #231656;
+                        font-family: Roboto-Medium;
+                        font-size: 1.625rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 160%; /* 41.6px */
+                    }
+                    .text-green-btn {
+                        color: #A4C367;
+                        font-family: Roboto-Regular;
+                        font-size: 1.25rem;
+                        font-style: normal;
+                        line-height: 160%;
+
+                        span {
+                            margin-left: 1rem;
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+.primicia-section {
+    background: url('/assets/imgs/primicia/primicia-bg.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    &__box {
+        padding: 6.5625rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+            margin-right: 13.6875rem;
+
+            .primicia-logo {
+                width: 15.8125rem;
+            }
+
+            .primicia-title {
+                margin-top: 2.1875rem;
+                color: #031A44;
+                font-family: Space-Medium;
+                font-size: 3.75rem;
+                font-style: normal;
+                line-height: 107.1%; /* 64.26px */
+
+                span {
+                    color: #031A44;
+                    font-family: Space-Bold;
+                    font-size: 3.75rem;
+                    font-style: normal;
+                    line-height: 107.1%; /* 64.26px */
+                }
+            }
+
+            .primicia-text {
+                margin-top: 2.1875rem;
+                width: 27.875rem;
+                color: #031A44;
+                text-align: justify;
+                font-family: Space-Regular;
+                font-size: 1.25rem;
+                font-style: normal;
+                line-height: 1.75rem; /* 140% */
+            }
+
+            .primicia-btn {
+                margin-top: 2.1875rem;
+                color: #FFF;
+                text-align: center;
+                font-family: Space-Regular;
+                font-size: 1.25rem;
+                font-style: normal;
+                line-height: 1.75rem; /* 140% */
+                padding: 1.25rem 2.1875rem;
+                width: fit-content;
+                border-radius: 0.875rem;
+                background: #031A44;
+                cursor: pointer;
+
+                span {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Space-Bold;
+                    line-height: 1.75rem; /* 140% */
+                }
+            }
+        }
+
+        &--img {
+            margin-top: 2.1875rem;
+        }
+    }
+}

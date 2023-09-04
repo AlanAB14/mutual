@@ -1,0 +1,28 @@
+.nuestros-servicios {
+    background: rgba(0, 165, 120, 0.05);
+    padding: 5.125rem 5.3125rem 8.125rem 5.3125rem;
+
+    p {
+        margin: 0;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .servicios-title {
+            color: #282D6C;
+            font-family: Roboto-Black;
+            font-size: 45px;
+            font-style: normal;
+            line-height: 140%; /* 63px */
+            letter-spacing: 1px;
+        }
+    }
+
+    &__prestamos {
+        display: flex;
+        justify-content: space-around;
+    }
+}

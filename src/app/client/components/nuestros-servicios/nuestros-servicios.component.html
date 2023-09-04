@@ -1,0 +1,14 @@
+<div class="nuestros-servicios">
+    <div class="nuestros-servicios__title">
+        <p class="servicios-title">Nuestros Servicios</p>
+    </div>
+    <div class="nuestros-servicios__prestamos">
+        <div *ngFor="let servicio of servicios">
+            <prestamo-box [titulo]="servicio.titulo"
+                          [texto]="servicio.texto"
+                          [icon]="servicio.icon"
+                          [caracteristicas]="servicio.caracteristicas"
+                          [selected]="servicio.selected"></prestamo-box>
+        </div>
+    </div>
+</div>

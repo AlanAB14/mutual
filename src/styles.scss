@@ -66,6 +66,33 @@
     src: url('./assets/fonts/Roboto/Roboto-Black.ttf');
 }
 
+@font-face {
+    font-family: Space-Regular;
+    src: url('./assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf');
+}
+
+@font-face {
+    font-family: Space-Light;
+    src: url('./assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf');
+}
+
+@font-face {
+    font-family: Space-Medium;
+    src: url('./assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf');
+}
+
+@font-face {
+    font-family: Space-SemiBold;
+    src: url('./assets/fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Space-Bold;
+    src: url('./assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf');
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -79,3 +106,16 @@ html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto-Regular, sans-serif; }
+
+.btn-primary {
+    padding: .75rem 1.1875rem;
+    border-radius: 4px;
+    background: #1A5C43;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto-Medium, sans-serif;
+    border: none;
+    font-size: .875rem;
+    line-height: 1.125rem; /* 128.571% */
+    cursor: pointer;
+}

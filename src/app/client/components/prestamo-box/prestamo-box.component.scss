@@ -1,0 +1,97 @@
+.prestamo {
+    padding: 3.125rem 1.5625rem 1.5625rem 1.5625rem;
+    border-radius: .75rem;
+    width: 18.75rem;
+    height: 20.3125rem;
+    margin-top: 3.4375rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin: 0;
+    }
+
+    &__header {
+        display: flex;
+
+        &--title {
+            margin-left: 1.17rem;
+            font-family: Roboto-Medium;
+            font-size: 1.5rem;
+            font-style: normal;
+            line-height: 120%; /* 28.8px */
+
+        }
+    }
+
+    &__body {
+        margin-top: 1rem;
+        color: #FFF;
+        text-overflow: ellipsis;
+        whitespace: nowrap;
+        font-family: Roboto-Regular;
+        font-size: 0.875rem;
+        font-style: normal;
+        line-height: 1.625rem; /* 185.714% */
+        letter-spacing: -0.5px;
+        margin-bottom: auto;
+        &--text {
+            position: relative;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px; /* Ajusta el margen izquierdo para separar la lista del contenido */
+            padding: 0; /* Elimina el espacio de relleno predeterminado de la lista */
+            top: 100%; /* Coloca la lista debajo del contenido */
+        }
+    }
+
+    &__footer {
+        &--btn {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            .leer-mas-btn {
+                background-color: transparent;
+                border: none;
+                font-size: 1.125rem;
+                font-family: Roboto-Bold;
+                line-height: 160%; /* 28.8px */
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.selected-background {
+    background-color: #176449;
+}
+
+.unselected-background {
+    background-color: #FCFFFF;
+}
+
+.selected-title-color {
+    color: #FFF;
+}
+
+.unselected-title-color {
+    color: #1A5C43;
+}
+
+.unselected-title-color-body {
+    color: #656D9F;
+}
+
+::ng-deep .mat-icon {
+    display: flex!important;
+    align-items: center!important;
+    height: 1.25rem;
+    width: 1.25rem;
+    cursor: pointer;
+}
+
+::ng-deep .material-icons {
+    font-size: 1.25rem;
+}

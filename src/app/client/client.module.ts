@@ -10,6 +10,7 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormularioComponent } from './pages/formulario/formulario.component';
     SharedGlobalModule,
     ClientRoutingModule,
     SharedModule,
+    ComponentsModule
   ]
 })
 export class ClientModule { }

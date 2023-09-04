@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    height: 40.125rem;
+    overflow: hidden;
+    background-image: linear-gradient(90deg, #000 0.19%,  rgba(217, 217, 217, 0.00) 99.82%),  url('/assets/imgs/header.png');
+    mix-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+
+    &__box {
+        width: 39.5rem;
+        margin-top: 4.5625rem;
+        margin-left: 9.1875rem;
+    }
+}
+
+.title-big {
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.subtitle {
+    color: #F8F8FB;
+    font-family: 'Roboto';
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; /* 35.2px */
+    width: 27rem;
+    margin-top: 1rem;
+}

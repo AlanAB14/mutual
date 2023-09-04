@@ -1,0 +1,25 @@
+<div class="prestamo" [ngClass]="selected ? 'selected-background' : 'unselected-background'">
+    <div class="prestamo__header">
+        <div class="prestamo__header--icon">
+            <img [src]="'./assets/imgs/servicios/' + icon" alt="serv-icon">
+        </div>
+        <div class="prestamo__header--title" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">
+            <p #textoRender hidden>{{ titulo }}</p>
+            <div class="first-word" #firstWord></div>
+            <div class="rest-of-text" #restOfText></div>
+        </div>
+    </div>
+    <div class="prestamo__body">
+        <div class="prestamo__body--text" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color-body'">
+            <p>{{ texto }}</p>
+                <ul>
+                    <li *ngFor="let item of caracteristicas.slice(0, 1); let i = index">{{ item }}{{ i === caracteristicas.length ? ' ...' : '' }}</li>
+                </ul>
+        </div>
+    </div>
+    <div class="prestamo__footer">
+        <div class="prestamo__footer--btn" >
+            <button class="leer-mas-btn" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">Leer más</button><mat-icon [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">arrow_forward_ios</mat-icon>
+        </div>
+    </div>
+</div>

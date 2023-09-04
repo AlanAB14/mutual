@@ -1,0 +1,62 @@
+[
+    {
+        "titulo":  "Préstamos personales",
+        "icon": "servicios-icon-personales.png",
+        "texto": "Nuestros préstamos personales le permiten a usted y su familia hacer realidad los proyectos",
+        "caracteristicas": [
+                "Usted elije el destino de los fondos para hacer realidad sus proyectos.",
+                "Disponibilidad inmediata.",
+                "La tasa más conveniente del mercado.",
+                "Plazo de financiación acorde a sus necesidades.",
+                "Cuotas mensuales, trimestrales y semestrales.",
+                "Tasa fija – Cuota Fija.",
+                "Pago íntegro hasta 180 días."
+        ],
+        "selected": true
+    },
+    {
+        "titulo":  "Préstamos prendarios",
+        "icon": "servicios-icon-prendarios.png",
+        "texto": "Para la adquisición de automotores, camiones, utilitarios y otros destinos",
+        "caracteristicas": [
+                "Usted elije el destino de los fondos.",
+                "Disponibilidad inmediata.",
+                "La tasa más conveniente del mercado.",
+                "Plazo de financiación acorde a sus necesidades.",
+                "Cuotas mensuales, trimestrales y semestrales.",
+                "Tasa fija – Cuota Fija.",
+                "Pago íntegro hasta 180 días."
+        ],
+        "selected": false
+    },
+    {
+        "titulo":  "Préstamos agropecuarios",
+        "icon": "servicios-icon-agropecuarios.png",
+        "texto": "Para la compra de semillas, combustible, insumos, fertilizantes, equipamiento tecnológico. Devolución cosecha fina y cosecha gruesa.",
+        "caracteristicas": [
+                "Usted elije el destino de los fondos",
+                "Disponibilidad inmediata.",
+                "La tasa más conveniente del mercado.",
+                "Plazo de financiación acorde a sus necesidades.",
+                "Cuotas mensuales, trimestrales y semestrales.",
+                "Tasa fija – Cuota Fija.",
+                "Pago íntegro hasta 180 días."
+        ],
+        "selected": false
+    },
+    {
+        "titulo":  "Préstamos empresariales",
+        "icon": "servicios-icon-empresariales.png",
+        "texto": "Asistencia financiera de corto plazo con caución de valores (Cheques). Financiación a clientes.",
+        "caracteristicas": [
+                "Usted elije el destino de los fondos",
+                "Disponibilidad inmediata.",
+                "La tasa más conveniente del mercado.",
+                "Plazo de financiación acorde a sus necesidades.",
+                "Cuotas mensuales, trimestrales y semestrales.",
+                "Tasa fija – Cuota Fija.",
+                "Pago íntegro hasta 180 días."
+        ],
+        "selected": false
+    }
+]
