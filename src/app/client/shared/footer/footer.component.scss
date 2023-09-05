@@ -1,0 +1,167 @@
+p {
+    margin: 0;
+}
+
+.footer {
+    &__box {
+        background: #F5F5F5;
+        padding: 6.5rem 8.6875rem 3rem 8.6875rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__mutual {
+        &--logo {
+            margin-bottom: 2.5rem;
+        }
+
+        &--info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--newsletter {
+            margin-top: 1rem;
+
+            .newsletter-item-input {
+                margin-top: 1rem;
+            }
+
+            .input-newsletter {
+                padding-left: 1rem !important;
+                padding: .5rem 0;
+                font-family: Roboto-Regular;
+                font-size: 1rem;
+                line-height: 1.75rem;
+                /* 162.5% */
+                letter-spacing: 0.5px;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    color: #D7D7D7;
+                }
+            }
+        }
+    }
+
+    &__filiales {
+        .filiales {
+            display: flex;
+
+            & div:not(:last-of-type) {
+                margin-right: 7.625rem;
+            }
+
+            div .text-mutual-info {
+                margin-top: 1rem;
+            }
+        }
+
+        .color-filial {
+            color: #575757 !important;
+        }
+    }
+
+    &__follow {
+        .social-media {
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &:not(:last-of-type) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    .segmented-hr {
+        border: .2px dashed #adadad8a;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.4375rem 8.6875rem 2.0625rem 8.6875rem;
+
+        background: #F5F5F5;
+
+        .financieros-box {
+            margin-left: 1.3125rem;
+        }
+
+        .text-box {
+            margin-left: 1.3125rem;
+            width: 34.8125rem;
+            margin-right: auto;
+            p {
+                color: #212B36;
+                font-family: Public-Regular;
+                font-size: 0.5625rem;
+                line-height: 1rem; /* 166.667% */
+            }
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                p {
+                    color: #212B36;
+                    font-family: Public-SemiBold;
+                    font-size: .75rem;
+                    font-style: normal;
+                    line-height: 1.375rem; /* 183.333% */
+                    margin-left: .5rem;
+                }
+
+                .mail-logo {
+                    width: 0.75rem;
+                    height: .5rem;
+                }
+
+                .cel-logo {
+                    height: 1rem;
+                    width: 0.85rem;
+                }
+            }
+        }
+    }
+
+    &__derechos {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        p {
+            color: #212B36;
+            font-family: Public-Regular;
+            font-size: 0.875rem;
+            font-style: normal;
+            line-height: 1.375rem; /* 157.143% */
+        }
+    }
+
+}
+
+.text-mutual-info {
+    color: #1F2744;
+    font-family: Roboto-Regular;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.625rem;
+    /* 162.5% */
+    letter-spacing: 0.04px;
+}
+
+.text-mutual-title {
+    color: #0B2E29;
+    font-family: Roboto-Medium;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 1.75rem;
+    /* 140% */
+}
