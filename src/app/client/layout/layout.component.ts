@@ -22,15 +22,19 @@ export class ClientLayoutComponent implements OnInit{
     const currentRoute = this.router.url;
     if (currentRoute === '/') {
       const ellipseElement = document.querySelector('.ellipse-selector') as HTMLElement;
+      const ellipseShadowElement = document.querySelector('.e-shadow') as HTMLElement;
       if (ellipseElement) {
         ellipseElement.classList.remove('ellipse');
         ellipseElement.classList.add('home-page-ellipse');
+        ellipseShadowElement.classList.add('ellipse-shadow')
       }
     }else {
       const ellipseElement = document.querySelector('.ellipse-selector') as HTMLElement;
+      const ellipseShadowElement = document.querySelector('.e-shadow') as HTMLElement;
       if (ellipseElement) {
         ellipseElement.classList.remove('home-page-ellipse');
         ellipseElement.classList.add('ellipse');
+        ellipseShadowElement.classList.remove('ellipse-shadow')
       }
     }
   }

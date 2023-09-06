@@ -4,18 +4,22 @@
     font-family: Public-Regular;
     src: url('./assets/fonts/Public_Sans/static/PublicSans-Regular.ttf');
 }
+
 @font-face {
     font-family: Public-Thin;
     src: url('./assets/fonts/Public_Sans/static/PublicSans-Thin.ttf');
 }
+
 @font-face {
     font-family: Public-ExtraLight;
     src: url('./assets/fonts/Public_Sans/static/PublicSans-ExtraLight.ttf');
 }
+
 @font-face {
     font-family: Public-Light;
     src: url('./assets/fonts/Public_Sans/static/PublicSans-Light.ttf');
 }
+
 @font-face {
     font-family: Public-Medium;
     src: url('./assets/fonts/Public_Sans/static/PublicSans-Medium.ttf');
@@ -101,11 +105,19 @@
 }
 
 html {
-    font-size: 100%; /* 100% = 16px */
+    font-size: 100%;
+    /* 100% = 16px */
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto-Regular, sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto-Regular, sans-serif;
+}
 
 .btn-primary {
     padding: .75rem 1.1875rem;
@@ -116,6 +128,43 @@ body { margin: 0; font-family: Roboto-Regular, sans-serif; }
     font-family: Roboto-Medium, sans-serif;
     border: none;
     font-size: .875rem;
-    line-height: 1.125rem; /* 128.571% */
+    line-height: 1.125rem;
+    /* 128.571% */
     cursor: pointer;
+}
+
+.text-small-section {
+    color: #919EAB;
+    text-align: center;
+    font-family: Public-Bold;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+}
+
+.title-section {
+    color: #212B36;
+    font-family: Roboto-Black;
+    font-size: 3rem;
+    font-style: normal;
+    line-height: 4rem;
+    letter-spacing: -0.6px;
+}
+
+.text-big-section {
+    color: #212B36;
+    font-family: Public-Black;
+    font-size: 3rem;
+    font-style: normal;
+    line-height: 4rem;
+}
+
+.text-section {
+    color: #637381;
+    text-align: justify;
+    font-family: Public-Regular;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.5rem;
 }

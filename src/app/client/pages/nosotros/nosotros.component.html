@@ -1,1 +1,24 @@
-<p>nosotros works!</p>
+<div class="nosotros">
+    <div class="nosotros__title-little">
+        <p class="text-small-section">Nosotros</p>
+    </div>
+    <div class="nosotros__title-big">
+        <p class="text-big-section">¿Quienes somos?</p>
+    </div>
+    <div class="nosotros__box-content">
+        <div class="nosotros__box-content__video">
+            <video controls>
+                <source src="./assets/imgs/nosotros/nosotros-prueba.mp4" type="video/mp4">
+                <!-- También puedes proporcionar múltiples fuentes para compatibilidad con diferentes formatos de video -->
+                <!-- <source src="tu_video.webm" type="video/webm"> -->
+                <!-- <source src="tu_video.ogv" type="video/ogg"> -->
+                Tu navegador no admite la reproducción de video.
+            </video>
+        </div>
+        <div class="nosotros__box-content__text">
+            <p class="title-section">{{ titulo }}</p>
+            <p class="text-section">{{ texto }}</p>
+            <button class="btn-nosotros">Conocé más sobre nosotros <img src="./assets/imgs/nosotros/follow-icon.png" alt=""></button>
+        </div>
+    </div>
+</div>
