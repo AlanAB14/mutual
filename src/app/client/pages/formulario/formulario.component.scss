@@ -20,7 +20,28 @@ p {
   }
 
   &__box-contact {
+// text-section-contact y text-section-contact__big  --> Posibles clases globales
+    .text-section-contact {
+      color: #1A5C43;
+      font-family: Roboto-Bold;
+      font-size: 1.75rem;
+      font-style: normal;
+      line-height: 2.375rem;
+      /* 135.714% */
+      letter-spacing: 0.5px;
 
+      &__big {
+        width: 20.25rem;
+        color: #73788C;
+        font-family: Roboto-Regular;
+        font-size: 1rem;
+        font-style: normal;
+        line-height: 1.625rem;
+        /* 162.5% */
+        margin-top: 1rem;
+      }
+    }
+    
     display: flex;
 
     p {
@@ -58,25 +79,5 @@ p {
   }
 }
 
-// Posible clases globales
 
-.text-section-contact {
-  color: #1A5C43;
-  font-family: Roboto-Bold;
-  font-size: 1.75rem;
-  font-style: normal;
-  line-height: 2.375rem;
-  /* 135.714% */
-  letter-spacing: 0.5px;
-}
 
-.text-section-contact-big {
-  width: 20.25rem;
-  color: #73788C;
-  font-family: Roboto-Regular;
-  font-size: 1rem;
-  font-style: normal;
-  line-height: 1.625rem;
-  /* 162.5% */
-  margin-top: 1rem;
-}
