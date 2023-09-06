@@ -1,0 +1,82 @@
+p {
+  margin: 0;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5.375rem;
+  padding-bottom: 5.375rem;
+
+  &__title-big {
+    .color {
+      color: #054457 !important;
+    }
+
+    margin-top: 2.3125rem;
+    margin-bottom: 3.75rem;
+  }
+
+  &__box-contact {
+
+    display: flex;
+
+    p {
+      margin-left: 1.25rem;
+    }
+
+    &__chatbox,
+    &__whatsapp,
+    &__redes-sociales {
+      img {
+        margin-left: 1.375rem;
+        margin-top: 2.39rem;
+        margin-bottom: 0.625rem;
+      }
+
+      width: 23.5rem;
+      height: 18.4375rem;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: #F5F5F5;
+    }
+
+    &__chatbox {
+      margin-left: 7.875rem;
+      margin-right: 2rem;
+    }
+
+    &__whatsapp {
+      margin-right: 2rem;
+    }
+
+    &__redes-sociales {
+      margin-right: 7.625rem;
+    }
+  }
+}
+
+// Posible clases globales
+
+.text-section-contact {
+  color: #1A5C43;
+  font-family: Roboto-Bold;
+  font-size: 1.75rem;
+  font-style: normal;
+  line-height: 2.375rem;
+  /* 135.714% */
+  letter-spacing: 0.5px;
+}
+
+.text-section-contact-big {
+  width: 20.25rem;
+  color: #73788C;
+  font-family: Roboto-Regular;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1.625rem;
+  /* 162.5% */
+  margin-top: 1rem;
+}
