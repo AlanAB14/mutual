@@ -47,7 +47,7 @@ a {
 
   &__button {
     button {
-      color: #096DD9;
+      color: var(--verde-oscuro);
       text-align: center;
       font-size: .875rem;
       font-style: normal;
@@ -57,7 +57,7 @@ a {
       padding: .75rem 1.0635rem;
       border-radius: 4px;
       cursor: pointer;
-      border: 1px solid rgba(9, 109, 217, 0.10);
+      border: 1px solid var(--verde-claro);
     }
   }
 }

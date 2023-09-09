@@ -1,4 +1,7 @@
 <div class="prestamo" [ngClass]="selected ? 'selected-background' : 'unselected-background'">
+    <div class="prestamo__detalle">
+        <img [src]="selected ? './assets/imgs/diamond-box-light.png' : './assets/imgs/diamond-box-strong.png'" alt="">            
+    </div>
     <div class="prestamo__header">
         <div class="prestamo__header--icon">
             <img [src]="'./assets/imgs/servicios/' + icon" alt="serv-icon">
@@ -19,7 +22,7 @@
     </div>
     <div class="prestamo__footer">
         <div class="prestamo__footer--btn" >
-            <button class="leer-mas-btn" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">Leer más</button><mat-icon [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">arrow_forward_ios</mat-icon>
+            <button class="leer-mas-btn selected-title-color selected-title-color">Leer más</button><mat-icon class="selected-title-color">arrow_forward_ios</mat-icon>
         </div>
     </div>
 </div>

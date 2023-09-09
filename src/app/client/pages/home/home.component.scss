@@ -2,13 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     p {
         margin: 0;
     }
 
+    &__detalles {
+        padding: 1.875rem 3.75rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
     &__box {
         display: flex;
         padding: 7.5rem 0;
+
 
         &__image {
             position: relative;
@@ -45,7 +55,7 @@
                     letter-spacing: -0.81px;
                 }
                 .title-verde-claro {
-                    color: #A5C367;
+                    color: var(--verde-claro);
                     font-family: Roboto-Bold;
                     font-size: 3.375rem;
                     font-style: normal;
@@ -73,7 +83,7 @@
                 width: 30.1875rem;
                 margin: 3.4375rem 0;
                 height: 1px;
-                background-color: #D8D8D8;
+                background-color: var(--verde-claro);
             }
 
             &--button {
@@ -95,7 +105,7 @@
                         line-height: 160%; /* 41.6px */
                     }
                     .text-green-btn {
-                        color: #A4C367;
+                        color: var(--verde-claro);
                         font-family: Roboto-Regular;
                         font-size: 1.25rem;
                         font-style: normal;
@@ -114,7 +124,8 @@
 }
 
 .primicia-section {
-    background: url('/assets/imgs/primicia/primicia-bg.png');
+    background-image: url('/assets/imgs/primicia/primicia-bg.png');
+    background-color: #F8FAFF;
     background-repeat: no-repeat;
     background-position: right center;
 

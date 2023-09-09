@@ -1,5 +1,5 @@
 .prestamo {
-    padding: 3.125rem 1.5625rem 1.5625rem 1.5625rem;
+    padding: 1.125rem 1.5625rem 1.5625rem 1.5625rem;
     border-radius: .75rem;
     width: 18.75rem;
     height: 20.3125rem;
@@ -9,6 +9,12 @@
 
     p {
         margin: 0;
+    }
+
+    &__detalle {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 0.625rem;
     }
 
     &__header {
@@ -65,23 +71,25 @@
 }
 
 .selected-background {
-    background-color: #176449;
+    background-color: var(--verde-oscuro);
 }
 
 .unselected-background {
     background-color: #FCFFFF;
+    border-radius: 12px;
+    border: 2px solid #1A5C43;
 }
 
 .selected-title-color {
-    color: #FFF;
+    color: #90FB6D;
 }
 
 .unselected-title-color {
-    color: #1A5C43;
+    color: var(--verde-oscuro);
 }
 
 .unselected-title-color-body {
-    color: #656D9F;
+    color: var(--verde-oscuro);
 }
 
 ::ng-deep .mat-icon {

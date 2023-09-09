@@ -136,8 +136,9 @@ p {
         display: flex;
         justify-content: center;
         padding: 2rem 0;
+        background: linear-gradient(90deg, rgba(23,100,73,1) 50%, rgba(59,100,69,1) 89%);
         p {
-            color: #212B36;
+            color: var(--verde-claro);
             font-family: Public-Regular;
             font-size: 0.875rem;
             font-style: normal;

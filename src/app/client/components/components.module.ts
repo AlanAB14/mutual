@@ -4,6 +4,7 @@ import { NuestrosServiciosComponent } from './nuestros-servicios/nuestros-servic
 import { PrestamoBoxComponent } from './prestamo-box/prestamo-box.component';
 import { SharedGlobalModule } from 'src/app/shared/shared.module';
 import { TestimonioComponent } from './testimonio/testimonio.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -15,7 +16,8 @@ import { TestimonioComponent } from './testimonio/testimonio.component';
   ],
   imports: [
     CommonModule,
-    SharedGlobalModule
+    SharedGlobalModule,
+    SlickCarouselModule
   ],
   exports: [
     NuestrosServiciosComponent,

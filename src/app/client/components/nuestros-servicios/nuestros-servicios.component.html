@@ -1,14 +1,23 @@
 <div class="nuestros-servicios">
     <div class="nuestros-servicios__title">
-        <p class="servicios-title">Nuestros Servicios</p>
+        <p class="servicios-title">Nuestros <span>Servicios</span></p>
     </div>
     <div class="nuestros-servicios__prestamos">
-        <div *ngFor="let servicio of servicios">
+        <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let servicio of servicios" class="slide">
             <prestamo-box [titulo]="servicio.titulo"
-                          [texto]="servicio.texto"
-                          [icon]="servicio.icon"
-                          [caracteristicas]="servicio.caracteristicas"
-                          [selected]="servicio.selected"></prestamo-box>
+            [texto]="servicio.texto"
+            [icon]="servicio.icon"
+            [caracteristicas]="servicio.caracteristicas"
+            [selected]="servicio.selected"></prestamo-box>
         </div>
+        </ngx-slick-carousel>
+       
     </div>
 </div>
