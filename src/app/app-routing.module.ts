@@ -5,14 +5,14 @@ import { AdminLayoutComponent } from './admin/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./client/client.module').then( m => m.ClientModule ),
-    component: ClientLayoutComponent
-  },
-  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminModule ),
     component: AdminLayoutComponent
+  },
+  {
+    path: '',
+    loadChildren: () => import('./client/client.module').then( m => m.ClientModule ),
+    component: ClientLayoutComponent
   },
   {
     path: '**',

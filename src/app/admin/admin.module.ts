@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminLayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
