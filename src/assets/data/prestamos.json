@@ -2,6 +2,8 @@
     {
         "titulo":  "Préstamos personales",
         "icon": "servicios-icon-personales.png",
+        "imgPrincipal": "prestamos-personales.png",
+        "url": "prestamos-personales",
         "texto": "Nuestros préstamos personales le permiten a usted y su familia hacer realidad los proyectos",
         "caracteristicas": [
                 "Usted elije el destino de los fondos para hacer realidad sus proyectos.",
@@ -17,6 +19,8 @@
     {
         "titulo":  "Préstamos prendarios",
         "icon": "servicios-icon-prendarios.png",
+        "imgPrincipal": "prestamos-prendarios.png",
+        "url": "prestamos-prendarios",
         "texto": "Para la adquisición de automotores, camiones, utilitarios y otros destinos",
         "caracteristicas": [
                 "Usted elije el destino de los fondos.",
@@ -31,7 +35,9 @@
     },
     {
         "titulo":  "Préstamos agropecuarios",
+        "url": "prestamos-agropecuarios",
         "icon": "servicios-icon-agropecuarios.png",
+        "imgPrincipal": "prestamos-agropecuarios.png",
         "texto": "Para la compra de semillas, combustible, insumos, fertilizantes, equipamiento tecnológico. Devolución cosecha fina y cosecha gruesa.",
         "caracteristicas": [
                 "Usted elije el destino de los fondos",
@@ -46,7 +52,9 @@
     },
     {
         "titulo":  "Préstamos empresariales",
+        "url": "prestamos-empresariales",
         "icon": "servicios-icon-empresariales.png",
+        "imgPrincipal": "prestamos-empresariales.png",
         "texto": "Asistencia financiera de corto plazo con caución de valores (Cheques). Financiación a clientes.",
         "caracteristicas": [
                 "Usted elije el destino de los fondos",
@@ -56,6 +64,45 @@
                 "Cuotas mensuales, trimestrales y semestrales.",
                 "Tasa fija – Cuota Fija.",
                 "Pago íntegro hasta 180 días."
+        ],
+        "selected": false
+    },
+    {
+        "titulo":  "Préstamos Empleados Públicos",
+        "url": "prestamos-empleados-publicos",
+        "icon": "servicios-icon-empresariales.png",
+        "imgPrincipal": "prestamos-empleados-publicos.png",
+        "texto": "Si sos empleado público de la provincia de Santa Fe solicitá tu crédito hasta $150.000",
+        "caracteristicas": [
+                "Elegí el destino de los fondos para hacer",
+                "Realidad sus proyectos.",
+                "Disponibilidad inmediata.",
+                "La tasa más conveniente del mercado.",
+                "Hasta 36 cuotas fijas"
+        ],
+        "selected": false
+    },
+    {
+        "titulo":  "Recaudaciones",
+        "url": "recaudaciones",
+        "icon": "servicios-icon-empresariales.png",
+        "imgPrincipal": "recaudaciones.png",
+        "texto": "Cobramos todos sus impuestos y servicios",
+        "caracteristicas": [
+                "Débito automático de Caja de ahorro SIN COSTO"
+        ],
+        "selected": false
+    },
+    {
+        "titulo":  "Consultorio Jurídico",
+        "url": "consultorio-juridico",
+        "icon": "servicios-icon-empresariales.png",
+        "imgPrincipal": "consultorio-juridico.png",
+        "texto": "Asesoramiento jurídico gratuito",
+        "caracteristicas": [
+                "Asesores legales",
+                "Asesoramiento permanente",
+                "Gratuito"
         ],
         "selected": false
     }

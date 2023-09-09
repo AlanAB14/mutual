@@ -1,1 +1,45 @@
-<p>servicios works!</p>
+<div class="servicios" *ngIf="servicioSeleccionado">
+    <div class="servicios__text">
+        <p class="text-small-section">Nosotros</p>
+    </div>
+    <div class="servicios__content" [ngClass]="{ 'margin-conditional' : (servicioSeleccionado.url === 'consultorio-juridico' || servicioSeleccionado.url === 'recaudaciones') }">
+        <div class="servicios__content__image">
+            <img [src]="'./assets/imgs/servicios/img-principal/' + servicioSeleccionado.imgPrincipal" alt="">
+        </div>
+        <div class="servicios__content__text">
+            <p class="servicios__content__text--title title-section">
+                <span class="primera-palabra">{{ servicioSeleccionado.titulo.split(' ')[0] }}</span>
+                <span class="resto-palabra"> {{ servicioSeleccionado.titulo.split(' ').slice(1).join(' ') }}</span>
+            </p>
+            <p class="servicios__content__text--texto">{{servicioSeleccionado.texto}}</p>
+            <ul>
+                <li *ngFor="let item of servicioSeleccionado.caracteristicas">{{item}}</li>
+            </ul>
+            <p class="button-servicios">Pedilo aquí</p>
+        </div>
+        
+    </div>
+</div>
+<hr class="segmented-hr">
+
+<div class="testimonios">
+    <div class="testimonios__text">
+        <p class="text-small-section">Testimonios</p>
+    </div>
+    <div class="testimonios__content">
+        <div class="testimonios__title">
+            <p class="title-section">¿Qué dicen de nuestro servicio?</p>
+        </div>
+        <div class="testimonios__box">
+            <div class="testimonios__box--item">
+                <testimonio></testimonio>
+            </div>
+            <div class="testimonios__box--item">
+                <testimonio></testimonio>
+            </div>
+            <div class="testimonios__box--item">
+                <testimonio></testimonio>
+            </div>
+        </div>
+    </div>
+</div>

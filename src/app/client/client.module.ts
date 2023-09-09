@@ -11,6 +11,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ComponentsModule } from './components/components.module';
+// import { ClientComponent } from './client.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ComponentsModule } from './components/components.module';
     NosotrosComponent,
     ServiciosComponent,
     AyudaComponent,
-    FormularioComponent
+    FormularioComponent,
+    // ClientComponent
   ],
   imports: [
     CommonModule,

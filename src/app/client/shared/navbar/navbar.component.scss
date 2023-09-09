@@ -61,3 +61,68 @@ a {
     }
   }
 }
+
+.arrow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3px;
+}
+
+.link-route {
+  position: relative;
+
+  &__href {
+    display: flex;
+    ::ng-deep .mat-icon {
+      height: 14px;
+      width: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+    }
+  
+    ::ng-deep .material-icons {
+      font-size: 18px;
+    }
+  }
+}
+.my-class {
+  ::ng-deep .mat-icon {
+    transform: rotate(180deg);
+  }
+  .submenu {
+    display: block;
+  }
+}
+.submenu {
+  background-color: white;
+  position: absolute;
+  top: 3.35rem;
+  left: -1rem;
+  display: none;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      margin-right: 0!important;
+      padding: .5rem 1rem;
+      transition: all .2s;
+      font-weight: 400;
+
+      a {
+        color: unset;
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #73779F;
+      }
+
+      &:hover {
+        background-color: #73779F;
+        color: white;
+      }
+    }
+  }
+}

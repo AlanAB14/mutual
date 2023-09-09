@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ServiciosService } from '../../services/servicios.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 interface ItemMenu {
   path: string;
@@ -10,7 +12,10 @@ interface ItemMenu {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  @ViewChild('elementItem') elementItem!: ElementRef;
+  constructor(private serviciosService: ServiciosService,
+              private router: Router) { }
 
   items: ItemMenu[] = [
     {
@@ -29,12 +34,49 @@ export class NavbarComponent {
       path: 'formulario',
       text: 'Formulario'
     }
-  ]
+  ];
+
+  servicios: any;
 
   selectedItem: string | null = null;
+
+  isClassVisible = false;
+  esClaseHija = false;
+
+  ngOnInit(): void {
+    this.serviciosService.getServicios()
+      .subscribe(servicios => {
+        this.servicios = servicios.map(servicio => ({
+          path: servicio.url,
+          titulo: servicio.titulo
+        }))
+      })
+
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const currentUrl = this.router.url;
+        const tieneServicios = currentUrl.includes('servicios');
+
+        if (tieneServicios) {
+          this.elementItem.nativeElement.classList.add('selected')
+        } else {
+          this.elementItem.nativeElement.classList.remove('selected')
+        }
+      }
+    });
+  }
 
   selectItem(item: string): void {
     this.selectedItem = item;
   }
-  
+
+  toggleClass(path: any) {
+    if (path === 'servicios') {
+      this.isClassVisible = !this.isClassVisible;
+    } else {
+      this.isClassVisible = false;
+    }
+  }
+
 }

@@ -6,10 +6,30 @@
     </div>
     <div class="navbar-container__items">
         <ul>
-            <li *ngFor="let item of items">
-                <a [routerLink]="[item.path]" routerLinkActive="selected" >
-                    {{ item.text }}
-                </a>
+            <li *ngFor="let item of items" class="link-route">
+                <ng-container *ngIf="item.path !== 'servicios'; else serviciosLink">
+                    <a [routerLink]="[item.path]" routerLinkActive="selected" class="link-route__href">
+                        {{ item.text }}
+                    </a>
+                </ng-container>
+
+                <ng-template #serviciosLink>
+                    <a #elementItem (click)="toggleClass(item.path)" [ngClass]="{'my-class': isClassVisible, 'selected': esClaseHija }"
+                        class="link-route__href">
+                        {{ item.text }}
+                        <div class="arrow-down"><mat-icon>expand_more</mat-icon></div>
+                        <div class="submenu animate__animated animate__fadeIn animate__faster">
+                            <ul>
+                                <li *ngFor="let servicio of servicios">
+                                    <a [routerLink]="'servicios/' + servicio.path" routerLinkActive="selected"
+                                        class="link-route__href">
+                                        {{ servicio.titulo }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </ng-template>
             </li>
         </ul>
     </div>

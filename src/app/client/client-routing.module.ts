@@ -5,6 +5,7 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import { ServiciosService } from './services/servicios.service';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'servicios',
-    component: ServiciosComponent
+    loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosModule ),
   },
   {
     path: 'ayuda',
@@ -37,4 +38,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ClientRoutingModule { }
+export class ClientRoutingModule {
+
+  constructor( private serviciosService: ServiciosService ) {  }
+
+}

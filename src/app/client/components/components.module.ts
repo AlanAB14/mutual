@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { NuestrosServiciosComponent } from './nuestros-servicios/nuestros-servicios.component';
 import { PrestamoBoxComponent } from './prestamo-box/prestamo-box.component';
 import { SharedGlobalModule } from 'src/app/shared/shared.module';
+import { TestimonioComponent } from './testimonio/testimonio.component';
 
 
 
 @NgModule({
   declarations: [
     NuestrosServiciosComponent,
-    PrestamoBoxComponent
+    PrestamoBoxComponent,
+    TestimonioComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { SharedGlobalModule } from 'src/app/shared/shared.module';
   ],
   exports: [
     NuestrosServiciosComponent,
-    PrestamoBoxComponent
+    PrestamoBoxComponent,
+    TestimonioComponent
   ]
 })
 export class ComponentsModule { }
