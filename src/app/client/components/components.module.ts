@@ -5,6 +5,8 @@ import { PrestamoBoxComponent } from './prestamo-box/prestamo-box.component';
 import { SharedGlobalModule } from 'src/app/shared/shared.module';
 import { TestimonioComponent } from './testimonio/testimonio.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { QuestionComponent } from './question/question.component';
+import { QuestionSectionComponent } from './question-section/question-section.component';
 
 
 
@@ -12,7 +14,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   declarations: [
     NuestrosServiciosComponent,
     PrestamoBoxComponent,
-    TestimonioComponent
+    TestimonioComponent,
+    QuestionComponent,
+    QuestionSectionComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   exports: [
     NuestrosServiciosComponent,
     PrestamoBoxComponent,
-    TestimonioComponent
+    TestimonioComponent,
+    QuestionComponent,
+    QuestionSectionComponent
   ]
 })
 export class ComponentsModule { }

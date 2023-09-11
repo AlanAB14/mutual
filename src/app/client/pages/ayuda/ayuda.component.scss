@@ -1,0 +1,45 @@
+.ayuda {
+    padding-top: 5.375rem;
+    padding-bottom: 5.375rem;
+
+    &__box {
+        margin-top: 3.75rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &__title {
+            margin-right: 4rem;
+        }
+
+        &__tab {
+            display: flex;
+            align-items: center;
+
+            ul {
+                display: flex;
+
+                .active {
+                    color: var(--verde-claro) !important;
+                    font-family: Roboto-Medium !important;
+
+                }
+
+                li {
+                    list-style: none;
+                    color: #636D79;
+                    font-family: Roboto-Regular !important;
+                    font-size: 1rem !important;
+                    line-height: 150% !important;
+                    letter-spacing: normal;
+                    cursor: pointer;
+                    transition: all .2s;
+
+                    &:not(:last-child) {
+                        margin-right: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

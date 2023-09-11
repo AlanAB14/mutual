@@ -16,7 +16,10 @@
             </video>
         </div>
         <div class="nosotros__box-content__text">
-            <p class="title-section">{{ titulo }}</p>
+            <p class="title-section">
+                <span class="primera-palabra">{{ titulo.split(' ')[0] + ' ' + titulo.split(' ')[1] + ' ' + titulo.split(' ')[2] }}</span>
+                <span class="resto-palabra"> {{ titulo.split(' ').slice(3).join(' ') }}</span>
+            </p>
             <p class="text-section">{{ texto }}</p>
             <button class="btn-nosotros">Conocé más sobre nosotros <img src="./assets/imgs/nosotros/follow-icon.png" alt=""></button>
         </div>

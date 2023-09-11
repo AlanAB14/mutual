@@ -21,7 +21,7 @@ p {
         margin-top: 1.5rem;
 
         p {
-            color: #1F2744;
+            color: var(--verde-claro);
             font-family: Poppins-SemiBold;
             font-size: 1.125rem;
             font-style: normal;
@@ -35,7 +35,7 @@ p {
         margin-top: 1rem;
 
         p {
-            color: #1F2744;
+            color: var(--verde-oscuro);
             font-family: Poppins-Regular;
             font-size: 1rem;
             font-style: normal;
@@ -64,7 +64,7 @@ p {
             flex-direction: column;
 
             .person-name {
-                color: #0B2E29;
+                color: var(--verde-oscuro);
                 font-family: Nunito-SemiBold;
                 font-size: 1rem;
                 font-style: normal;

@@ -12,6 +12,7 @@
                         (beforeChange)="beforeChange($event)">
         <div ngxSlickItem *ngFor="let servicio of servicios" class="slide">
             <prestamo-box [titulo]="servicio.titulo"
+            class="prestamo-box"
             [texto]="servicio.texto"
             [icon]="servicio.icon"
             [caracteristicas]="servicio.caracteristicas"

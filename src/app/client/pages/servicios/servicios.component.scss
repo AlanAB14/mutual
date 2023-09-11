@@ -14,7 +14,7 @@ p {
             display: flex;
             flex-direction: column;
             &--title {
-                max-width: 23.5rem;
+                max-width: 28.5rem;
                 margin-top: 2.5rem;
             }
     
@@ -49,7 +49,7 @@ p {
             }
             
             .button-servicios {
-                color: #FFF;
+                color: var(--verde-claro);
                 text-align: center;
                 font-family: Roboto-Medium;
                 font-size: 0.875rem;
@@ -82,7 +82,8 @@ p {
         letter-spacing: 0.5px;
     }
     .resto-palabra {
-        color: #A5C367!important;
+        color: var(--verde-claro)!important;
+        text-transform: capitalize;
     }
 }
 

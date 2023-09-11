@@ -10,7 +10,7 @@ import { Servicio } from 'src/app/core/interfaces/servicio.interface';
 export class NuestrosServiciosComponent implements OnInit {
   servicios: Servicio[] = [];
 
-  slideConfig = { "slidesToShow": 4, "slidesToScroll": 1, "autoplay": true };
+  slideConfig = { "slidesToShow": 4, "slidesToScroll": 1, "autoplay": true, "arrows": false };
 
   slickInit(e: any) {
     console.log('slick initialized');

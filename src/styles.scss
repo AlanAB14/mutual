@@ -195,7 +195,7 @@ body {
 }
 
 .title-section {
-  color: #212B36;
+  color: var(--verde-oscuro)!important;
   font-family: Roboto-Black;
   font-size: 3rem;
   font-style: normal;
@@ -203,8 +203,17 @@ body {
   letter-spacing: -0.6px;
 }
 
+.title-section span {
+  color: var(--verde-oscuro)!important;
+  font-family: Roboto-Black!important;
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 4rem;
+  letter-spacing: -0.6px;
+}
+
 .text-big-section {
-  color: #212B36;
+  color: var(--verde-oscuro);
   font-family: Public-Black;
   font-size: 3rem;
   font-style: normal;
@@ -212,7 +221,7 @@ body {
 }
 
 .text-section {
-  color: #637381;
+  color: var(--verde-oscuro);
   text-align: justify;
   font-family: Public-Regular;
   font-size: 1rem;

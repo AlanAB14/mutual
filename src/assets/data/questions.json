@@ -1,0 +1,107 @@
+[
+    {
+        "tipo": "generales",
+        "data": [
+            {
+                "question": "¿Cómo pago las cuotas del préstamo que pedí?",
+                "answer": "El pago de tu préstamo se debita de tu cuenta en forma automática. Solo tenés que asegurarte de contar con la plata correspondiente al valor de la cuota, el día que configuraste como fecha de pago, ¡y listo!. Esto sucederá todos los meses hasta cumplir con el plazo que hayas elegido cuando pediste el préstamo."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            }
+        ]
+    },
+    {
+        "tipo": "payments",
+        "data": [
+            {
+                "question": "¿Cómo pago las cuotas del préstamo que pedí?",
+                "answer": "El pago de tu préstamo se debita de tu cuenta en forma automática. Solo tenés que asegurarte de contar con la plata correspondiente al valor de la cuota, el día que configuraste como fecha de pago, ¡y listo!. Esto sucederá todos los meses hasta cumplir con el plazo que hayas elegido cuando pediste el préstamo."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            }
+        ]
+    },
+    {
+        "tipo": "services",
+        "data": [
+            {
+                "question": "¿Cómo pago las cuotas del préstamo que pedí?",
+                "answer": "El pago de tu préstamo se debita de tu cuenta en forma automática. Solo tenés que asegurarte de contar con la plata correspondiente al valor de la cuota, el día que configuraste como fecha de pago, ¡y listo!. Esto sucederá todos los meses hasta cumplir con el plazo que hayas elegido cuando pediste el préstamo."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            }
+        ]
+    },
+    {
+        "tipo": "refund",
+        "data": [
+            {
+                "question": "¿Cómo pago las cuotas del préstamo que pedí?",
+                "answer": "El pago de tu préstamo se debita de tu cuenta en forma automática. Solo tenés que asegurarte de contar con la plata correspondiente al valor de la cuota, el día que configuraste como fecha de pago, ¡y listo!. Esto sucederá todos los meses hasta cumplir con el plazo que hayas elegido cuando pediste el préstamo."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            }
+        ]
+    },
+    {
+        "tipo": "contact",
+        "data": [
+            {
+                "question": "¿Cómo pago las cuotas del préstamo que pedí?",
+                "answer": "El pago de tu préstamo se debita de tu cuenta en forma automática. Solo tenés que asegurarte de contar con la plata correspondiente al valor de la cuota, el día que configuraste como fecha de pago, ¡y listo!. Esto sucederá todos los meses hasta cumplir con el plazo que hayas elegido cuando pediste el préstamo."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            },
+            {
+                "question": "¿Dónde puedo ver los términos y condiciones de las cuotas de mis consumos?",
+                "answer": "Los términos y condiciones te los vamos a enviar por mail una vez que confirmes la transacción. También podés verlos previo a pasar tu consumo a cuotas, cuando hagas la solicitud desde la web de Mutual."
+            }
+        ]
+    }
+]

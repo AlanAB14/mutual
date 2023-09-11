@@ -8,7 +8,7 @@
         <ul>
             <li *ngFor="let item of items" class="link-route">
                 <ng-container *ngIf="item.path !== 'servicios'; else serviciosLink">
-                    <a [routerLink]="[item.path]" routerLinkActive="selected" class="link-route__href">
+                    <a [routerLink]="[item.path]" (click)="toggleClass(item.path)" routerLinkActive="selected" class="link-route__href">
                         {{ item.text }}
                     </a>
                 </ng-container>
@@ -20,8 +20,8 @@
                         <div class="arrow-down"><mat-icon>expand_more</mat-icon></div>
                         <div class="submenu animate__animated animate__fadeIn animate__faster">
                             <ul>
-                                <li *ngFor="let servicio of servicios">
-                                    <a [routerLink]="'servicios/' + servicio.path" routerLinkActive="selected"
+                                <li *ngFor="let servicio of servicios" [routerLink]="'servicios/' + servicio.path">
+                                    <a  routerLinkActive="selected"
                                         class="link-route__href">
                                         {{ servicio.titulo }}
                                     </a>

@@ -1,0 +1,8 @@
+<div class="question">
+    <div class="question__section">
+        <question *ngFor="let question of questions"
+                  [question]="question.question"
+                  class="question-item"
+                  [answer]="question.answer"></question>
+    </div>
+</div>
