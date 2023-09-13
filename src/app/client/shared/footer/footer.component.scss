@@ -65,6 +65,7 @@ p {
 
     &__follow {
         .social-media {
+            margin-top: 1rem;
             img {
                 width: 2.5rem;
                 height: 2.5rem;
@@ -78,6 +79,7 @@ p {
 
     .segmented-hr {
         border: .2px dashed #adadad8a;
+        margin: 0;
     }
 
     &__bottom {

@@ -1,20 +1,20 @@
 .question {
     display: flex;
-    justify-content: space-between; /* Para separar los elementos igualmente */
+    justify-content: center; /* Para separar los elementos igualmente */
     width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
     
     &__section {
         display: flex;
         flex-wrap: wrap; /* Para que los elementos se envuelvan a la siguiente fila cuando no quepan */
         justify-content: space-between; /* Para separar los elementos igualmente */
-        width: 100%; 
+        width: 80%; 
+        margin-top: 4.6875rem;
     }
 
     &-item {
         flex: calc(50% - 10px); /* Cada elemento question-item ocupará el 50% del ancho disponible con espaciado */
-        margin: 5px; /* Espacio entre elementos */
         box-sizing: border-box; /* Para incluir el margen en el ancho total */
-        padding: 10px; /* Agrega espaciado si es necesario */
+        padding: .5rem; /* Agrega espaciado si es necesario */
     }
 }
 
