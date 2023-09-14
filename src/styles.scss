@@ -229,5 +229,17 @@ body {
   line-height: 1.5rem;
 }
 
+.segmented-hr {
+  border: .2px dashed #adadad8a;
+} 
+
+hr {
+  margin: 0
+}
+
+.formulario-box {
+  padding: 4rem 0;
+}
+
 @import 'animate.css';
 

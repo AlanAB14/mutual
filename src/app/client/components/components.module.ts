@@ -7,6 +7,8 @@ import { TestimonioComponent } from './testimonio/testimonio.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { QuestionComponent } from './question/question.component';
 import { QuestionSectionComponent } from './question-section/question-section.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,19 +18,22 @@ import { QuestionSectionComponent } from './question-section/question-section.co
     PrestamoBoxComponent,
     TestimonioComponent,
     QuestionComponent,
-    QuestionSectionComponent
+    QuestionSectionComponent,
+    FormularioComponent
   ],
   imports: [
     CommonModule,
     SharedGlobalModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    ReactiveFormsModule
   ],
   exports: [
     NuestrosServiciosComponent,
     PrestamoBoxComponent,
     TestimonioComponent,
     QuestionComponent,
-    QuestionSectionComponent
+    QuestionSectionComponent,
+    FormularioComponent
   ]
 })
 export class ComponentsModule { }

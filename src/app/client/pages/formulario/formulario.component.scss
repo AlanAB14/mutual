@@ -20,7 +20,6 @@ p {
   }
 
   &__box-contact {
-// text-section-contact y text-section-contact__big  --> Posibles clases globales
     .text-section-contact {
       color: #1A5C43;
       font-family: Roboto-Bold;
@@ -77,6 +76,11 @@ p {
       margin-right: 7.625rem;
     }
   }
+}
+
+.formulario-box {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 

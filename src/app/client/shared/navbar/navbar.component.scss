@@ -26,6 +26,7 @@ a {
 
   &__items {
     ul {
+      margin: 0;
       display: flex;
       li {
         cursor: pointer;
