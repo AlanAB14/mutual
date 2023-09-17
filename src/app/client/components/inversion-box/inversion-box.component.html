@@ -1,0 +1,19 @@
+<div class="inversion-box">
+    <div class="inversion-box__header">
+        <img src="./assets/imgs/servicios/img-principal/inversiones.png" alt="inv-image">
+    </div>
+    <div class="inversion-box__body">
+        <p class="title-inversiones">{{ titulo }}</p>
+        <div class="inversiones-caracteristicas">
+            <ul>
+                <li *ngFor="let caracteristica of caracteristicas">
+                    {{ caracteristica }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="inversion-box__footer">
+        <p class="text-inversion">La mejor <strong>inversión</strong></p>
+        <button class="button-servicios" [ngClass]="{'white-btn': btnBlanco}" >Pedilo aquí</button>
+    </div>
+</div>

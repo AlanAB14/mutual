@@ -3,13 +3,18 @@ import { ServiciosService } from '../../services/servicios.service';
 import { Servicio } from 'src/app/core/interfaces/servicio.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { DicenService } from '../../services/dicen.service';
+import { inversionesData } from 'src/assets/data/inversiones';
+
+const inversiones = inversionesData;
 
 @Component({
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.scss']
 })
-export class ServiciosComponent implements OnInit, AfterViewInit{
 
+
+export class ServiciosComponent implements OnInit, AfterViewInit{
+  inversiones = inversiones;
   cargandoData: boolean = true;
   servicios!: Servicio[];
   servicioSeleccionado!: Servicio;
@@ -19,8 +24,6 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
                private dicenService: DicenService,
                private router: Router,
                private cdRef: ChangeDetectorRef ) { }
-
-
 
   ngOnInit(): void {
     this.serviciosService.getServicios()

@@ -30,6 +30,10 @@ let dynamicRoutes: Routes = [
   {
     path: 'consultorio-juridico',
     component: ServiciosComponent
+  },
+  {
+    path: 'inversiones',
+    component: ServiciosComponent
   }
 ];
 

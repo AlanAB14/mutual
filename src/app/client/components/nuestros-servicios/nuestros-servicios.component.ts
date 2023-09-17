@@ -11,7 +11,35 @@ export class NuestrosServiciosComponent implements OnInit {
   servicios: Servicio[] = [];
   cargandoData: boolean = true;
 
-  slideConfig = { "slidesToShow": 4, "slidesToScroll": 1, "autoplay": true, "arrows": false };
+  slideConfig = { 
+    "slidesToShow": 4, 
+    "slidesToScroll": 1, 
+    "autoplay": true, 
+    "arrows": false,
+    "responsive" : [
+      {
+        "breakpoint": 1400,
+        "settings": {
+          "slidesToShow": 3, 
+          "slidesToScroll": 1, 
+        }
+      },
+      {
+        "breakpoint": 1200,
+        "settings": {
+          "slidesToShow": 2, 
+          "slidesToScroll": 1, 
+        }
+      },
+      {
+        "breakpoint": 790,
+        "settings": {
+          "slidesToShow": 1, 
+          "slidesToScroll": 1, 
+        }
+      }
+    ]
+  };
 
   slickInit(e: any) {
     console.log('slick initialized');

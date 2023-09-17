@@ -14,6 +14,7 @@ import { PrendariosComponent } from './formulario/formularios/prendarios/prendar
 import { AgropecuariosComponent } from './formulario/formularios/agropecuarios/agropecuarios.component';
 import { EmpresarialesComponent } from './formulario/formularios/empresariales/empresariales.component';
 import { EmpleadosPublicosComponent } from './formulario/formularios/empleados-publicos/empleados-publicos.component';
+import { InversionBoxComponent } from './inversion-box/inversion-box.component';
 
 
 
@@ -29,7 +30,8 @@ import { EmpleadosPublicosComponent } from './formulario/formularios/empleados-p
     PrendariosComponent,
     AgropecuariosComponent,
     EmpresarialesComponent,
-    EmpleadosPublicosComponent
+    EmpleadosPublicosComponent,
+    InversionBoxComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { EmpleadosPublicosComponent } from './formulario/formularios/empleados-p
     TestimonioComponent,
     QuestionComponent,
     QuestionSectionComponent,
-    FormularioComponent
+    FormularioComponent,
+    InversionBoxComponent
   ]
 })
 export class ComponentsModule { }

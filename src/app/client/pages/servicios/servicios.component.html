@@ -2,7 +2,7 @@
     <div class="servicios__text">
         <p class="text-small-section">Nosotros</p>
     </div>
-    <div class="servicios__content"
+    <div class="servicios__content" *ngIf="servicioSeleccionado.url !== 'inversiones'"
         [ngClass]="{ 'margin-conditional' : (servicioSeleccionado.url === 'consultorio-juridico' || servicioSeleccionado.url === 'recaudaciones') }">
         <div class="servicios__content__image">
             <img [src]="servicioSeleccionado.image ? ('data:image/png;base64,' + servicioSeleccionado.image) : './assets/imgs/servicios/img-principal/recaudaciones.png'"
@@ -20,6 +20,22 @@
             <p class="button-servicios" (click)="goToPrestamo()">Pedilo aquí</p>
         </div>
 
+    </div>
+    <div class="servicios__content" *ngIf="servicioSeleccionado.url === 'inversiones'">
+        <div class="servicios__content--inversiones">
+            <div class="servicios__content__text-inversiones">
+                <p class="title-section">Inversiones</p>
+            </div>
+            <div class="servicios__content__box-inversiones">
+                <div *ngFor="let inversion of inversiones" class="inversiones-box">
+                    <inversion-box [titulo]="inversion.titulo"
+                                   [caracteristicas]="inversion.caracteristicas"
+                                   [btnBlanco]="inversion.btnBlanco"
+                                   class="inversion-box"
+                                   ></inversion-box>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <hr class="segmented-hr">

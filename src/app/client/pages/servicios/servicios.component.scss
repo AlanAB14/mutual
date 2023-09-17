@@ -8,11 +8,25 @@ p {
     .servicios__content {
         display: flex;
         justify-content: center;
+
+        &--inversiones {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__box-inversiones {
+            display: flex;
+        }
     
         &__text {
             margin-left: 3.5rem;
             display: flex;
             flex-direction: column;
+            &-inversiones {
+                margin-top: 1.875rem;
+                margin-bottom: 2.625rem;
+                text-align: center;
+            }
             &--title {
                 max-width: 28.5rem;
                 margin-top: 2.5rem;
@@ -127,6 +141,12 @@ p {
     }
     
 
+}
+
+.inversiones-box {
+    &:not(:last-of-type) {
+        margin-right: 2rem;
+    }
 }
 
 .margin-conditional {

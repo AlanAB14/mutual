@@ -1,0 +1,103 @@
+.button-servicios {
+    color: var(--verde-claro);
+    text-align: center;
+    font-family: Roboto-Medium;
+    font-size: 0.875rem;
+    font-style: normal;
+    line-height: 1.125rem;
+    /* 128.571% */
+    border-radius: 4px;
+    background: #1A5C43;
+    padding: 1.125rem 0;
+    max-width: 100%;
+    border: none;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.white-btn {
+    background-color: white;
+    border: 1px solid var(--verde-oscuro);
+}
+
+p {
+    margin: 0;
+}
+
+.inversion-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #FFF;
+    min-height: 41.25rem;
+    max-width: 23.75rem;
+    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12), 0px 0px 2px 0px rgba(145, 158, 171, 0.20);
+
+    &__header {
+        img {
+            width: 21.875rem;
+        }
+    }
+
+    &__body {
+        margin-top: 1.625rem;
+        margin-left: 1.5rem;
+
+        .title-inversiones {
+            color: var(--verde-oscuro);
+            font-family: Roboto-Regular;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 800 !important;
+            line-height: 2rem;
+            letter-spacing: 0.06px;
+
+        }
+
+        .inversiones-caracteristicas {
+            margin-top: 0.875rem;
+
+            ul {
+                li {
+                    color: var(--verde-oscuro);
+                    font-family: Roboto-Regular;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.625rem;
+                    letter-spacing: 0.04px;
+
+                    &::marker {
+                        font-size: .75rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+
+        .text-inversion {
+            margin-left: 1.5rem;
+            width: fit-content;
+            background: var(--verde-claro);
+            padding: .25rem .5rem;
+            color: #1F2744;
+            font-family: Poppins-Regular;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5rem;
+            letter-spacing: 0.04px;
+            margin-bottom: 1.4375rem;
+            strong {
+                font-weight: 700!important;
+                font-family: Poppins-Regular;
+            }
+        }
+    }
+}
