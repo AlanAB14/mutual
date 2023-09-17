@@ -1,0 +1,16 @@
+p {
+    margin: 0;
+}
+.titulo-formulario {
+    color: #000;
+    font-family: Roboto-Regular;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700!important;
+    line-height: normal;
+    margin-bottom: 2.3125rem;
+
+    &:not(:first-of-type) {
+        margin-top: 2.5rem;
+    }
+}

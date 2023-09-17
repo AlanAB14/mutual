@@ -45,6 +45,8 @@
         margin-bottom: auto;
         &--text {
             position: relative;
+            max-height: 8.125rem;
+            overflow: hidden;
         }
         ul {
             list-style: disc;

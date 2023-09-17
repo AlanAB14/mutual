@@ -4,7 +4,7 @@
     </div>
     <div class="prestamo__header">
         <div class="prestamo__header--icon">
-            <img [src]="'./assets/imgs/servicios/' + icon" alt="serv-icon">
+            <img [src]="'data:image/png;base64,' + icon" alt="serv-icon">
         </div>
         <div class="prestamo__header--title" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color'">
             <p #textoRender hidden>{{ titulo }}</p>
@@ -22,7 +22,7 @@
     </div>
     <div class="prestamo__footer">
         <div class="prestamo__footer--btn" >
-            <button class="leer-mas-btn selected-title-color selected-title-color">Leer más</button><mat-icon class="selected-title-color">arrow_forward_ios</mat-icon>
+            <button (click)="redireccionar(url)" class="leer-mas-btn selected-title-color selected-title-color">Leer más</button><mat-icon class="selected-title-color">arrow_forward_ios</mat-icon>
         </div>
     </div>
 </div>

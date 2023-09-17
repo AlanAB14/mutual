@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/co
 import { ServiciosService } from '../../services/servicios.service';
 import { Servicio } from 'src/app/core/interfaces/servicio.interface';
 import { NavigationEnd, Router } from '@angular/router';
+import { DicenService } from '../../services/dicen.service';
 
 @Component({
   templateUrl: './servicios.component.html',
@@ -9,10 +10,13 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class ServiciosComponent implements OnInit, AfterViewInit{
 
+  cargandoData: boolean = true;
   servicios!: Servicio[];
   servicioSeleccionado!: Servicio;
+  dicen: any = [];
 
   constructor( private serviciosService: ServiciosService,
+               private dicenService: DicenService,
                private router: Router,
                private cdRef: ChangeDetectorRef ) { }
 
@@ -24,11 +28,15 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
         this.servicios = services;
         this.setServicioSeleccionado();
       })
+    this.dicenService.getDicen()
+      .subscribe( dicen => {
+        console.log(dicen)
+        this.dicen = dicen
+      })
   }
 
   ngAfterViewInit(): void {
     this.cdRef.detectChanges();
-    console.log(this.servicioSeleccionado)
   }
 
   setServicioSeleccionado() {
@@ -37,9 +45,18 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
     for (const servicio of this.servicios) {
       if (currentUrl.includes(servicio.url)) {
         this.servicioSeleccionado = servicio;
+        console.log(this.servicioSeleccionado)
         break; // Exit the loop once we've found the servicio
       }
     }
+    this.cargandoData = false
+  }
+
+  goToPrestamo() {
+    const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo };
+    console.log(data)
+    const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify( data )) }]));
+    window.open(url, '_self');
   }
 
 }

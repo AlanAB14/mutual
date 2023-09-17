@@ -1,43 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss']
+  selector: 'form-agropecuario',
+  templateUrl: './agropecuarios.component.html',
+  styleUrls: ['./agropecuarios.component.scss']
 })
-export class FormularioComponent implements OnInit {
-  @Input() tipo!: string;
-  @Input() titulo: string = '';
+export class AgropecuariosComponent {
 
-  formConsulta: FormGroup = this.fb.group({
+  formAgropecuario: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
+    monto: ['', [Validators.required,]],
+    plazo: ['', [Validators.required,]],
     celular: ['', [Validators.required,]],
+    dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
-    consulta: ['', Validators.required],
+    filial: ['', Validators.required],
   })
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    console.log(this.tipo)
-  }
-
   sendData() {
-    this.formConsulta.markAllAsTouched();
-    console.log(this.formConsulta.valid)
-    if (this.formConsulta.valid) {
-      console.log(this.formConsulta.value)
+    this.formAgropecuario.markAllAsTouched();
+    console.log(this.formAgropecuario.valid)
+    if (this.formAgropecuario.valid) {
+      console.log(this.formAgropecuario.value)
     }
   }
 
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
-    if (this.tipo === 'consulta') {
-      this.formConsulta.get(input)!.setValue(valor);
-    }
+    this.formAgropecuario.get(input)!.setValue(valor);
   }
 
   onKeyDown(event: KeyboardEvent) {
@@ -51,7 +46,7 @@ export class FormularioComponent implements OnInit {
   }
 
   checkIfError(campo: string) {
-    if (this.formConsulta.get(campo)!.invalid && (this.formConsulta.get(campo)!.dirty || this.formConsulta.get(campo)!.touched)) {
+    if (this.formAgropecuario.get(campo)!.invalid && (this.formAgropecuario.get(campo)!.dirty || this.formAgropecuario.get(campo)!.touched)) {
       return true;
     } else {
       return false;

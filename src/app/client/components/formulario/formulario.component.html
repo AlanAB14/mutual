@@ -1,22 +1,22 @@
-<div class="formulario">
-    <div class="formulario__title">
+<div class="formulario-defined">
+    <div class="formulario-defined__title" *ngIf="tipo === 'consulta'">
         <p class="title-section change-size">Dejanos su consulta</p>
     </div>
-    <form [formGroup]="formConsulta" (ngSubmit)="sendData()">
-        <div class="formulario__content">
-            <div class="formulario__content--item">
+    <form [formGroup]="formConsulta" (ngSubmit)="sendData()" *ngIf="tipo === 'consulta'">
+        <div class="formulario-defined__content">
+            <div class="formulario-defined__content--item">
                 <label>Nombre y Apellido</label>
                 <input formControlName="nombre" type="text">
-                <div
-                    *ngIf="formConsulta.get('nombre')!.invalid && (formConsulta.get('nombre')!.dirty || formConsulta.get('nombre')!.touched)">
+                <div class="error-text-defined"
+                    *ngIf="checkIfError('nombre')">
                     El Nombre es obligatorio.
                 </div>
             </div>
-            <div class="formulario__content--item">
+            <div class="formulario-defined__content--item">
                 <label>Email</label>
                 <input formControlName="email" type="text">
-                <div
-                    *ngIf="formConsulta.get('email')!.invalid && (formConsulta.get('email')!.dirty || formConsulta.get('email')!.touched)">
+                <div *ngIf="checkIfError('email')"
+                     class="error-text-defined">
                     <div *ngIf="formConsulta.get('email')!.hasError('required')">
                         El correo electrónico es obligatorio.
                     </div>
@@ -26,45 +26,53 @@
                     </div>
                 </div>
             </div>
-            <div class="formulario__content--item">
+            <div class="formulario-defined__content--item">
                 <label>Celular</label>
                 <input formControlName="celular" type="text" 
                        (input)="onInputChange($event, 'celular')"
                        (keydown)="onKeyDown($event)">
-                <div
-                    *ngIf="formConsulta.get('celular')!.invalid && (formConsulta.get('celular')!.dirty || formConsulta.get('celular')!.touched)">
+                <div class="error-text-defined"
+                     *ngIf="checkIfError('celular')">
                     El Celular es obligatorio.
                 </div>
             </div>
-            <div class="formulario__content--item">
+            <div class="formulario-defined__content--item">
                 <label>Dirección Postal</label>
                 <input formControlName="codPostal" type="text"
                        (input)="onInputChange($event, 'codPostal')"
                        (keydown)="onKeyDown($event)">
-                <div
-                    *ngIf="formConsulta.get('codPostal')!.invalid && (formConsulta.get('codPostal')!.dirty || formConsulta.get('codPostal')!.touched)">
+                <div class="error-text-defined"
+                     *ngIf="checkIfError('codPostal')">
                     El Código postal es obligatorio.
                 </div>
             </div>
-            <div class="formulario__content--item">
+            <div class="formulario-defined__content--item">
                 <label>Ciudad</label>
                 <input formControlName="ciudad" type="text">
-                <div
-                    *ngIf="formConsulta.get('ciudad')!.invalid && (formConsulta.get('ciudad')!.dirty || formConsulta.get('ciudad')!.touched)">
+                <div class="error-text-defined"
+                     *ngIf="checkIfError('ciudad')">
                     La ciudad es obligatoria.
                 </div>
             </div>
-            <div class="formulario__content--item">
+            <div class="formulario-defined__content--item">
                 <label>Consultas o sugerencias</label>
                 <textarea formControlName="consulta"></textarea>
-                <div
-                    *ngIf="formConsulta.get('consulta')!.invalid && (formConsulta.get('consulta')!.dirty || formConsulta.get('consulta')!.touched)">
+                <div class="error-text-defined"
+                     *ngIf="checkIfError('consulta')">
                     Ingrese su consulta.
                 </div>
             </div>
         </div>
-        <div class="formulario__button">
-            <button type="submit" class="btn-primary-mutual btn-form">Enviar</button>
+        <div class="formulario-defined__button">
+            <button type="submit" class="btn-primary-mutual btn-form-defined">Enviar</button>
         </div>
+    </form>
+
+    <form>
+        <form-personales *ngIf="tipo === 'prestamos-personales'"></form-personales>
+        <form-prendario *ngIf="tipo === 'prestamos-prendarios'"></form-prendario>
+        <form-agropecuario *ngIf="tipo === 'prestamos-agropecuarios'"></form-agropecuario>
+        <form-empresarial *ngIf="tipo === 'prestamos-empresariales'"></form-empresarial>
+        <form-empleados-publicos *ngIf="tipo === 'prestamos-empleados-publicos'"></form-empleados-publicos>
     </form>
 </div>

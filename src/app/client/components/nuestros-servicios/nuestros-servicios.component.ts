@@ -9,6 +9,7 @@ import { Servicio } from 'src/app/core/interfaces/servicio.interface';
 })
 export class NuestrosServiciosComponent implements OnInit {
   servicios: Servicio[] = [];
+  cargandoData: boolean = true;
 
   slideConfig = { "slidesToShow": 4, "slidesToScroll": 1, "autoplay": true, "arrows": false };
 
@@ -21,11 +22,9 @@ export class NuestrosServiciosComponent implements OnInit {
   }
 
   afterChange(e: any) {
-    console.log('afterChange');
   }
 
   beforeChange(e: any) {
-    console.log('beforeChange');
   }
 
   constructor(private serviciosService: ServiciosService) { }
@@ -34,6 +33,8 @@ export class NuestrosServiciosComponent implements OnInit {
     this.serviciosService.getServicios()
       .subscribe((servicios) => {
         this.servicios = servicios
+        console.log(servicios)
+        this.cargandoData = false;
       })
   }
 

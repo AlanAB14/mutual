@@ -6,6 +6,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ServiciosService } from './services/servicios.service';
+import { PrestamoComponent } from './pages/prestamo/prestamo.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'formulario',
     component: FormularioComponent
+  },
+  {
+    path: 'prestamo',
+    component: PrestamoComponent
   },
   {
     path: '**',

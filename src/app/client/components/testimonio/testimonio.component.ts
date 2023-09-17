@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'testimonio',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./testimonio.component.scss']
 })
 export class TestimonioComponent {
+  @Input() titulo!: string;
+  @Input() texto!: string;
+  @Input() nombre!: string;
+  @Input() imagen!: string;
+  @Input() trabajo!: string;
 
 }

@@ -11,6 +11,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ComponentsModule } from './components/components.module';
+import { PrestamoComponent } from './pages/prestamo/prestamo.component';
 // import { ClientComponent } from './client.component';
 
 
@@ -22,6 +23,7 @@ import { ComponentsModule } from './components/components.module';
     ServiciosComponent,
     AyudaComponent,
     FormularioComponent,
+    PrestamoComponent,
     // ClientComponent
   ],
   imports: [

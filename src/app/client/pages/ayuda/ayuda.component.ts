@@ -9,28 +9,37 @@ import { QuestionsService } from '../../services/questions.service';
 
 
 export class AyudaComponent implements OnInit {
-  questions!: any[];
-  isSelected!: string;
-  questionsSelected: any = [];
+  catQuestions!: any[];
+  isSelected!: number;
+  catQuestionsSelected: any = [];
+
+  cargandoData: boolean = true;
 
   constructor(private questionService: QuestionsService) { }
 
   ngOnInit(): void {
-    this.questionService.getQuestions()
+    this.questionService.getCategoriesQuestions()
       .subscribe(questions => {
-        this.questions = questions
-        this.toggleClass('generales')
+        this.catQuestions = questions
+        this.toggleClass(this.catQuestions[0].id)
       })
+
   }
 
-  toggleClass(tipo: string): void {
-    console.log('ingresa')
+  toggleClass(tipo: number): void {
     if (this.isSelected !== tipo) {
       this.isSelected = tipo;
-      console.log(this.questions)
-      const questions = this.questions.find(question => question.tipo === tipo)
-      this.questionsSelected = questions.data
+      this.getQuestionsPerCategory(tipo)
     }
+  }
+
+  getQuestionsPerCategory(category: number) {
+    this.questionService.getQuestions(category)
+      .subscribe( questions => {
+        this.catQuestionsSelected = questions
+        console.log(this.catQuestionsSelected)
+      })
+    this.cargandoData = false;
   }
 
 }

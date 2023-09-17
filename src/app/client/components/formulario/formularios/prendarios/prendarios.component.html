@@ -1,0 +1,135 @@
+<form [formGroup]="formPrendario" (ngSubmit)="sendData()">
+    <div class="formulario-defined__content">
+        <div class="titulo-formulario">
+            <p>Datos Personales</p>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Nombre y Apellido / Razón Social</label>
+            <input formControlName="nombre" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('nombre')">
+                El Nombre / Razón Social es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Email</label>
+            <input formControlName="email" type="text">
+            <div *ngIf="checkIfError('email')" class="error-text-defined">
+                <div *ngIf="formPrendario.get('email')!.hasError('required')">
+                    El correo electrónico es obligatorio.
+                </div>
+                <div *ngIf="formPrendario.get('email')!.hasError('email')">
+                    El formato del correo electrónico no es
+                    válido.
+                </div>
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Celular</label>
+            <input formControlName="celular" type="text" (input)="onInputChange($event, 'celular')"
+                (keydown)="onKeyDown($event)">
+            <div class="error-text-defined" *ngIf="checkIfError('celular')">
+                El Celular es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Dirección Postal</label>
+            <input formControlName="codPostal" type="text" (input)="onInputChange($event, 'codPostal')"
+                (keydown)="onKeyDown($event)">
+            <div class="error-text-defined" *ngIf="checkIfError('codPostal')">
+                El Código postal es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Ciudad</label>
+            <input formControlName="ciudad" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('ciudad')">
+                La ciudad es obligatoria.
+            </div>
+        </div>
+
+        <div class="titulo-formulario">
+            <p>Datos del vehículo a adquirir</p>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Marca del vehículo</label>
+            <input formControlName="marca" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('marca')">
+                La Marca es obligatoria.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Seleccione el año</label>
+            <select formControlName="anio">
+                <option value=""></option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+            <div class="error-text-defined" *ngIf="checkIfError('anio')">
+                El año es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Modelo</label>
+            <input formControlName="modelo" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('modelo')">
+                El Modelo es obligatoria.
+            </div>
+        </div>
+
+
+
+        <div class="titulo-formulario">
+            <p>Otro destino</p>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>En el caso de elegir otro destino seleccione</label>
+            <select formControlName="destino">
+                <option value=""></option>
+                <option value="Venado Tuerto">Venado Tuerto</option>
+                <option value="Rufino">Rufino</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+
+
+        <div class="titulo-formulario">
+            <p>Plazo de devolución</p>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Seleccione el plazo de devolución</label>
+            <select formControlName="devolucion">
+                <option value=""></option>
+                <option value="12 meses">12 meses</option>
+                <option value="24 meses">24 meses</option>
+                <option value="48 meses">48 meses</option>
+            </select>
+            <div class="error-text-defined" *ngIf="checkIfError('devolucion')">
+                El plazo de devolución es obligatorio.
+            </div>
+        </div>
+
+        <div class="formulario-defined__content--item">
+            <label>Elija su filial</label>
+            <select formControlName="filial">
+                <option value=""></option>
+                <option value="Venado Tuerto">Venado Tuerto</option>
+                <option value="Rufino">Rufino</option>
+                <option value="Villa Cañas">Villa Cañas</option>
+                <option value="San Gregorio">San Gregorio</option>
+                <option value="San Nicolás">San Nicolás</option>
+                <option value="Villa Const.">Villa Const.</option>
+                <option value="Villa Ramallo">Villa Ramallo</option>
+            </select>
+            <div class="error-text-defined" *ngIf="checkIfError('filial')">
+                Debes seleccionar la fililal.
+            </div>
+        </div>
+    </div>
+    <div class="formulario__button">
+        <button type="submit" class="btn-primary-mutual btn-form-defined">Enviar</button>
+    </div>
+</form>

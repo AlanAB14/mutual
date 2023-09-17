@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'prestamo-box',
@@ -15,6 +16,9 @@ export class PrestamoBoxComponent implements AfterViewInit {
   @Input() caracteristicas: string [] = [];
   @Input() selected: boolean = true;
   @Input() icon: string = '';
+  @Input() url: string = '';
+
+  constructor( private router: Router ) { }
 
   ngAfterViewInit() {
     this.separarTexto();
@@ -34,5 +38,10 @@ export class PrestamoBoxComponent implements AfterViewInit {
     } else {
       firstWordElement.textContent = textoCompleto;
     }
+  }
+
+  redireccionar(url: string) {
+    console.log(url)
+    this.router.navigate(['/servicios', url]);
   }
 }

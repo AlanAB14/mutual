@@ -3,22 +3,23 @@
         <p class="servicios-title">Nuestros <span>Servicios</span></p>
     </div>
     <div class="nuestros-servicios__prestamos">
-        <ngx-slick-carousel class="carousel" 
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let servicio of servicios" class="slide">
-            <prestamo-box [titulo]="servicio.titulo"
-            class="prestamo-box"
-            [texto]="servicio.texto"
-            [icon]="servicio.icon"
-            [caracteristicas]="servicio.caracteristicas"
-            [selected]="servicio.selected"></prestamo-box>
-        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+            (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let servicio of servicios" class="slide">
+                <prestamo-box class="prestamo-box" 
+                              [titulo]="servicio.titulo" 
+                              [url]="servicio.url"
+                              [texto]="servicio.texto"
+                              [icon]="servicio.icon" 
+                              [caracteristicas]="servicio.caracteristicas"
+                              [selected]="servicio.selected"></prestamo-box>
+            </div>
         </ngx-slick-carousel>
-       
+
     </div>
+</div>
+
+<div class="loader-mutual-box" *ngIf="cargandoData">
+    <span class="loader-mutual"></span>
 </div>

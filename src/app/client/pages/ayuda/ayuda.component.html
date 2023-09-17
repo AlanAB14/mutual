@@ -6,16 +6,17 @@
         <div class="ayuda__box__title title-section">Preguntas Frecuentes</div>
         <div class="ayuda__box__tab">
             <ul>
-                <li [ngClass]="{'active': isSelected === 'generales'}" (click)="toggleClass('generales')">General</li>
-                <li [ngClass]="{'active': isSelected === 'payments'}" (click)="toggleClass('payments')">Payments</li>
-                <li [ngClass]="{'active': isSelected === 'services'}" (click)="toggleClass('services')">Services</li>
-                <li [ngClass]="{'active': isSelected === 'refund'}" (click)="toggleClass('refund')">Refund</li>
-                <li [ngClass]="{'active': isSelected === 'contact'}" (click)="toggleClass('contact')">Contact</li>
+                <li *ngFor="let cat of catQuestions" [ngClass]="{'active': isSelected === cat.id}" (click)="toggleClass(cat.id)">{{ cat.nombre }}</li>
+                
             </ul>
         </div>
     </div>
 
     <div class="ayuda__box__answers">
-        <question-section [questions]="questionsSelected"></question-section>
+        <question-section [questions]="catQuestionsSelected"></question-section>
     </div>
+</div>
+
+<div class="loader-mutual-box" *ngIf="cargandoData">
+    <span class="loader-mutual"></span>
 </div>

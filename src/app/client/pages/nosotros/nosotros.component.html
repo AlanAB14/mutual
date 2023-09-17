@@ -8,7 +8,7 @@
     <div class="nosotros__box-content">
         <div class="nosotros__box-content__video">
             <video controls>
-                <source src="./assets/imgs/nosotros/nosotros-prueba.mp4" type="video/mp4">
+                <source [src]=" video ? ('data:video/mp4;base64,' + video) : './assets/imgs/nosotros/nosotros-prueba.mp4'" type="video/mp4">
                 <!-- También puedes proporcionar múltiples fuentes para compatibilidad con diferentes formatos de video -->
                 <!-- <source src="tu_video.webm" type="video/webm"> -->
                 <!-- <source src="tu_video.ogv" type="video/ogg"> -->
@@ -17,11 +17,15 @@
         </div>
         <div class="nosotros__box-content__text">
             <p class="title-section">
-                <span class="primera-palabra">{{ titulo.split(' ')[0] + ' ' + titulo.split(' ')[1] + ' ' + titulo.split(' ')[2] }}</span>
-                <span class="resto-palabra"> {{ titulo.split(' ').slice(3).join(' ') }}</span>
+                <span class="primera-palabra">{{ titulo ? (titulo.split(' ')[0] + ' ' + titulo.split(' ')[1] + ' ' + titulo.split(' ')[2]) : 'Mutual Entre Asociados' }}</span>
+                <span class="resto-palabra"> {{ titulo ? (titulo.split(' ').slice(3).join(' ')) : 'de Cooperación Mutual Patronal' }}</span>
             </p>
             <p class="text-section">{{ texto }}</p>
             <button class="btn-nosotros">Conocé más sobre nosotros <img src="./assets/imgs/nosotros/follow-icon.png" alt=""></button>
         </div>
     </div>
+</div>
+
+<div class="loader-mutual-box" *ngIf="cargandoData">
+    <span class="loader-mutual"></span>
 </div>

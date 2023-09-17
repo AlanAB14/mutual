@@ -1,43 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss']
+  selector: 'form-prendario',
+  templateUrl: './prendarios.component.html',
+  styleUrls: ['./prendarios.component.scss']
 })
-export class FormularioComponent implements OnInit {
-  @Input() tipo!: string;
-  @Input() titulo: string = '';
-
-  formConsulta: FormGroup = this.fb.group({
+export class PrendariosComponent {
+  formPrendario: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     celular: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
-    consulta: ['', Validators.required],
+    marca: ['', [Validators.required,]],
+    anio: ['', [Validators.required]],
+    modelo: ['', [Validators.required,]],
+    destino: [''],
+    devolucion: ['', Validators.required],
+    filial: ['', Validators.required],
   })
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    console.log(this.tipo)
-  }
-
   sendData() {
-    this.formConsulta.markAllAsTouched();
-    console.log(this.formConsulta.valid)
-    if (this.formConsulta.valid) {
-      console.log(this.formConsulta.value)
+    this.formPrendario.markAllAsTouched();
+    console.log(this.formPrendario.valid)
+    if (this.formPrendario.valid) {
+      console.log(this.formPrendario.value)
     }
   }
 
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
-    if (this.tipo === 'consulta') {
-      this.formConsulta.get(input)!.setValue(valor);
-    }
+    this.formPrendario.get(input)!.setValue(valor);
   }
 
   onKeyDown(event: KeyboardEvent) {
@@ -51,7 +47,7 @@ export class FormularioComponent implements OnInit {
   }
 
   checkIfError(campo: string) {
-    if (this.formConsulta.get(campo)!.invalid && (this.formConsulta.get(campo)!.dirty || this.formConsulta.get(campo)!.touched)) {
+    if (this.formPrendario.get(campo)!.invalid && (this.formPrendario.get(campo)!.dirty || this.formPrendario.get(campo)!.touched)) {
       return true;
     } else {
       return false;

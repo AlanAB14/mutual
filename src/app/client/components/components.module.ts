@@ -9,6 +9,11 @@ import { QuestionComponent } from './question/question.component';
 import { QuestionSectionComponent } from './question-section/question-section.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PersonalesComponent } from './formulario/formularios/personales/personales.component';
+import { PrendariosComponent } from './formulario/formularios/prendarios/prendarios.component';
+import { AgropecuariosComponent } from './formulario/formularios/agropecuarios/agropecuarios.component';
+import { EmpresarialesComponent } from './formulario/formularios/empresariales/empresariales.component';
+import { EmpleadosPublicosComponent } from './formulario/formularios/empleados-publicos/empleados-publicos.component';
 
 
 
@@ -19,7 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     TestimonioComponent,
     QuestionComponent,
     QuestionSectionComponent,
-    FormularioComponent
+    FormularioComponent,
+    PersonalesComponent,
+    PrendariosComponent,
+    AgropecuariosComponent,
+    EmpresarialesComponent,
+    EmpleadosPublicosComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 export interface Servicio {
     titulo: string;
     icon: string;
-    imgPrincipal: string;
+    image: string;
     texto: string;
     caracteristicas: string[];
     selected: boolean;

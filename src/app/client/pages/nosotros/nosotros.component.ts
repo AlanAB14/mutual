@@ -6,17 +6,22 @@ import { NosotrosService } from '../../services/nosotros.service';
   styleUrls: ['./nosotros.component.scss']
 })
 export class NosotrosComponent implements OnInit{
-
-  titulo!: string;
-  texto!: string;
+  cargandoData: boolean = true
+  titulo: string = '';
+  texto: string = '';
+  video!: string;
 
   constructor( private nosotrosService: NosotrosService ) { }
 
   ngOnInit(): void {
     this.nosotrosService.getNosotrosContent()
-      .subscribe( content => {
-        this.titulo = content.titulo
-        this.texto = content.texto
+      .subscribe( (content: any) => {
+        this.video = content[0].video
+        this.titulo = content[0].titulo;
+        this.texto = content[0].texto;
+        const videoElement = document.querySelector('video');
+        videoElement!.load();
+        this.cargandoData = false;
       })
   }
 

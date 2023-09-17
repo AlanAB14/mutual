@@ -2,9 +2,11 @@
     <div class="servicios__text">
         <p class="text-small-section">Nosotros</p>
     </div>
-    <div class="servicios__content" [ngClass]="{ 'margin-conditional' : (servicioSeleccionado.url === 'consultorio-juridico' || servicioSeleccionado.url === 'recaudaciones') }">
+    <div class="servicios__content"
+        [ngClass]="{ 'margin-conditional' : (servicioSeleccionado.url === 'consultorio-juridico' || servicioSeleccionado.url === 'recaudaciones') }">
         <div class="servicios__content__image">
-            <img [src]="'./assets/imgs/servicios/img-principal/' + servicioSeleccionado.imgPrincipal" alt="">
+            <img [src]="servicioSeleccionado.image ? ('data:image/png;base64,' + servicioSeleccionado.image) : './assets/imgs/servicios/img-principal/recaudaciones.png'"
+                alt="">
         </div>
         <div class="servicios__content__text">
             <p class="servicios__content__text--title title-section">
@@ -15,9 +17,9 @@
             <ul>
                 <li *ngFor="let item of servicioSeleccionado.caracteristicas">{{item}}</li>
             </ul>
-            <p class="button-servicios">Pedilo aquí</p>
+            <p class="button-servicios" (click)="goToPrestamo()">Pedilo aquí</p>
         </div>
-        
+
     </div>
 </div>
 <hr class="segmented-hr">
@@ -31,15 +33,25 @@
             <p class="title-section">¿Qué dicen de nuestro servicio?</p>
         </div>
         <div class="testimonios__box">
-            <div class="testimonios__box--item">
+            <div class="testimonios__box--item" *ngFor="let item of dicen">
+                <testimonio
+                    [titulo]="item.titulo"
+                    [texto]="item.texto"
+                    [nombre]="item.nombre"
+                    [imagen]="item.imagen"
+                    [trabajo]="item.trabajo"
+                ></testimonio>
+            </div>
+            <!-- <div class="testimonios__box--item">
                 <testimonio></testimonio>
             </div>
             <div class="testimonios__box--item">
                 <testimonio></testimonio>
-            </div>
-            <div class="testimonios__box--item">
-                <testimonio></testimonio>
-            </div>
+            </div> -->
         </div>
     </div>
+</div>
+
+<div class="loader-mutual-box" *ngIf="cargandoData">
+    <span class="loader-mutual"></span>
 </div>
