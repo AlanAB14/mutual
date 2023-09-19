@@ -247,6 +247,18 @@ body {
   flex-direction: column;
   max-width: 35.1875rem;
   margin-left: 9.125rem;
+  @media (max-width: 840px) {
+    width: 90%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+.form-item-selector {
+  @media (max-width: 840px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .formulario-defined__title {

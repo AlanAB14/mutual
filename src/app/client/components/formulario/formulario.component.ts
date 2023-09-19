@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PrestamosService } from '../../services/prestamos.service';
 
 @Component({
   selector: 'formulario',
@@ -19,7 +20,8 @@ export class FormularioComponent implements OnInit {
     consulta: ['', Validators.required],
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private prestamosService: PrestamosService) { }
 
   ngOnInit(): void {
     console.log(this.tipo)
@@ -56,5 +58,12 @@ export class FormularioComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  sendFormulario(data: any) {
+    console.log(data, this.titulo)
+    this.prestamosService.savePrestamo(this.titulo, data)
+      .subscribe( console.log )
+    
   }
 }

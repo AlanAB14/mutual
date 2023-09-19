@@ -6,8 +6,19 @@
         margin-left: 9.125rem;
         margin-top: 3.125rem;
         margin-bottom: 4rem;
+        @media (max-width: 840px) {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 }
 .change-size {
     font-size: 2.8125rem;
+}
+
+.formulario-class {
+    @media (max-width: 840px) {
+        display: flex;
+        justify-content: center;
+    }
 }

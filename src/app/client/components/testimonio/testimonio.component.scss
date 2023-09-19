@@ -10,6 +10,9 @@ p {
     background: #FEFEFF;
     width: 23.5rem;
     height: 22.625rem;
+    @media (max-width: 1200px) {
+        max-width: 21.5rem;
+    }
 
     &__quote {
         img {

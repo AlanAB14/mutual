@@ -17,15 +17,31 @@ p {
 
     &__box-content {
         display: flex;
+        @media (max-width: 1000px) {
+            flex-direction: column;
+            align-items: center;
+        }
         &__video {
             width: 603px;
             height: 441px;
             position: relative;
             margin-top: 4px;
+            @media (max-width: 1200px) {
+                text-align: center;
+            }
+            @media (max-width: 1000px) {
+                height: fit-content;
+                margin-bottom: 2rem;
+            }
+
             video {
                 max-width: 603px;
                 max-height: 441px;
                 border-radius: 16px;
+
+                @media (max-width: 1200px) {
+                    max-width: 500px;
+                }
             }
         }
 
@@ -34,6 +50,10 @@ p {
             flex-direction: column;
             max-width: 31.5625rem;
             margin-left: 3.25rem;
+
+            @media (max-width: 1200px) {
+                margin-left: 0;
+            }
 
             p:first-child {
                 margin-bottom: 1.5rem;

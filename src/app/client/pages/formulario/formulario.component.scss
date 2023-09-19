@@ -17,9 +17,21 @@ p {
 
     margin-top: 2.3125rem;
     margin-bottom: 3.75rem;
+    
+    @media (max-width: 784px) {
+      text-align: center;
+    }
   }
 
   &__box-contact {
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 784px) {
+      flex-direction: column;
+    }
     .text-section-contact {
       color: #1A5C43;
       font-family: Roboto-Bold;
@@ -38,6 +50,7 @@ p {
         line-height: 1.625rem;
         /* 162.5% */
         margin-top: 1rem;
+
       }
     }
     
@@ -65,15 +78,41 @@ p {
 
     &__chatbox {
       margin-left: 7.875rem;
+
+      @media (max-width: 1500px) {
+        margin-left: 0;
+      }
       margin-right: 2rem;
+      @media (max-width: 1300px) {
+        margin-right: 1rem;
+      }
+      @media (max-width: 784px) {
+        margin-right: 0rem;
+      }
     }
 
     &__whatsapp {
       margin-right: 2rem;
+      @media (max-width: 1300px) {
+        margin-right: 1rem;
+      }
+      @media (max-width: 800px) {
+        margin-top: 1rem;
+      }
+      @media (max-width: 784px) {
+        margin-right: 0rem;
+      }
     }
 
     &__redes-sociales {
       margin-right: 7.625rem;
+
+      @media (max-width: 1500px) {
+        margin-right: 0;
+      }
+      @media (max-width: 1176px) {
+        margin-top: 1rem;
+      }
     }
   }
 }
