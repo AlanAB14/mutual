@@ -271,7 +271,29 @@
                 margin-right: 0;
 
                 .primicia-btn {
-                    width: 100%;
+                    width: 100%!important;
+                }
+            }
+
+            .primicia-btn {
+                margin-top: 2.1875rem;
+                color: #FFF;
+                text-align: center;
+                font-family: Space-Regular;
+                font-size: 1.25rem;
+                font-style: normal;
+                line-height: 1.75rem; /* 140% */
+                padding: 1.25rem 2.1875rem;
+                width: fit-content;
+                border-radius: 0.875rem;
+                background: #031A44;
+                cursor: pointer;
+                border: none;
+                span {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Space-Bold;
+                    line-height: 1.75rem; /* 140% */
                 }
             }
 

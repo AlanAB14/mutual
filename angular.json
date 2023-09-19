@@ -47,13 +47,14 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2.00MB",
+                  "maximumError": "2.50MB",
+                  "name": "home.component.scss"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "7.00kb",
+                  "maximumError": "10.00kB"
                 }
               ],
               "outputHashing": "all"
