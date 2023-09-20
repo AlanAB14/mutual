@@ -64,15 +64,15 @@
             </div>
         </div>
         <div class="formulario-defined__button">
-            <button type="submit" class="btn-primary-mutual btn-form-defined">Enviar</button>
+            <button type="submit" [disabled]="enviandoDataConsulta" class="btn-primary-mutual btn-form-defined">Enviar</button>
         </div>
     </form>
 
     <form>
-        <form-personales class="form-item-selector" *ngIf="tipo === 'prestamos-personales'"></form-personales>
-        <form-prendario class="form-item-selector" *ngIf="tipo === 'prestamos-prendarios'"></form-prendario>
-        <form-agropecuario class="form-item-selector" *ngIf="tipo === 'prestamos-agropecuarios'" (envioForm)="sendFormulario($event)"></form-agropecuario>
-        <form-empresarial class="form-item-selector" *ngIf="tipo === 'prestamos-empresariales'"></form-empresarial>
-        <form-empleados-publicos class="form-item-selector" *ngIf="tipo === 'prestamos-empleados-publicos'"></form-empleados-publicos>
+        <form-personales class="form-item-selector" *ngIf="tipo === 'prestamos-personales'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-personales>
+        <form-prendario class="form-item-selector" *ngIf="tipo === 'prestamos-prendarios'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-prendario>
+        <form-agropecuario class="form-item-selector" *ngIf="tipo === 'prestamos-agropecuarios'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-agropecuario>
+        <form-empresarial class="form-item-selector" *ngIf="tipo === 'prestamos-empresariales'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-empresarial>
+        <form-empleados-publicos class="form-item-selector" *ngIf="tipo === 'prestamos-empleados-publicos'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-empleados-publicos>
     </form>
 </div>

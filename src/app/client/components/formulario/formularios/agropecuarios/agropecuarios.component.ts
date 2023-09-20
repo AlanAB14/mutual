@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./agropecuarios.component.scss']
 })
 export class AgropecuariosComponent {
-
+  @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
 
   formAgropecuario: FormGroup = this.fb.group({
@@ -29,6 +29,8 @@ export class AgropecuariosComponent {
     console.log(this.formAgropecuario.valid)
     if (this.formAgropecuario.valid) {
       this.envioForm.emit(this.formAgropecuario.value);
+      this.enviandoData = true
+      this.formAgropecuario.reset();
     }
   }
 

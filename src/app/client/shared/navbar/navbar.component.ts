@@ -13,6 +13,8 @@ interface ItemMenu {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  isExpanded: boolean = false;
+  isExpandedSub: boolean = false;
   @ViewChild('elementItem') elementItem!: ElementRef;
   constructor(private serviciosService: ServiciosService,
               private router: Router) { }
@@ -77,6 +79,21 @@ export class NavbarComponent implements OnInit {
     } else {
       this.isClassVisible = false;
     }
+  }
+
+  toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+    this.isExpandedSub = false;
+  }
+
+  expandSubmenu() {
+    this.isExpandedSub = !this.isExpandedSub
+    console.log(this.isExpandedSub)
+  }
+
+  goToRoute(ruta: string) {
+    this.router.navigate([ruta])
+    this.isExpanded = false;
   }
 
 }

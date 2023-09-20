@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./prendarios.component.scss']
 })
 export class PrendariosComponent {
+
+  @Input() enviandoData: boolean = false;
+  @Output() envioForm = new EventEmitter<any>();
+
   formPrendario: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
@@ -27,7 +31,9 @@ export class PrendariosComponent {
     this.formPrendario.markAllAsTouched();
     console.log(this.formPrendario.valid)
     if (this.formPrendario.valid) {
-      console.log(this.formPrendario.value)
+      this.envioForm.emit(this.formPrendario.value);
+      this.enviandoData = true
+      this.formPrendario.reset();
     }
   }
 

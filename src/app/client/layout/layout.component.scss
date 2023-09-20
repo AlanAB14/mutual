@@ -25,6 +25,10 @@
         height: 5.625rem;
         background: linear-gradient(to right, rgba(0, 165, 120, 1) 0%, rgba(255, 255, 255, 1) 100%);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+        @media (max-width: 768px) {
+            height: 0;
+        }
     }
 
     /* Agrega un elemento adicional para simular la sombra */
@@ -37,6 +41,9 @@
         box-shadow: 0 20px 20px rgba(0, 165, 121, 0.05);
         z-index: 100;
         pointer-events: none;
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     &__navbar {
@@ -49,5 +56,8 @@
 
     &__content {
         margin-top: 5.4375rem;
+        @media (max-width: 768px) {
+            margin-top: 4.25rem;
+        }
     }
 }

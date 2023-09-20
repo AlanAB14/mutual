@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./empleados-publicos.component.scss']
 })
 export class EmpleadosPublicosComponent {
+  @Input() enviandoData: boolean = false;
+  @Output() envioForm = new EventEmitter<any>();
 
   formEmpPublicos: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
@@ -28,7 +30,9 @@ export class EmpleadosPublicosComponent {
     this.formEmpPublicos.markAllAsTouched();
     console.log(this.formEmpPublicos.valid)
     if (this.formEmpPublicos.valid) {
-      console.log(this.formEmpPublicos.value)
+      this.envioForm.emit(this.formEmpPublicos.value);
+      this.enviandoData = true
+      this.formEmpPublicos.reset();
     }
   }
 

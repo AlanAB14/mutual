@@ -37,3 +37,37 @@
         <button>Home Mutual</button>
     </div>
 </div>
+
+<div class="navbar-responsive">
+    <div class="navbar-responsive__top">
+        <a routerLink="'/'">
+            <img src="./assets/imgs/mutual-logo.png" alt="">
+        </a>
+        <div class="navbar-responsive__top__button">
+            <button>Home Mutual</button>
+        </div>
+        <div class="navbar-responsive__top__expand">
+            <img (click)="toggleMenu()" src="./assets/imgs/icon_menu.png" alt="">
+        </div>
+    </div>
+
+    <div class="navbar-responsive__body" [ngClass]="{expanded: isExpanded}" >
+        <ul class="animate__animated animate__fadeIn animate__faster" *ngIf="(isExpanded && !isExpandedSub)">
+            <li (click)="goToRoute('nosotros')">¿Quiénes somos?</li>
+            <li (click)="expandSubmenu()">Servicios <div class="arrow-down"><mat-icon>chevron_right</mat-icon></div></li>
+            <li (click)="goToRoute('ayuda')">Ayuda y Seguridad</li>
+            <li (click)="goToRoute('formulario')">Formulario</li>
+        </ul>
+        <div class="submenu-responsive animate__animated animate__fadeIn animate__faster" *ngIf="isExpanded" [ngClass]="{expandedSub: isExpandedSub}">
+            <ul>
+                <div (click)="expandSubmenu()" class="arrow-left"><mat-icon>chevron_left</mat-icon></div>
+                <li *ngFor="let servicio of servicios" (click)="goToRoute('servicios/' + servicio.path)">
+                    <a  routerLinkActive="selected"
+                        class="link-route__href">
+                        {{ servicio.titulo }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

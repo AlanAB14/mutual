@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PrestamosService } from '../../services/prestamos.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'formulario',
@@ -10,6 +11,8 @@ import { PrestamosService } from '../../services/prestamos.service';
 export class FormularioComponent implements OnInit {
   @Input() tipo!: string;
   @Input() titulo: string = '';
+  enviandoData!: boolean;
+  enviandoDataConsulta: boolean = false;
 
   formConsulta: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
@@ -32,6 +35,9 @@ export class FormularioComponent implements OnInit {
     console.log(this.formConsulta.valid)
     if (this.formConsulta.valid) {
       console.log(this.formConsulta.value)
+      this.enviandoDataConsulta = true;
+      this.sendFormulario(this.formConsulta.value)
+      this.formConsulta.reset()
     }
   }
 
@@ -63,7 +69,23 @@ export class FormularioComponent implements OnInit {
   sendFormulario(data: any) {
     console.log(data, this.titulo)
     this.prestamosService.savePrestamo(this.titulo, data)
-      .subscribe( console.log )
+      .subscribe( (suscripcion: any) => {
+        if (suscripcion.id) {
+          Swal.fire({
+            icon: 'success',
+            text: 'Tu solicitud se ha cargado con exito',
+            showConfirmButton: true,
+          })
+        }else {
+          Swal.fire({
+            icon: 'error',
+            text: 'Ocurrió un error, comuniquesé con nosotros',
+            showConfirmButton: true,
+          })
+        }
+        this.enviandoData = false;
+        this.enviandoDataConsulta = false;
+      })
     
   }
 }
