@@ -55,8 +55,8 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
     this.cargandoData = false
   }
 
-  goToPrestamo() {
-    const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo };
+  goToPrestamo(tipoInversion?: string) {
+    const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo, tipoInversion: tipoInversion ? tipoInversion : null };
     console.log(data)
     const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify( data )) }]));
     window.open(url, '_self');

@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 export class FormularioComponent implements OnInit {
   @Input() tipo!: string;
   @Input() titulo: string = '';
+  @Input() tipoInversion!: string;
   enviandoData!: boolean;
   enviandoDataConsulta: boolean = false;
 
@@ -68,7 +69,8 @@ export class FormularioComponent implements OnInit {
 
   sendFormulario(data: any) {
     console.log(data, this.titulo)
-    this.prestamosService.savePrestamo(this.titulo, data)
+    const tituloAEnviar = this.tipoInversion !== null ? `${ this.titulo } - ${ this.tipoInversion }` : this.titulo;
+    this.prestamosService.savePrestamo(tituloAEnviar, data)
       .subscribe( (suscripcion: any) => {
         if (suscripcion.id) {
           Swal.fire({

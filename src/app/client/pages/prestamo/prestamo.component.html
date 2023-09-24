@@ -3,11 +3,12 @@
         <p class="text-small-section">{{ titulo }}</p>
     </div>
     <div class="prestamo-title">
-        <p class="title-section change-size">Solicitá tu préstamo online</p>
+        <p class="title-section change-size">{{ (tipo !== 'inversiones') && (tipo !== 'recaudaciones') && (tipo !== 'consultorio-juridico') ? 'Solicitá tu préstamo online' : 'Consultas' }}</p>
     </div>
     <div class="prestamo-formulario">
         <formulario [tipo]="tipo"
                     [titulo]="titulo"
+                    [tipoInversion]="tipoInversion"
                     class="formulario-class"></formulario>
     </div>
 </div>

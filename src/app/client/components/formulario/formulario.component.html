@@ -74,5 +74,8 @@
         <form-agropecuario class="form-item-selector" *ngIf="tipo === 'prestamos-agropecuarios'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-agropecuario>
         <form-empresarial class="form-item-selector" *ngIf="tipo === 'prestamos-empresariales'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-empresarial>
         <form-empleados-publicos class="form-item-selector" *ngIf="tipo === 'prestamos-empleados-publicos'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-empleados-publicos>
+        <form-inversiones class="form-item-selector" *ngIf="tipo === 'inversiones'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-inversiones>
+        <form-recaudaciones class="form-item-selector" *ngIf="tipo === 'recaudaciones'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-recaudaciones>
+        <form-consultorio-juridico class="form-item-selector" *ngIf="tipo === 'consultorio-juridico'" (envioForm)="sendFormulario($event)" [enviandoData]="enviandoData"></form-consultorio-juridico>
     </form>
 </div>

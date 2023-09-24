@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'inversion-box',
@@ -9,4 +9,10 @@ export class InversionBoxComponent {
   @Input() titulo!: string;
   @Input() caracteristicas!: string [];
   @Input() btnBlanco!: boolean;
+  @Output() goToPrestamo = new EventEmitter<any>();
+
+
+  enviarPresamo() {
+    this.goToPrestamo.emit(this.titulo);
+  }
 }

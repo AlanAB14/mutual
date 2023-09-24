@@ -265,9 +265,11 @@
 
         &--img {
             margin-top: 2.1875rem;
+            width: 80%;
             @media (max-width: 1000px) {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 margin-right: 0;
 
                 .primicia-btn {
@@ -315,4 +317,15 @@
             width: 4rem;
         }
     }
+}
+
+.primicia-text {
+    margin-top: 2.1875rem;
+    width: 90%;
+    color: #031A44;
+    text-align: justify;
+    font-family: Space-Regular;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 1.75rem; /* 140% */
 }

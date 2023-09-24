@@ -15,6 +15,9 @@ import { AgropecuariosComponent } from './formulario/formularios/agropecuarios/a
 import { EmpresarialesComponent } from './formulario/formularios/empresariales/empresariales.component';
 import { EmpleadosPublicosComponent } from './formulario/formularios/empleados-publicos/empleados-publicos.component';
 import { InversionBoxComponent } from './inversion-box/inversion-box.component';
+import { InversionesComponent } from './formulario/formularios/inversiones/inversiones.component';
+import { RecaudacionesComponent } from './formulario/formularios/recaudaciones/recaudaciones.component';
+import { ConsultorioJuridicoComponent } from './formulario/formularios/consultorio-juridico/consultorio-juridico.component';
 
 
 
@@ -31,7 +34,10 @@ import { InversionBoxComponent } from './inversion-box/inversion-box.component';
     AgropecuariosComponent,
     EmpresarialesComponent,
     EmpleadosPublicosComponent,
-    InversionBoxComponent
+    InversionBoxComponent,
+    InversionesComponent,
+    RecaudacionesComponent,
+    ConsultorioJuridicoComponent
   ],
   imports: [
     CommonModule,

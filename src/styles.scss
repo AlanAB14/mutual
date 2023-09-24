@@ -162,6 +162,9 @@ html {
   font-size: 100%;
   /* 100% = 16px */
   position: relative;
+  // @media (max-width: 700px) {
+  //   font-size: 90%;
+  // }
 }
 
 html,

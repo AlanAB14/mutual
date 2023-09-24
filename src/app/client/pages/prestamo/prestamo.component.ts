@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PrestamoComponent implements OnInit{
   tipo!: string;
   titulo!: string;
+  tipoInversion!: string;
   constructor( private route: ActivatedRoute ) { }
   ngOnInit(): void {
     const data = atob(this.route.snapshot.paramMap.get('c')!)
@@ -15,5 +16,6 @@ export class PrestamoComponent implements OnInit{
     console.log(dataJson)
     this.tipo = dataJson.url
     this.titulo = dataJson.titulo
+    this.tipoInversion = dataJson.tipoInversion ? dataJson.tipoInversion : null 
   }
 }

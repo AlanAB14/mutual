@@ -1,0 +1,89 @@
+<form [formGroup]="formInversiones" (ngSubmit)="sendData()">
+    <div class="formulario-defined__content">
+        <div class="formulario-defined__content--item">
+            <label>Nombre y Apellido / Razón Social</label>
+            <input formControlName="nombre" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('nombre')">
+                El Nombre / Razón Social es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Email</label>
+            <input formControlName="email" type="text">
+            <div *ngIf="checkIfError('email')" class="error-text-defined">
+                <div *ngIf="formInversiones.get('email')!.hasError('required')">
+                    El correo electrónico es obligatorio.
+                </div>
+                <div *ngIf="formInversiones.get('email')!.hasError('email')">
+                    El formato del correo electrónico no es
+                    válido.
+                </div>
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Celular</label>
+            <input formControlName="celular" type="text" (input)="onInputChange($event, 'celular')"
+                (keydown)="onKeyDown($event)">
+            <div class="error-text-defined" *ngIf="checkIfError('celular')">
+                El Celular es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>DNI</label>
+            <input formControlName="dni" type="text" (input)="onInputChange($event, 'dni')"
+                (keydown)="onKeyDown($event)">
+            <div class="error-text-defined" *ngIf="checkIfError('dni')">
+                El DNI es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Dirección Postal</label>
+            <input formControlName="codPostal" type="text" (input)="onInputChange($event, 'codPostal')"
+                (keydown)="onKeyDown($event)">
+            <div class="error-text-defined" *ngIf="checkIfError('codPostal')">
+                El Código postal es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Ciudad</label>
+            <input formControlName="ciudad" type="text">
+            <div class="error-text-defined" *ngIf="checkIfError('ciudad')">
+                La ciudad es obligatoria.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Estoy interesado en:</label>
+            <select formControlName="interes">
+                <option value=""></option>
+                <option value="100.000">100.000</option>
+                <option value="200.000">200.000</option>
+                <option value="300.000">300.000</option>
+                <option value="400.000">400.000</option>
+                <option value="500.000">500.000</option>
+                <option value="otro">Otro</option>
+            </select>
+            <div class="error-text-defined" *ngIf="checkIfError('interes')">
+                El campo es obligatorio.
+            </div>
+        </div>
+        <div class="formulario-defined__content--item">
+            <label>Elija su filial</label>
+            <select formControlName="filial">
+                <option value=""></option>
+                <option value="Venado Tuerto">Venado Tuerto</option>
+                <option value="Rufino">Rufino</option>
+                <option value="Villa Cañas">Villa Cañas</option>
+                <option value="San Gregorio">San Gregorio</option>
+                <option value="San Nicolás">San Nicolás</option>
+                <option value="Villa Const.">Villa Const.</option>
+                <option value="Villa Ramallo">Villa Ramallo</option>
+            </select>
+            <div class="error-text-defined" *ngIf="checkIfError('filial')">
+                Debes seleccionar la fililal.
+            </div>
+        </div>
+    </div>
+    <div class="formulario__button">
+        <button type="submit" [disabled]="enviandoData" class="btn-primary-mutual btn-form-defined">Enviar</button>
+    </div>
+</form>
