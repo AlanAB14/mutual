@@ -192,9 +192,16 @@
             display: flex;
             flex-direction: column;
             margin-right: 13.6875rem;
+            margin-left: 10rem;
 
             @media (max-width: 1200px) {
                 margin-right: 4.6875rem;
+                margin-left: 5.5rem;
+            }
+
+            @media (max-width: 1020px) {
+                margin-right: 0;
+                margin-left: 4.5rem;
             }
 
             @media (max-width: 1000px) {

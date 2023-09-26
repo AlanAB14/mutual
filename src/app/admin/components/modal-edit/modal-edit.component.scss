@@ -1,0 +1,22 @@
+.text-area-input {
+    min-height: 4rem;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.servicio-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.service-icon {
+    width: 2rem;
+    cursor: pointer;
+} 
+.service-image {
+    width: 8rem;
+    cursor: pointer;
+}

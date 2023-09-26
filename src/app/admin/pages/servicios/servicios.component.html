@@ -1,0 +1,15 @@
+<div class="servicios">
+    <div class="servicios-section" *ngIf="!cargandoData">
+        <div class="servicios-section__title">
+            <p>Seleccione el servicio a editar</p>
+        </div>
+        <div class="servicios-section__buttons">
+            <button *ngFor="let servicio of servicios" (click)="openDialog(servicio)" mat-raised-button>{{ servicio.titulo }} <img class="service-icon" [src]="servicio.icon ? ('data:image/png;base64,' + servicio.icon) : ''"></button>
+        </div>
+    
+    </div>
+    
+    <div class="loader-admin-section" *ngIf="cargandoData">
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
+</div>

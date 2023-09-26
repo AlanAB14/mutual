@@ -30,16 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "node_modules/admin-lte/dist/css/adminlte.min.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js"
             ]
           },
           "configurations": {
@@ -102,14 +96,11 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+
             ]
           }
         }
