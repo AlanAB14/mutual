@@ -20,7 +20,7 @@
                     <button (click)="eliminarCaracteristica(i)">Eliminar</button>
                 </li>
             </ul> -->
-            <button (click)="agregarCaracteristica()">Agregar Característica</button>
+            <button mat-raised-button (click)="gestionarCaracteristicas()">Característica</button>
         </div>
         <div class="servicio-item servicio-images">
             <input type="file" 
@@ -33,12 +33,18 @@
                    accept="image/png, image/gif, image/jpeg"
                    hidden
                    (change)="uploadFile($event, 'image')">
-            <img class="service-icon" (click)="f_input_icon.click()" [src]="formServicio.value.icon ? ('data:image/png;base64,' + formServicio.value.icon) : ''">
-            <img class="service-image" (click)="f_input_image.click()" [src]="formServicio.value.image ? ('data:image/png;base64,' + formServicio.value.image) : ''">
+            <div class="media-box">
+                <img class="service-icon" [src]="formServicio.value.icon ? ('data:image/png;base64,' + formServicio.value.icon) : ''">
+                <button class="btn-media" mat-raised-button (click)="f_input_icon.click()">Cambiar Icono</button>
+            </div>
+            <div class="media-box">
+                <img class="service-image" [src]="formServicio.value.image ? ('data:image/png;base64,' + formServicio.value.image) : ''">
+                <button class="btn-media" mat-raised-button (click)="f_input_image.click()">Cambiar Image</button>
+            </div>
         </div>
     </form>
 </div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button cdkFocusInitial>Ok</button> <!--[mat-dialog-close]="data.animal"-->
-</div>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button button mat-button class="btn-guardar" [disabled]="cargando" (click)="updateCaracteristicas()" cdkFocusInitial>Guardar</button> <!--[mat-dialog-close]="data.animal"-->
+</mat-dialog-actions>

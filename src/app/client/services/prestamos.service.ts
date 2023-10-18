@@ -23,4 +23,12 @@ export class PrestamosService {
     }
     return this.http.post(`${ this._url }/prestamos`, body, httpOptions )
   }
+
+  getPrestamos() {
+    return this.http.get(`${ this._url }/prestamos`)
+  }
+
+  deletePrestamo(id: number) {
+    return this.http.delete(`${ this._url }/prestamos/${ id }`)
+  }
 }

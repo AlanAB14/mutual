@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, financiacion, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-empresarial',
@@ -7,6 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./empresariales.component.scss']
 })
 export class EmpresarialesComponent {
+
+  montos: string[] = montos;
+  filiales: string[] = filiales;
+  financiaciones: string[] = financiacion
 
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();

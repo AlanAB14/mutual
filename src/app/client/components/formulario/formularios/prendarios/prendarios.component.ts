@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, financiacion } from 'src/environments/environment';
 
 @Component({
   selector: 'form-prendario',
@@ -7,6 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./prendarios.component.scss']
 })
 export class PrendariosComponent {
+
+  filiales: string[] = filiales;
+  financiaciones: string[] = financiacion;
 
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();

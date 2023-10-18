@@ -26,23 +26,18 @@
             <p class="text-mutual-title">Filiales</p>
             <div class="filiales">
                 <div>
-                    <p class="text-mutual-info color-filial">Venado Tuerto</p>
-                    <p class="text-mutual-info color-filial">Rufino</p>
-                    <p class="text-mutual-info color-filial">Villa Cañas</p>
-                    <p class="text-mutual-info color-filial">San Gregorio</p>
+                    <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(0, 4)">{{ filial }}</p>
                 </div>
                 <div>
-                    <p class="text-mutual-info color-filial">San Nicolás</p>
-                    <p class="text-mutual-info color-filial">Villa Const.</p>
-                    <p class="text-mutual-info color-filial">Villa Ramallo</p>
+                    <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(4, 7)">{{ filial }}</p>
                 </div>
             </div>
         </div>
         <div class="footer__follow">
             <p class="text-mutual-title">Seguinos</p>
             <div class="social-media">
-                <img src="./assets/imgs/footer/ig-logo.png" alt="ig">
-                <img src="./assets/imgs/footer/fb-logo.png" alt="fb">
+                <a [href]="socialMedia.instagram" target="_blank"><img src="./assets/imgs/footer/ig-logo.png" alt="ig"></a>
+                <a [href]="socialMedia.facebook" target="_blank"><img src="./assets/imgs/footer/fb-logo.png" alt="fb"></a>
             </div>
         </div>
     </div>

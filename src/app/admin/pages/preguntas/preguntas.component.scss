@@ -1,0 +1,44 @@
+.section-preguntas {
+    padding: 1rem;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4 {
+    margin: 0;
+}
+
+.actions-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        width: 41px;
+        height: 41px;
+
+        &:first-of-type {
+            margin-right: .5rem;
+        }
+
+        & .mat-icon {
+            height: 18px;
+            width: 18px;
+            display: flex!important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & .material-icons {
+            font-size: 20px;
+        }
+    }
+}
+
+.mat-elevation-z8 {
+    box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
+}

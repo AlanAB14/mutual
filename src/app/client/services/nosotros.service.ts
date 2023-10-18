@@ -16,4 +16,9 @@ export class NosotrosService {
   getNosotrosContent(): Observable<Nosotros>{
     return this.http.get<Nosotros>(`${ this._url }/nosotros`)
   }
+
+  updateNosotros(body: any, id: number) {
+    console.log(body)
+    return this.http.patch(`${this._url}/nosotros/${ id }`, body)
+  }
 }

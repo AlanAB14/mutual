@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Datos</h2>
+<mat-dialog-content class="mat-typography">
+  <table>
+    <tr>
+      <th>Clave</th>
+      <th>Valor</th>
+    </tr>
+    <tr *ngFor="let key of data | keyvalue">
+      <td>{{ capitalizeTitle(key.key) }}</td>
+      <td>{{ key.value }}</td>
+    </tr>
+  </table>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

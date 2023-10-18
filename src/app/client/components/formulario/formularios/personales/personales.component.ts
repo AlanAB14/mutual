@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, financiacion, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-personales',
@@ -9,6 +10,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PersonalesComponent {
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
+
+  montos: string[] = montos;
+  filiales: string[] = filiales;
+  financiaciones: string[] = financiacion;
+
 
   formPersonales: FormGroup = this.fb.group({
     nombre: ['', Validators.required],

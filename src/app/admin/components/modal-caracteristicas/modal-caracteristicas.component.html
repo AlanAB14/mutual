@@ -1,0 +1,41 @@
+<mat-dialog-content>
+    <div class="caracteristicas-box">
+        <div class="caracteristicas-box__title">
+            <h1>Características</h1>
+            <div class="example-button-container">
+                <button (click)="agregarCaracteristica = !agregarCaracteristica" mat-raised-button>
+                    Agregar
+                </button>
+            </div>
+        </div>
+        <div class="caracteristicas-box__add" *ngIf="agregarCaracteristica">
+            <form class="form-agregar">
+                <p class="text-agregar">Agregar Característica</p>
+                <div class="box-agregar">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nueva Característica</mat-label>
+                        <input matInput #nuevaCaracteristica>
+                    </mat-form-field>
+                    <button (click)="agregarNuevaCaracteristica()" class="btn-agregar" mat-mini-fab color="accent">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="caracteristicas-box__caracteristicas">
+            <div class="caracteristicas-box__caracteristicas--item"
+                *ngFor="let caracteristica of caracteristicas; let i = index">
+                <mat-form-field class="example-full-width">
+                    <input matInput [value]="caracteristica" (change)="changeCaracteristica(i, $event)">
+                </mat-form-field>
+                <button (click)="borrarCaracteristica(i)" class="btn-borrar" mat-mini-fab color="accent">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button class="btn-guardar" [disabled]="cargando" (click)="updateCaracteristicas()" cdkFocusInitial>Guardar</button> <!--[mat-dialog-close]="data.animal"-->
+</mat-dialog-actions>

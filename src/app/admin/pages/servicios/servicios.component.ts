@@ -21,6 +21,7 @@ export class ServiciosComponent implements OnInit {
   }
 
   getServices() {
+  this.cargandoData = true;
     this.serviciosService.getServicios()
       .subscribe(services => {
         this.servicios = services;
@@ -38,6 +39,9 @@ export class ServiciosComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       // this.animal = result;
+      if (result) {
+        this.getServices()
+      }
     });
   }
 

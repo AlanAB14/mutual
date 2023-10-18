@@ -1,0 +1,197 @@
+<div class="section-preguntas">
+    <section class="content-header py-0">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Preguntas</h1>
+                </div>
+      
+            </div>
+        </div>
+      </section>
+      <hr>
+      
+      
+      <div id="accordion">
+          <div class="card card-info">
+              <div class="card-header">
+                  <h4 class="card-title w-100">
+                      <a class="d-block w-100" data-toggle="collapse" href="#collapseOne" aria-expanded="false">
+                          <i class="fa fa-tag mr-1"></i>
+                          Categoría
+                      </a>
+                  </h4>
+              </div>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                  <div class="card-body">
+                      <form [formGroup]="preguntasForm">
+                          <div class="row">
+                              <div class="col-sm-8  col-md-8 col-lg-8">
+                                  <dl class="row">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>Categorias</mat-label>
+                                                  <mat-select (selectionChange)="categorySelected()"
+                                                              formControlName="category"
+                                                              [disabled]="showAllCategories">
+                                                      <mat-option *ngFor="let item of categoriesPreguntas" 
+                                                                  [value]="item"
+                                                                  [ngClass]="!item.publicado ? 'category-publish' : ''">
+                                                          {{ item.nombre }}
+                                                      </mat-option>
+                                                  </mat-select>
+                                          </mat-form-field>
+                                  </dl>
+                              </div>
+                              <div class="col-sm-4 col-md-4 col-lg-4 text-right align-self-center">
+                                  <dl class="row">
+                                      <dt class="col-sm-12 col-md-12 col-lg-12 py-2">
+                                          <button type="button" 
+                                                  (click)="addCategoria()" 
+                                                  class="btn btn-labeled btn-success">
+                                              <span class="btn-label">
+                                                  <i class="fa fa-plus"></i>
+                                              </span>
+                                                  Agregar categoría
+                                          </button>
+                                      </dt>
+                                      <dd></dd>
+                                      <dt class="col-sm-12 col-md-12 col-lg-12 py-2"
+                                          *ngIf="!showAllCategories">
+                                          <button type="button"
+                                                  [disabled]="!preguntasForm.value['category']"
+                                                  (click)="editCategoria()"
+                                                  class="btn btn-labeled btn-warning">
+                                              <span class="btn-label">
+                                                  <i class="fa fa-pencil"></i>
+                                              </span>
+                                                  Editar categoría
+                                          </button>
+                                      </dt>
+                                      <dd></dd>
+                                      <dd></dd>
+                                      <dt class="col-sm-12 col-md-12 col-lg-12 py-2"
+                                          *ngIf="!showAllCategories">
+                                          <button type="button"
+                                                  [disabled]="!preguntasForm.value['category']"
+                                                  (click)="deleteCategoria()"
+                                                  class="btn btn-labeled btn-warning">
+                                              <span class="btn-label">
+                                                  <i class="fa fa-close"></i>
+                                              </span>
+                                                  Eliminar categoría
+                                          </button>
+                                      </dt>
+                                      <dd></dd>
+                                      <dd></dd>
+                                      <dt *ngIf="!showAllCategories"
+                                          class="col-sm-12 col-md-12 col-lg-12 py-2">
+                                          <button type="button"
+                                                  [disabled]="!preguntasForm.value['category']"
+                                                  (click)="addPregunta()"
+                                                  class="btn btn-labeled btn-primary">
+                                              <span class="btn-label">
+                                                  <i class="fa fa-plus"></i>
+                                              </span>
+                                                  Agregar pregunta
+                                          </button>
+                                      </dt>
+                                      <dd></dd>
+                                  </dl>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div *ngIf="spinner"
+           class="spinner">
+          <mat-spinner></mat-spinner>
+      </div>
+      
+      <div [hidden]="!showTable">
+          <div class="mat-elevation-z8">
+          
+              <table mat-table
+                     matTableResponsive
+                     [dataSource]="preguntas" 
+                     class="mat-elevation-z8">
+                        
+                  <!-- Id Column -->
+                  <ng-container matColumnDef="id">
+                      <th 
+                          mat-header-cell 
+                          *matHeaderCellDef>
+                          Id 
+                      </th>
+                      <td mat-cell 
+                          *matCellDef="let element">
+                          {{element.id}} 
+                      </td>
+                  </ng-container>
+          
+                  <!-- Subcategory Column -->
+                  <ng-container matColumnDef="pregunta">
+                      <th 
+                          mat-header-cell 
+                          *matHeaderCellDef>
+                          Pregunta 
+                      </th>
+                      <td mat-cell 
+                          *matCellDef="let element">
+                          {{element.pregunta}} 
+                      </td>
+                  </ng-container>
+          
+                  <!-- Category Column -->
+                  <ng-container matColumnDef="respuesta">
+                      <th 
+                          mat-header-cell 
+                          *matHeaderCellDef>
+                          Respuesta
+                      </th>
+                      <td mat-cell 
+                          *matCellDef="let element">
+                          {{element.respuesta | limitString:[40]}} 
+                      </td>
+                      
+                  </ng-container>
+          
+                  <ng-container matColumnDef="actions">
+                      <th mat-header-cell
+                          *matHeaderCellDef>
+                          Acciones
+                      </th>
+                      <td mat-cell 
+                          *matCellDef="let element">
+                            <div class="actions-buttons">
+                                <button mat-icon-button
+                                        (click)="editPregunta( element )">
+                                        <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button
+                                        (click)="removePregunta( element )">
+                                        <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                      </td>
+                  </ng-container>
+          
+                  <tr class="mat-row" 
+                      *matNoDataRow>
+                      <td class="mat-cell" 
+                          colspan="9999"
+                          style="text-align: center;">
+                          No hay subcategorías que cumplan con el filtro
+                      </td>
+                  </tr>
+          
+                  <tr mat-header-row *matHeaderRowDef="titleColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: titleColumns;" [ngClass]="!row.publicado ? 'category-publish' : ''"></tr>
+              </table>
+          </div>
+      </div>
+      
+</div>
+

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-consultorio-juridico',
@@ -9,6 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ConsultorioJuridicoComponent {
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
+
+  montos: string[] = montos;
+  filiales: string[] = filiales;
 
   formConsultorioJuridico: FormGroup = this.fb.group({
     nombre: ['', Validators.required],

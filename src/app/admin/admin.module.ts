@@ -10,6 +10,14 @@ import { MaterialModule } from '../shared/material/material.module';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalCaracteristicasComponent } from './components/modal-caracteristicas/modal-caracteristicas.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
+import { LimitStringPipe } from '../shared/pipes/limit-string.pipe';
+import { SharedGlobalModule } from '../shared/shared.module';
+import { OpinionesComponent } from './pages/opiniones/opiniones.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { PrestamosComponent } from './pages/prestamos/prestamos.component';
 
 
 @NgModule({
@@ -19,13 +27,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     HeaderComponent,
     ServiciosComponent,
-    ModalEditComponent
+    ModalEditComponent,
+    ModalCaracteristicasComponent,
+    PreguntasComponent,
+    OpinionesComponent,
+    NosotrosComponent,
+    UsuariosComponent,
+    PrestamosComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedGlobalModule,
   ]
 })
 export class AdminModule { }

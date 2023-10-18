@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, financiacion, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-agropecuario',
@@ -9,6 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AgropecuariosComponent {
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
+
+  montos: string[] = montos;
+  filiales: string[] = filiales;
+  financiaciones: string[] = financiacion;
 
   formAgropecuario: FormGroup = this.fb.group({
     nombre: ['', Validators.required],

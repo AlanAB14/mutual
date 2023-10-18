@@ -1,0 +1,35 @@
+<div class="nosotros-section">
+    <div *ngIf="muestraNosotros">
+        <div class="nosotros-box">
+            <div class="nosotros-item">
+                <label>Titulo</label>
+                <p>{{ nosotros[0].titulo }}</p><button (click)="updateNosotros('titulo',nosotros[0].id, nosotros[0].titulo)" mat-raised-button>Editar</button>
+            </div>
+            <div class="nosotros-item">
+                <label>Texto</label>
+                <p>{{ nosotros[0].texto }}</p><button (click)="updateNosotros('texto',nosotros[0].id, nosotros[0].texto)" mat-raised-button>Editar</button>
+            </div>
+            <div class="nosotros-item">
+                <label>Video</label>
+                <div class="video-box">
+                    <video controls>
+                        <source [src]=" nosotros[0].video ? ('data:video/mp4;base64,' + nosotros[0].video) : './assets/imgs/nosotros/nosotros-prueba.mp4'" type="video/mp4">
+                        <!-- También puedes proporcionar múltiples fuentes para compatibilidad con diferentes formatos de video -->
+                        <!-- <source src="tu_video.webm" type="video/webm"> -->
+                        <!-- <source src="tu_video.ogv" type="video/ogg"> -->
+                        Tu navegador no admite la reproducción de video.
+                    </video>
+                </div>
+                <button (click)="f_input_image.click()" mat-raised-button>Editar</button>
+                <input type="file" 
+                #f_input_image
+                accept=".mp4, .webm, .ogg"
+                hidden
+                (change)="updateNosotrosVideo('video', $event, nosotros[0].id)">
+            </div>
+        </div>
+    </div>
+    <div class="spinner" *ngIf="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

@@ -14,4 +14,8 @@ export class DicenService {
   getDicen() {
     return this.httpClient.get(`${ this._url }/dicen`)
   }
+
+  updateDicen(body: any, id: number) {
+    return this.httpClient.patch(`${ this._url }/dicen/${ id }`, body)
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-empleados-publicos',
@@ -9,6 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EmpleadosPublicosComponent {
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
+
+  montos: string[] = montos
+  filiales: string[] = filiales;
+
 
   formEmpPublicos: FormGroup = this.fb.group({
     nombre: ['', Validators.required],

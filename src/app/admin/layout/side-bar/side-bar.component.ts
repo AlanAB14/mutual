@@ -13,14 +13,29 @@ export class SideBarComponent {
       icon: 'fa fa-tag'
     },
     {
-      texto: 'Gestionar Contenido',
-      ruta: 'contenidos',
-      icon: 'fa fa-image'
+      texto: 'Gestionar Preguntas',
+      ruta: 'preguntas',
+      icon: 'fa fa-question-circle'
     },
     {
-      texto: 'Estadísticas',
-      ruta: 'estadisticas',
-      icon: 'fa fa-bar-chart'
+      texto: 'Opiniones',
+      ruta: 'opiniones',
+      icon: 'fa fa-comments-o'
+    },
+    {
+      texto: 'Nosotros',
+      ruta: 'nosotros',
+      icon: 'fa fa-building'
+    },
+    {
+      texto: 'Usuarios',
+      ruta: 'usuarios',
+      icon: 'fa fa-user'
+    },
+    {
+      texto: 'Préstamos',
+      ruta: 'prestamos',
+      icon: 'fa fa-info-circle'
     }
   ]
 }

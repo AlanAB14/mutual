@@ -1,5 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { filiales, montos } from 'src/environments/environment';
 
 @Component({
   selector: 'form-inversiones',
@@ -9,6 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class InversionesComponent {
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();
+
+  montos: string[] = montos;
+  filiales: string[] = filiales;
 
   formInversiones: FormGroup = this.fb.group({
     nombre: ['', Validators.required],

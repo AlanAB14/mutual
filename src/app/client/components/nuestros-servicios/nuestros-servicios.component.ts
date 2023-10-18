@@ -41,9 +41,6 @@ export class NuestrosServiciosComponent implements OnInit {
     ]
   };
 
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
 
   breakpoint(e: any) {
     console.log('breakpoint');

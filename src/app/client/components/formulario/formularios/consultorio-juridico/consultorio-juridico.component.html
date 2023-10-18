@@ -55,11 +55,7 @@
             <label>Estoy interesado en:</label>
             <select formControlName="interes">
                 <option value=""></option>
-                <option value="100.000">100.000</option>
-                <option value="200.000">200.000</option>
-                <option value="300.000">300.000</option>
-                <option value="400.000">400.000</option>
-                <option value="500.000">500.000</option>
+                <option *ngFor="let monto of montos" [value]="monto">{{ monto }}</option>
                 <option value="otro">Otro</option>
             </select>
             <div class="error-text-defined" *ngIf="checkIfError('interes')">
@@ -70,13 +66,7 @@
             <label>Elija su filial</label>
             <select formControlName="filial">
                 <option value=""></option>
-                <option value="Venado Tuerto">Venado Tuerto</option>
-                <option value="Rufino">Rufino</option>
-                <option value="Villa Cañas">Villa Cañas</option>
-                <option value="San Gregorio">San Gregorio</option>
-                <option value="San Nicolás">San Nicolás</option>
-                <option value="Villa Const.">Villa Const.</option>
-                <option value="Villa Ramallo">Villa Ramallo</option>
+                <option *ngFor="let filial of filiales" [value]="filial">{{ filial }}</option>
             </select>
             <div class="error-text-defined" *ngIf="checkIfError('filial')">
                 Debes seleccionar la fililal.
