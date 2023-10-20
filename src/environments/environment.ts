@@ -48,3 +48,7 @@ export const socialMedia = {
     facebook:  'https://www.facebook.com/mutualentreasociados',
     instagram: 'https://www.instagram.com/mutualentreasociados'
 }
+
+export const phoneNumber = {
+    number: '543462430655'
+}
