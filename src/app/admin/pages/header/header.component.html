@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="header-section" *ngIf="!cargandoData">
+        <div class="header-section__title">
+            <p>Seleccione el header a editar o eliminar</p>
+            <button mat-raised-button (click)="addHeader()">Agregar nuevo header</button>
+        </div>
+        <div class="header-section__images">
+            <div *ngFor="let head of header">
+                <img (click)="updateDeleteHeader(head)" class="service-icon" [src]="head.image ? ('data:image/png;base64,' + head.image) : ''">
+                <p>{{ head.titulo }}</p>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="loader-admin-section" *ngIf="cargandoData">
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
+</div>

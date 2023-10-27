@@ -16,6 +16,7 @@ export class NuestrosServiciosComponent implements OnInit {
     "slidesToScroll": 1, 
     "autoplay": true, 
     "arrows": false,
+    "pauseOnHover": false,
     "responsive" : [
       {
         "breakpoint": 1400,

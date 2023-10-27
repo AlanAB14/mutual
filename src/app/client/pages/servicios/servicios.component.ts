@@ -13,26 +13,26 @@ const inversiones = inversionesData;
 })
 
 
-export class ServiciosComponent implements OnInit, AfterViewInit{
+export class ServiciosComponent implements OnInit, AfterViewInit {
   inversiones = inversiones;
   cargandoData: boolean = true;
   servicios!: Servicio[];
   servicioSeleccionado!: Servicio;
   dicen: any = [];
 
-  constructor( private serviciosService: ServiciosService,
-               private dicenService: DicenService,
-               private router: Router,
-               private cdRef: ChangeDetectorRef ) { }
+  constructor(private serviciosService: ServiciosService,
+    private dicenService: DicenService,
+    private router: Router,
+    private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.serviciosService.getServicios()
-      .subscribe( services => {
+      .subscribe(services => {
         this.servicios = services;
         this.setServicioSeleccionado();
       })
     this.dicenService.getDicen()
-      .subscribe( dicen => {
+      .subscribe(dicen => {
         console.log(dicen)
         this.dicen = dicen
       })
@@ -44,7 +44,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
 
   setServicioSeleccionado() {
     const currentUrl = this.router.url;
-    
+
     for (const servicio of this.servicios) {
       if (currentUrl.includes(servicio.url)) {
         this.servicioSeleccionado = servicio;
@@ -58,8 +58,12 @@ export class ServiciosComponent implements OnInit, AfterViewInit{
   goToPrestamo(tipoInversion?: string) {
     const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo, tipoInversion: tipoInversion ? tipoInversion : null };
     console.log(data)
-    const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify( data )) }]));
-    window.open(url, '_self');
+    if (this.servicioSeleccionado.url === 'prestamos-prendarios') {
+      this.router.navigateByUrl("simulador");
+    }else {
+      const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
+      window.open(`/#/${url}`, '_self');
+    }
   }
 
 }

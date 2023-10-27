@@ -7,6 +7,7 @@ import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ServiciosService } from './services/servicios.service';
 import { PrestamoComponent } from './pages/prestamo/prestamo.component';
+import { SimuladorComponent } from './pages/simulador/simulador.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'prestamo',
     component: PrestamoComponent
+  },
+  {
+    path: 'simulador',
+    component: SimuladorComponent
   },
   {
     path: '**',

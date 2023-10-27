@@ -12,6 +12,8 @@ import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ComponentsModule } from './components/components.module';
 import { PrestamoComponent } from './pages/prestamo/prestamo.component';
+import { SimuladorComponent } from './pages/simulador/simulador.component';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { ClientComponent } from './client.component';
 
 
@@ -24,6 +26,7 @@ import { PrestamoComponent } from './pages/prestamo/prestamo.component';
     AyudaComponent,
     FormularioComponent,
     PrestamoComponent,
+    SimuladorComponent,
     // ClientComponent
   ],
   imports: [
@@ -31,7 +34,8 @@ import { PrestamoComponent } from './pages/prestamo/prestamo.component';
     SharedGlobalModule,
     ClientRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientModule { }

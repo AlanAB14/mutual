@@ -1,0 +1,107 @@
+p {
+    margin: 0;
+}
+
+.simulador-section {
+    padding-top: 5.375rem;
+    padding-bottom: 5.375rem;
+
+    &__title-big {
+        margin-top: 2.3125rem;
+        margin-bottom: 3.75rem;
+        margin-left: 9rem;
+
+        .color {
+            color: #054457 !important;
+        }
+    }
+
+    &__box-products {
+        display: flex;
+        justify-content: center;
+        
+        &--producto {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #F5F5F5;
+            width: 23.5rem;
+        }
+
+        .box-header {
+            background-color: var(--verde-claro);
+            padding: 1rem;
+
+            img {
+                width: 3.43rem;
+            }
+        }
+
+        .box-body {
+            margin-left: 1.31rem;
+
+            .box-title {
+                display: flex;
+                align-items: center;
+                margin-top: .875rem;
+
+                img {
+                    width: 1.562rem;
+                    height: 1.6875rem;
+                }
+
+                .title-text {
+                    color: #1A5C43;
+                    font-family: 'Roboto';
+                    font-size: 1.75rem;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 2.375rem;
+                    margin-left: .75rem;
+                }
+            }
+
+            .box-content {
+                margin-top: 0.6875rem;
+                .content-text {
+                    color: #73788C;
+                    font-family: 'Roboto';
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.625rem;
+                    max-width: 11.625rem;
+                }
+            }
+
+            .box-button {
+                margin-top: 1.25rem;
+                margin-bottom: 1.5625rem;
+                button {
+                    color: var(--verde-claro);
+                    text-align: center;
+                    font-family: 'Roboto-Medium';
+                    font-size: 0.875rem;
+                    font-style: normal;
+                    line-height: 1.125rem;
+                    /* 128.571% */
+                    border-radius: 4px;
+                    background: #1A5C43;
+                    padding: 1.125rem 0;
+                    max-width: 11.625rem;
+                    margin-top: auto;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.simulador-box {
+    background-image: url('/assets/imgs/fondo-simulador.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    min-height: 47rem;
+}

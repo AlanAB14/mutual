@@ -7,6 +7,7 @@ import { OpinionesComponent } from './pages/opiniones/opiniones.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { PrestamosComponent } from './pages/prestamos/prestamos.component';
+import { HeaderPageComponent } from './pages/header/header.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'prestamos',
     component: PrestamosComponent
+  },
+  {
+    path: 'header',
+    component: HeaderPageComponent
   }
 ];
 

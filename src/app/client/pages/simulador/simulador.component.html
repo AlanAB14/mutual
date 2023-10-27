@@ -1,0 +1,70 @@
+<div class="simulador-section">
+    <div class="simulador-section__title-little">
+        <p class="text-small-section">Simulador</p>
+    </div>
+    <div class="simulador-section__title-big">
+        <p class="title-section color">Simulá la cuota de tu Préstamo</p>
+    </div>
+    <!-- <div class="simulador-section__box-products">
+        <div class="simulador-section__box-products--producto">
+            <div class="box-header">
+                <img src="/assets/imgs/servicios/simulador/simulador-personales.png" alt="img-sim">
+            </div>
+            <div class="box-body">
+                <div class="box-title">
+                    <img src="/assets/imgs/servicios/simulador/tick.png" alt="tick">
+                    <p class="title-text">Préstamo Personal</p>
+                </div>
+                <div class="box-content">
+                    <p class="content-text">Podés pagarlo en hasta 72 meses(*)</p>
+                </div>
+                <div class="box-button">
+                    <button>Simulá tu préstamo</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="simulador-box">
+        <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+          </button>
+          <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+          
+    </div>
+</div>

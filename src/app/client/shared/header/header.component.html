@@ -3,6 +3,12 @@
         <!-- <p class="title-big">¿Ya conocés nuestras opciones de Préstamos?</p>
         <p class="subtitle">¡Asistencia Financiera de corto plazo con caución de valores!</p>
         <button class="btn-primary">Ingresá aquí</button> -->
-        <img src="./assets/imgs/text-home.png" alt="">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+            (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let head of header" class="slide">
+                <img [src]=" head.image ? ('data:image/png;base64,' + head.image) : ('./assets/imgs/header.png')" alt="user">
+
+            </div>
+        </ngx-slick-carousel>
     </div>
 </div>

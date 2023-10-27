@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SharedGlobalModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -17,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     SharedGlobalModule,
-    RouterModule
+    RouterModule,
+    SlickCarouselModule
   ],
   exports: [
     NavbarComponent,

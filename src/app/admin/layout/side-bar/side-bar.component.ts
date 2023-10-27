@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class SideBarComponent {
   public menuItems: any[] = [
     {
+      texto: 'Editar Header',
+      ruta: 'header',
+      icon: 'fa fa-image'
+    },
+    {
       texto: 'Editar Servicios',
       ruta: 'servicios',
       icon: 'fa fa-tag'
