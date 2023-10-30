@@ -1,77 +1,80 @@
-<div class="footer">
-    <div class="footer__box">
-        <div class="footer__mutual">
-            <div class="footer__mutual--logo">
-                <img src="./assets/imgs/footer/mutual-logo-completo.png" alt="m-logo">
-                <img class="logo-mutual-responsive" src="./assets/imgs/mutual-logo.png" alt="m-logo">
+<footer>
+    <div class="footer">
+        <div class="footer__box">
+            <div class="footer__mutual">
+                <div class="footer__mutual--logo">
+                    <img src="./assets/imgs/footer/mutual-logo-completo.png" alt="m-logo">
+                    <img class="logo-mutual-responsive" src="./assets/imgs/mutual-logo.png" alt="m-logo">
+                </div>
+                <div class="footer__mutual--info">
+                    <p class="text-mutual-info">Casa Central</p>
+                    <p class="text-mutual-info">Mitre 664 - Venado Tuerto</p>
+                </div>
+                <div class="footer__mutual--newsletter">
+                    <p class="text-mutual-title">Boletín informativo</p>
+                    <div class="newsletter-item-input">
+                        <input class="input-newsletter" placeholder="Ingresa tu mail" type="text"><button class="btn-primary-mutual">Enviar</button>
+                    </div>
+                </div>
             </div>
-            <div class="footer__mutual--info">
-                <p class="text-mutual-info">Casa Central</p>
-                <p class="text-mutual-info">Mitre 664 - Venado Tuerto</p>
+            <div class="footer-sociales-responsive">
+                <div class="social-media">
+                    <img src="./assets/imgs/footer/ig-logo.png" alt="ig">
+                    <img src="./assets/imgs/footer/fb-logo.png" alt="fb">
+                </div>
             </div>
-            <div class="footer__mutual--newsletter">
-                <p class="text-mutual-title">Boletín informativo</p>
-                <div class="newsletter-item-input">
-                    <input class="input-newsletter" placeholder="Ingresa tu mail" type="text"><button class="btn-primary-mutual">Enviar</button>
+            <div class="footer__filiales">
+                <p class="text-mutual-title">Filiales</p>
+                <div class="filiales">
+                    <div>
+                        <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(0, 4)">{{ filial }}</p>
+                    </div>
+                    <div>
+                        <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(4, 7)">{{ filial }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__follow">
+                <p class="text-mutual-title">Seguinos</p>
+                <div class="social-media">
+                    <a [href]="socialMedia.instagram" target="_blank"><img src="./assets/imgs/footer/ig-logo.png" alt="ig"></a>
+                    <a [href]="socialMedia.facebook" target="_blank"><img src="./assets/imgs/footer/fb-logo.png" alt="fb"></a>
                 </div>
             </div>
         </div>
-        <div class="footer-sociales-responsive">
-            <div class="social-media">
-                <img src="./assets/imgs/footer/ig-logo.png" alt="ig">
-                <img src="./assets/imgs/footer/fb-logo.png" alt="fb">
+        <hr class="segmented-hr">
+    
+        <div class="footer__bottom">
+            <div class="qr-box">
+                <img src="./assets/imgs/footer/qr.png" alt="qr">
             </div>
-        </div>
-        <div class="footer__filiales">
-            <p class="text-mutual-title">Filiales</p>
-            <div class="filiales">
-                <div>
-                    <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(0, 4)">{{ filial }}</p>
+            <div class="financieros-box">
+                <img src="./assets/imgs/footer/usuarios-financieros.png" alt="u-financieros">
+            </div>
+            <div class="text-box">
+                <p>
+                    MEACMP es un Proveedor de Servicios de Pago y no está autorizado por el BCRA para operar como entidad
+                    financiera. Mas info acá
+                    Alau Tecnología S.A.U. © 2022 - CUIT 30-71542170-0. Todos los derechos reservados. Nicaragua 4677,
+                    C1414BVG CABA, Argentina.
+                    Contacto telefónico al +54 8103 45 8252.
+                </p>
+            </div>
+            <div class="contact-box">
+                <div class="contact-item">
+                    <img class="mail-logo" src="./assets/imgs/footer/mail-logo.png" alt="mail">
+                    <p>casacentral@mutualentreasoc.com.ar</p>
                 </div>
-                <div>
-                    <p class="text-mutual-info color-filial" *ngFor="let filial of filiales.slice(4, 7)">{{ filial }}</p>
+                <div class="contact-item">
+                    <img class="cel-logo" src="./assets/imgs/footer/cel-logo.png" alt="cel">
+                    <p>03462 430655</p>
                 </div>
             </div>
         </div>
-        <div class="footer__follow">
-            <p class="text-mutual-title">Seguinos</p>
-            <div class="social-media">
-                <a [href]="socialMedia.instagram" target="_blank"><img src="./assets/imgs/footer/ig-logo.png" alt="ig"></a>
-                <a [href]="socialMedia.facebook" target="_blank"><img src="./assets/imgs/footer/fb-logo.png" alt="fb"></a>
-            </div>
+        <div class="footer__derechos">
+            <p>© 2023. All rights reserved</p>
         </div>
+    
     </div>
-    <hr class="segmented-hr">
-
-    <div class="footer__bottom">
-        <div class="qr-box">
-            <img src="./assets/imgs/footer/qr.png" alt="qr">
-        </div>
-        <div class="financieros-box">
-            <img src="./assets/imgs/footer/usuarios-financieros.png" alt="u-financieros">
-        </div>
-        <div class="text-box">
-            <p>
-                MEACMP es un Proveedor de Servicios de Pago y no está autorizado por el BCRA para operar como entidad
-                financiera. Mas info acá
-                Alau Tecnología S.A.U. © 2022 - CUIT 30-71542170-0. Todos los derechos reservados. Nicaragua 4677,
-                C1414BVG CABA, Argentina.
-                Contacto telefónico al +54 8103 45 8252.
-            </p>
-        </div>
-        <div class="contact-box">
-            <div class="contact-item">
-                <img class="mail-logo" src="./assets/imgs/footer/mail-logo.png" alt="mail">
-                <p>casacentral@mutualentreasoc.com.ar</p>
-            </div>
-            <div class="contact-item">
-                <img class="cel-logo" src="./assets/imgs/footer/cel-logo.png" alt="cel">
-                <p>03462 430655</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer__derechos">
-        <p>© 2023. All rights reserved</p>
-    </div>
-
-</div>
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"42b211d791f243169f00ad00aeb845a6"})});</script>
+</footer>

@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     p {
         margin: 0;
     }
@@ -28,15 +29,22 @@
 
         &__image {
             position: relative;
+
             .prestamo-img {
                 border-radius: 1rem;
                 width: 29.3125rem;
                 box-shadow: -2.5rem 2.5rem 5rem 0px rgba(145, 158, 171, 0.40);
+
                 @media (max-width: 1200px) {
                     width: 25.3125rem;
                 }
+
                 @media (max-width: 1000px) {
                     width: 29.3125rem;
+                }
+
+                @media (max-width: 768px) {
+                    width: 22.3125rem;
                 }
 
             }
@@ -46,6 +54,7 @@
                 left: 2.875rem;
                 top: -2.71rem;
                 filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));
+
                 @media (max-width: 1200px) {
                     width: 5rem;
                 }
@@ -79,12 +88,15 @@
                     font-size: 3.375rem;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: 101%; /* 54.54px */
+                    line-height: 101%;
+                    /* 54.54px */
                     letter-spacing: -0.81px;
+
                     @media (max-width: 1200px) {
                         font-size: 3rem;
                     }
                 }
+
                 .title-verde-claro {
                     color: var(--verde-claro);
                     font-family: Roboto-Bold;
@@ -92,6 +104,7 @@
                     font-style: normal;
                     line-height: 101%;
                     letter-spacing: -0.27px;
+
                     @media (max-width: 1200px) {
                         font-size: 3rem;
                     }
@@ -108,7 +121,9 @@
                     font-family: Roboto-Regular;
                     font-size: 1.25rem;
                     font-style: normal;
-                    line-height: 160%; /* 32px */
+                    line-height: 160%;
+
+                    /* 32px */
                     @media (max-width: 1200px) {
                         font-size: 1rem;
                     }
@@ -139,11 +154,14 @@
                         font-size: 1.625rem;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: 160%; /* 41.6px */
+                        line-height: 160%;
+
+                        /* 41.6px */
                         @media (max-width: 1200px) {
                             font-size: 1.225rem;
                         }
                     }
+
                     .text-green-btn {
                         color: var(--verde-claro);
                         font-family: Roboto-Regular;
@@ -154,7 +172,7 @@
                         @media (max-width: 1200px) {
                             font-size: 1rem;
                         }
-                        
+
 
                         span {
                             margin-left: 1rem;
@@ -183,6 +201,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         @media (max-width: 1000px) {
             flex-direction: column;
             padding: 2.5625rem 0;
@@ -218,14 +237,16 @@
                 font-family: Space-Medium;
                 font-size: 3.75rem;
                 font-style: normal;
-                line-height: 107.1%; /* 64.26px */
+                line-height: 107.1%;
+                /* 64.26px */
 
                 span {
                     color: #031A44;
                     font-family: Space-Bold;
                     font-size: 3.75rem;
                     font-style: normal;
-                    line-height: 107.1%; /* 64.26px */
+                    line-height: 107.1%;
+                    /* 64.26px */
                 }
             }
 
@@ -237,7 +258,9 @@
                 font-family: Space-Regular;
                 font-size: 1.25rem;
                 font-style: normal;
-                line-height: 1.75rem; /* 140% */
+                line-height: 1.75rem;
+
+                /* 140% */
                 @media (max-width: 1000px) {
                     display: none;
                 }
@@ -250,13 +273,15 @@
                 font-family: Space-Regular;
                 font-size: 1.25rem;
                 font-style: normal;
-                line-height: 1.75rem; /* 140% */
+                line-height: 1.75rem;
+                /* 140% */
                 padding: 1.25rem 2.1875rem;
                 width: fit-content;
                 border-radius: 0.875rem;
                 background: #031A44;
                 cursor: pointer;
                 border: none;
+
                 @media (max-width: 1000px) {
                     display: none;
                 }
@@ -265,14 +290,16 @@
                     color: #FFF;
                     text-align: center;
                     font-family: Space-Bold;
-                    line-height: 1.75rem; /* 140% */
+                    line-height: 1.75rem;
+                    /* 140% */
                 }
             }
         }
 
         &--img {
             margin-top: 2.1875rem;
-            width: 80%;
+
+            // width: 80%;
             @media (max-width: 1000px) {
                 display: flex;
                 flex-direction: column;
@@ -280,7 +307,13 @@
                 margin-right: 0;
 
                 .primicia-btn {
-                    width: 100%!important;
+                    width: 100% !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    width: 20rem;
                 }
             }
 
@@ -291,18 +324,25 @@
                 font-family: Space-Regular;
                 font-size: 1.25rem;
                 font-style: normal;
-                line-height: 1.75rem; /* 140% */
+                line-height: 1.75rem;
+                /* 140% */
                 padding: 1.25rem 2.1875rem;
                 width: fit-content;
                 border-radius: 0.875rem;
                 background: #031A44;
                 cursor: pointer;
                 border: none;
+
                 span {
                     color: #FFF;
                     text-align: center;
                     font-family: Space-Bold;
-                    line-height: 1.75rem; /* 140% */
+                    line-height: 1.75rem;
+                    /* 140% */
+                }
+
+                @media (max-width: 768px) {
+                    width: 80%!important;
                 }
             }
 
@@ -314,7 +354,7 @@
     display: none;
 
     @media (max-width: 1000px) {
-        display: block!important;
+        display: block !important;
     }
 }
 
@@ -334,5 +374,6 @@
     font-family: Space-Regular;
     font-size: 1.25rem;
     font-style: normal;
-    line-height: 1.75rem; /* 140% */
+    line-height: 1.75rem;
+    /* 140% */
 }

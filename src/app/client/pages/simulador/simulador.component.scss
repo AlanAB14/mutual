@@ -19,7 +19,7 @@ p {
     &__box-products {
         display: flex;
         justify-content: center;
-        
+
         &--producto {
             border-radius: 1rem;
             overflow: hidden;
@@ -62,6 +62,7 @@ p {
 
             .box-content {
                 margin-top: 0.6875rem;
+
                 .content-text {
                     color: #73788C;
                     font-family: 'Roboto';
@@ -76,6 +77,7 @@ p {
             .box-button {
                 margin-top: 1.25rem;
                 margin-bottom: 1.5625rem;
+
                 button {
                     color: var(--verde-claro);
                     text-align: center;
@@ -104,4 +106,164 @@ p {
     background-repeat: no-repeat;
     background-position: right center;
     min-height: 47rem;
+    margin-left: 6rem;
+    display: flex;
+    align-items: center;
+
+    .mat-stepper-vertical {
+        background-color: transparent;
+    }
+
+    ::ng-deep .mat-step-header:hover {
+        background-color: transparent !important;
+    }
+
+    ::ng-deep .mat-step-header.cdk-program-focused {
+        background-color: transparent !important;
+    }
+
+    ::ng-deep .mat-step-header-ripple {
+        display: none !important;
+    }
+
+    ::ng-deep .mat-step-header .mat-step-icon-selected {
+        background-color: var(--verde-oscuro) !important;
+    }
+
+    ::ng-deep .mat-step-text-label {
+        background-color: white;
+        padding: .5rem;
+        color: var(--verde-claro);
+        font-family: Roboto-Regular;
+        font-size: 1.625rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.625rem;
+        letter-spacing: 0.5px;
+    }
+
+    ::ng-deep .mat-step-label-selected .mat-step-text-label {
+        background-color: var(--verde-claro);
+        color: var(--verde-oscuro) !important;
+    }
+
+    ::ng-deep .mat-step-header .mat-step-icon-state-edit {
+        background-color: var(--verde-oscuro);
+    }
+
+    .box-text-prestamo {
+        max-width: 21rem;
+
+        p {
+            margin-bottom: 1.4rem;
+            color: #73788C;
+            font-family: Roboto-Regular;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5rem;
+            /* 150% */
+        }
+    }
+
+    .box-number-prestamo {
+        margin-bottom: 1rem;
+        max-width: 22.5rem;
+        display: flex;
+        flex-direction: column;
+
+        .number-prestamo {
+            color: var(--verde-oscuro);
+            font-family: Roboto-Regular;
+            font-size: 4rem;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 4.625rem;
+            text-decoration: underline;
+            text-decoration-skip: ink;
+            text-underline-offset: 0.2em;
+            display: inline;
+            margin-bottom: 2.375rem;
+        }
+
+        ::ng-deep .mat-mdc-slider.mat-primary {
+            --mdc-slider-handle-color: var(--verde-oscuro);
+            --mdc-slider-focus-handle-color: var(--verde-oscuro);
+            --mdc-slider-hover-handle-color: var(--verde-oscuro);
+            --mdc-slider-active-track-color: var(--verde-oscuro);
+            --mdc-slider-inactive-track-color: var(--verde-oscuro);
+            --mdc-slider-with-tick-marks-active-container-color: #fff;
+            --mdc-slider-with-tick-marks-inactive-container-color: var(--verde-oscuro);
+            --mat-mdc-slider-ripple-color: var(--verde-oscuro);
+            --mat-mdc-slider-hover-ripple-color: rgba(79, 183, 58, 0.05);
+            --mat-mdc-slider-focus-ripple-color: rgba(73, 183, 58, 0.2);
+        }
+    }
+
+    .cuotas-selection {
+
+        .mat-mdc-radio-button {
+            &:not(:last-of-type) {
+                margin-right: 1rem;
+            }
+        }
+
+        ::ng-deep .mdc-radio {
+            --mdc-radio-disabled-selected-icon-color: #000;
+            --mdc-radio-disabled-unselected-icon-color: #000;
+            --mdc-radio-unselected-focus-icon-color: #212121;
+            --mdc-radio-unselected-hover-icon-color: #212121;
+            --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+            --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+            --mdc-radio-selected-focus-icon-color: var(--verde-oscuro);
+            --mdc-radio-selected-hover-icon-color: var(--verde-oscuro);
+            --mdc-radio-selected-icon-color: var(--verde-oscuro);
+            --mdc-radio-selected-pressed-icon-color: var(--verde-oscuro);
+            --mat-mdc-radio-ripple-color: #000;
+            --mat-mdc-radio-checked-ripple-color: var(--verde-oscuro);
+        }
+
+        ::ng-deep .mat-mdc-radio-button .mdc-form-field {
+
+            label {
+                margin-bottom: 0 !important;
+                color: #A6A6A6;
+                font-family: Roboto-Regular;
+                font-size: 1.375rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.625rem;
+                letter-spacing: 0.055px;
+            }
+        }
+
+    }
+    .buttons-section {
+        margin-top: 1.5rem;
+    }
+
+
+}
+
+::ng-deep .mat-step {
+    background-color: white;
+}
+
+.button-servicios {
+    margin-left: 1rem;
+    color: var(--verde-claro)!important;
+    text-align: center;
+    font-family: Roboto-Medium;
+    font-size: 0.875rem;
+    font-style: normal;
+    line-height: 1.125rem;
+    /* 128.571% */
+    border-radius: 4px;
+    background: #1A5C43;
+    padding: 1.125rem;
+    max-width: 11.625rem;
+    margin-top: auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }

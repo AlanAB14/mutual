@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './simulador.component.html',
@@ -7,12 +8,20 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SimuladorComponent {
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    firstCtrl: [100000, Validators.required],
   });
   secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    secondCtrl: ['1', Validators.required],
   });
-  isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder,
+    private router: Router,
+  ) { }
+
+  goToPrestamo() {
+    const data = { url: 'prestamos-prendarios', titulo: 'Préstamos Prendarios', tipoInversion: null };
+    console.log(data)
+    const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
+    window.open(`/#/${url}`, '_self');
+  }
 }

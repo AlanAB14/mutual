@@ -16,11 +16,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatStepperModule } from '@angular/material/stepper';
-
-
-
-
-
+import { MatSliderModule } from '@angular/material/slider';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -43,7 +40,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSortModule,
     MatSelectModule,
     MatTableModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSliderModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }
