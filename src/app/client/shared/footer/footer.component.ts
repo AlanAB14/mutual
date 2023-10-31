@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Filiales } from 'src/app/core/interfaces/filiales.interface';
 import { filiales, socialMedia } from 'src/environments/environment';
 
 @Component({
@@ -7,6 +8,6 @@ import { filiales, socialMedia } from 'src/environments/environment';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  filiales: string[] = filiales;
+  filiales: Filiales[] = filiales;
   socialMedia = socialMedia
 }

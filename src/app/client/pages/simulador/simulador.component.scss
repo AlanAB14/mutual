@@ -238,6 +238,7 @@ p {
         }
 
     }
+
     .buttons-section {
         margin-top: 1.5rem;
     }
@@ -251,7 +252,7 @@ p {
 
 .button-servicios {
     margin-left: 1rem;
-    color: var(--verde-claro)!important;
+    color: var(--verde-claro) !important;
     text-align: center;
     font-family: Roboto-Medium;
     font-size: 0.875rem;
@@ -270,4 +271,39 @@ p {
 
 .mat-mdc-button:not(:disabled) {
     color: var(--verde-oscuro);
+}
+
+.prestamo-number-input {
+    color: var(--verde-oscuro);
+    font-family: Roboto-Regular;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 4.625rem;
+    display: inline;
+    margin-bottom: 2.375rem;
+    border: none;
+    outline: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+/* CSS personalizado para eliminar las flechas de incremento y decremento */
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+/* Estas reglas se aplican a navegadores Webkit como Chrome y Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 }

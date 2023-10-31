@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Filiales } from 'src/app/core/interfaces/filiales.interface';
 import { filiales, financiacion } from 'src/environments/environment';
 
 @Component({
@@ -9,7 +10,7 @@ import { filiales, financiacion } from 'src/environments/environment';
 })
 export class PrendariosComponent {
 
-  filiales: string[] = filiales;
+  filiales: Filiales[] = filiales;
   financiaciones: string[] = financiacion;
 
   @Input() enviandoData: boolean = false;

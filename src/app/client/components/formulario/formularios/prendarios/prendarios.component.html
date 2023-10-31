@@ -114,7 +114,7 @@
             <label>Elija su filial</label>
             <select formControlName="filial">
                 <option value=""></option>
-                <option *ngFor="let filial of filiales" [value]="filial">{{ filial }}</option>
+                <option *ngFor="let filial of filiales" [value]="filial.ciudad">{{ filial.ciudad }}</option>
             </select>
             <div class="error-text-defined" *ngIf="checkIfError('filial')">
                 Debes seleccionar la fililal.

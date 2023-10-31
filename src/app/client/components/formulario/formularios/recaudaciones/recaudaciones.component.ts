@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Filiales } from 'src/app/core/interfaces/filiales.interface';
 import { filiales, montos } from 'src/environments/environment';
 
 @Component({
@@ -10,7 +11,7 @@ import { filiales, montos } from 'src/environments/environment';
 export class RecaudacionesComponent {
 
   montos: string[] = montos;
-  filiales: string[] = filiales;
+  filiales: Filiales[] = filiales;
 
   @Input() enviandoData: boolean = false;
   @Output() envioForm = new EventEmitter<any>();

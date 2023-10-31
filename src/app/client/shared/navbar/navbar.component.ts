@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
     },
     {
       path: 'formulario',
-      text: 'Formulario'
+      text: 'Contacto'
     }
   ];
 

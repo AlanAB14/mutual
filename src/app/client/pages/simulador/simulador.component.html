@@ -5,38 +5,20 @@
   <div class="simulador-section__title-big">
     <p class="title-section color">Simulá la cuota de tu Préstamo</p>
   </div>
-  <!-- <div class="simulador-section__box-products">
-        <div class="simulador-section__box-products--producto">
-            <div class="box-header">
-                <img src="/assets/imgs/servicios/simulador/simulador-personales.png" alt="img-sim">
-            </div>
-            <div class="box-body">
-                <div class="box-title">
-                    <img src="/assets/imgs/servicios/simulador/tick.png" alt="tick">
-                    <p class="title-text">Préstamo Personal</p>
-                </div>
-                <div class="box-content">
-                    <p class="content-text">Podés pagarlo en hasta 72 meses(*)</p>
-                </div>
-                <div class="box-button">
-                    <button>Simulá tu préstamo</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
   <div class="simulador-box">
-    <mat-stepper orientation="vertical" [linear]="true" #stepper>
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup" class="box-step">
-        <form [formGroup]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" (keydown.enter)="(false)">
           <ng-template matStepLabel>Elegí el monto de tu Préstamo</ng-template>
             <div class="box-text-prestamo">
               <p>Ingresá el monto en miles. Caso contrario se redondeará automáticamente.</p>
             </div>
             <div class="box-number-prestamo">
-              <p class="number-prestamo">${{firstFormGroup.value.firstCtrl! | dotThousandSeparator }}</p>
+              <p (click)="selectInputContent()" [ngClass]="{'d-none': !ocultaInput, 'd-block': ocultaInput}" class="number-prestamo">${{firstFormGroup.value.firstCtrl! | dotThousandSeparator }}</p>
+              <input #myInput class="prestamo-number-input" [ngClass]="{'d-none': ocultaInput, 'd-block': !ocultaInput}" (change)="validateCampo()" (keydown.enter)="validateCampo()" type="number" max="2000000" min="100000" step="100000" [value]="firstFormGroup.value.firstCtrl" formControlName="firstCtrl">
               <mat-slider class="example-margin" [max]="2000000" [min]="100000" [step]="100000">
-                <input matSliderThumb formControlName="firstCtrl">
+                <input matSliderThumb [value]="firstFormGroup.value.firstCtrl" formControlName="firstCtrl">
               </mat-slider>
             </div>
           <div>

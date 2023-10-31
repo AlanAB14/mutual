@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InteresesService } from '../../services/intereses.service';
@@ -24,11 +24,15 @@ export class SimuladorComponent implements OnInit {
   };
 
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: [100000, Validators.required],
+    firstCtrl: [100000, [Validators.required, Validators.min(100000), Validators.max(2000000)]],
   });
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['1', Validators.required],
   });
+
+  isLinear = true;
+  ocultaInput: boolean = true;
+  @ViewChild('myInput') myInput!: ElementRef;
 
   constructor(private _formBuilder: FormBuilder,
     private router: Router,
@@ -76,4 +80,30 @@ export class SimuladorComponent implements OnInit {
     }
 
   }
+
+  validateCampo() {
+    const number = Number(this.firstFormGroup.value.firstCtrl)
+    console.log(number)
+    if (this.firstFormGroup.value.firstCtrl! > 2000000) {
+      this.firstFormGroup.controls.firstCtrl.patchValue(2000000)
+    } else if (this.firstFormGroup.value.firstCtrl! < 100000) {
+      this.firstFormGroup.controls.firstCtrl.patchValue(100000)
+    } else {
+      this.firstFormGroup.controls.firstCtrl.patchValue(this.roundToNearest100000(this.firstFormGroup.value.firstCtrl!))
+    }
+    this.ocultaInput = true;
+  }
+
+  roundToNearest100000(num: number) {
+    return Math.round(num / 100000) * 100000;
+  }
+
+  selectInputContent() {
+    this.ocultaInput = false;
+    setTimeout(() => {
+      this.firstFormGroup.controls.firstCtrl.patchValue(0)
+      this.myInput.nativeElement.focus();
+    });
+  }
+
 }
