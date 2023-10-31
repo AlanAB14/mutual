@@ -257,6 +257,17 @@ body {
   }
 }
 
+.box-telefono-area {
+  display: flex;
+  align-items: center;
+  input {
+    width: 100%;
+  }
+  .mat-icon {
+    padding-right: 1.5rem;
+  }
+}
+
 .form-item-selector {
   @media (max-width: 840px) {
     display: flex;

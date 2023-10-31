@@ -18,7 +18,9 @@ export class InversionesComponent {
   formInversiones: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -32,6 +34,7 @@ export class InversionesComponent {
     this.formInversiones.markAllAsTouched();
     console.log(this.formInversiones.valid)
     if (this.formInversiones.valid) {
+      this.creaCampoCelular();
       console.log(this.formInversiones.value)
       this.envioForm.emit(this.formInversiones.value);
       this.enviandoData = true
@@ -42,6 +45,12 @@ export class InversionesComponent {
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
     this.formInversiones.get(input)!.setValue(valor);
+  }
+
+  creaCampoCelular() {
+    this.formInversiones.patchValue({
+      celular: `${this.formInversiones.value.celularArea}-${this.formInversiones.value.celularNumero}`
+    })
   }
 
   onKeyDown(event: KeyboardEvent) {

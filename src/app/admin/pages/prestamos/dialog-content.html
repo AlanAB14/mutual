@@ -6,8 +6,8 @@
       <th>Valor</th>
     </tr>
     <tr *ngFor="let key of data | keyvalue">
-      <td>{{ capitalizeTitle(key.key) }}</td>
-      <td>{{ key.value }}</td>
+      <td *ngIf="key.key !== 'celularArea' && key.key !== 'celularNumero'">{{ capitalizeTitle(key.key) }}</td>
+      <td *ngIf="key.key !== 'celularArea' && key.key !== 'celularNumero'">{{ key.value }}</td>
     </tr>
   </table>
 

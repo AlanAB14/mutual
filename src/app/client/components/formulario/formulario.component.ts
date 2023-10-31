@@ -18,7 +18,9 @@ export class FormularioComponent implements OnInit {
   formConsulta: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
     consulta: ['', Validators.required],
@@ -35,11 +37,18 @@ export class FormularioComponent implements OnInit {
     this.formConsulta.markAllAsTouched();
     console.log(this.formConsulta.valid)
     if (this.formConsulta.valid) {
+      this.creaCampoCelular();
       console.log(this.formConsulta.value)
       this.enviandoDataConsulta = true;
       this.sendFormulario(this.formConsulta.value)
       this.formConsulta.reset()
     }
+  }
+
+  creaCampoCelular() {
+    this.formConsulta.patchValue({
+      celular: `${this.formConsulta.value.celularArea}-${this.formConsulta.value.celularNumero}`
+    })
   }
 
   onInputChange(event: any, input: string) {

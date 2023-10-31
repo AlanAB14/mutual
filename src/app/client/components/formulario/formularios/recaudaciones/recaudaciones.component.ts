@@ -19,7 +19,9 @@ export class RecaudacionesComponent {
   formRecaudaciones: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -33,6 +35,7 @@ export class RecaudacionesComponent {
     this.formRecaudaciones.markAllAsTouched();
     console.log(this.formRecaudaciones.valid)
     if (this.formRecaudaciones.valid) {
+      this.creaCampoCelular();
       console.log(this.formRecaudaciones.value)
       this.envioForm.emit(this.formRecaudaciones.value);
       this.enviandoData = true
@@ -43,6 +46,12 @@ export class RecaudacionesComponent {
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
     this.formRecaudaciones.get(input)!.setValue(valor);
+  }
+
+  creaCampoCelular() {
+    this.formRecaudaciones.patchValue({
+      celular: `${this.formRecaudaciones.value.celularArea}-${this.formRecaudaciones.value.celularNumero}`
+    })
   }
 
   onKeyDown(event: KeyboardEvent) {

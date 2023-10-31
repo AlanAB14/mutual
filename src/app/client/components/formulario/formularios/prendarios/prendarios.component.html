@@ -23,14 +23,30 @@
                 </div>
             </div>
         </div>
+        
         <div class="formulario-defined__content--item">
             <label>Celular</label>
-            <input formControlName="celular" type="text" (input)="onInputChange($event, 'celular')"
-                (keydown)="onKeyDown($event)">
-            <div class="error-text-defined" *ngIf="checkIfError('celular')">
+            <div class="box-telefono-area">
+                <mat-icon matPrefix>exposure_zero</mat-icon>
+                <input matInput
+                (keydown)="onKeyDown($event)"
+                       ngClass="campo-datos-personales"
+                       [maxLength]="4"
+                       style="width: 30%;"
+                       formControlName="celularArea">
+                <mat-icon matPrefix>remove</mat-icon>
+                <input matInput
+                (keydown)="onKeyDown($event)"
+                [maxLength]="10"
+                placeholder="Incluir el 15"
+                ngClass="campo-datos-personales"
+                formControlName="celularNumero">
+            </div>
+            <div class="error-text-defined" *ngIf="checkIfError('celularArea') || checkIfError('celularNumero')">
                 El Celular es obligatorio.
             </div>
         </div>
+
         <div class="formulario-defined__content--item">
             <label>Dirección Postal</label>
             <input formControlName="codPostal" type="text" (input)="onInputChange($event, 'codPostal')"
@@ -47,7 +63,7 @@
             </div>
         </div>
 
-        <div class="titulo-formulario">
+        <!-- <div class="titulo-formulario">
             <p>Datos del vehículo a adquirir</p>
         </div>
         <div class="formulario-defined__content--item">
@@ -108,7 +124,7 @@
             <div class="error-text-defined" *ngIf="checkIfError('devolucion')">
                 El plazo de devolución es obligatorio.
             </div>
-        </div>
+        </div> -->
 
         <div class="formulario-defined__content--item">
             <label>Elija su filial</label>

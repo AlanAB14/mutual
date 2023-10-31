@@ -19,14 +19,16 @@ export class PrendariosComponent {
   formPrendario: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
-    marca: ['', [Validators.required,]],
-    anio: ['', [Validators.required]],
-    modelo: ['', [Validators.required,]],
-    destino: [''],
-    devolucion: ['', Validators.required],
+    // marca: ['', [Validators.required,]],
+    // anio: ['', [Validators.required]],
+    // modelo: ['', [Validators.required,]],
+    // destino: [''],
+    // devolucion: ['', Validators.required],
     filial: ['', Validators.required],
   })
 
@@ -36,10 +38,17 @@ export class PrendariosComponent {
     this.formPrendario.markAllAsTouched();
     console.log(this.formPrendario.valid)
     if (this.formPrendario.valid) {
+      this.creaCampoCelular();
       this.envioForm.emit(this.formPrendario.value);
       this.enviandoData = true
       this.formPrendario.reset();
     }
+  }
+
+  creaCampoCelular() {
+    this.formPrendario.patchValue({
+      celular: `${this.formPrendario.value.celularArea}-${this.formPrendario.value.celularNumero}`
+    })
   }
 
   onInputChange(event: any, input: string) {

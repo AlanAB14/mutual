@@ -18,7 +18,9 @@ export class ConsultorioJuridicoComponent {
   formConsultorioJuridico: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -33,6 +35,7 @@ export class ConsultorioJuridicoComponent {
     console.log(this.formConsultorioJuridico.valid)
     if (this.formConsultorioJuridico.valid) {
       console.log(this.formConsultorioJuridico.value)
+      this.creaCampoCelular();
       this.envioForm.emit(this.formConsultorioJuridico.value);
       this.enviandoData = true
       this.formConsultorioJuridico.reset();
@@ -42,6 +45,12 @@ export class ConsultorioJuridicoComponent {
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
     this.formConsultorioJuridico.get(input)!.setValue(valor);
+  }
+
+  creaCampoCelular() {
+    this.formConsultorioJuridico.patchValue({
+      celular: `${this.formConsultorioJuridico.value.celularArea}-${this.formConsultorioJuridico.value.celularNumero}`
+    })
   }
 
   onKeyDown(event: KeyboardEvent) {

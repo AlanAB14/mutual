@@ -20,7 +20,9 @@ export class EmpresarialesComponent {
   formEmpresarial: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -35,6 +37,7 @@ export class EmpresarialesComponent {
     this.formEmpresarial.markAllAsTouched();
     console.log(this.formEmpresarial.valid)
     if (this.formEmpresarial.valid) {
+      this.creaCampoCelular();
       console.log(this.formEmpresarial.value)
       this.envioForm.emit(this.formEmpresarial.value);
       this.enviandoData = true
@@ -46,6 +49,13 @@ export class EmpresarialesComponent {
     const valor = event.target.value.replace(/[^0-9]/g, '');
     this.formEmpresarial.get(input)!.setValue(valor);
   }
+
+  creaCampoCelular() {
+    this.formEmpresarial.patchValue({
+      celular: `${this.formEmpresarial.value.celularArea}-${this.formEmpresarial.value.celularNumero}`
+    })
+  }
+
 
   onKeyDown(event: KeyboardEvent) {
     const tecla = event.key;

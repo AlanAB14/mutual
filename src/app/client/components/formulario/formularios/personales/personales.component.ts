@@ -23,7 +23,9 @@ export class PersonalesComponent {
     monto: ['', [Validators.required,]],
     montoOtro: [{ value: '', disabled: true }, [Validators.required]],
     financiacion: ['', [Validators.required,]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -37,6 +39,7 @@ export class PersonalesComponent {
     this.formPersonales.markAllAsTouched();
     console.log(this.formPersonales.valid)
     if (this.formPersonales.valid) {
+      this.creaCampoCelular();
       console.log(this.formPersonales.value)
       this.envioForm.emit(this.formPersonales.value);
       this.enviandoData = true
@@ -51,6 +54,12 @@ export class PersonalesComponent {
       this.formPersonales.get('montoOtro')?.disable();
       this.formPersonales.get('montoOtro')?.reset();
     }
+  }
+
+  creaCampoCelular() {
+    this.formPersonales.patchValue({
+      celular: `${this.formPersonales.value.celularArea}-${this.formPersonales.value.celularNumero}`
+    })
   }
 
   onInputChange(event: any, input: string) {

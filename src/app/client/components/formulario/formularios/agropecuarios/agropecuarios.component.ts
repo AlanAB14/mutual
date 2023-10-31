@@ -21,7 +21,9 @@ export class AgropecuariosComponent {
     email: ['', [Validators.required, Validators.email]],
     monto: ['', [Validators.required,]],
     plazo: ['', [Validators.required,]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -34,6 +36,8 @@ export class AgropecuariosComponent {
     this.formAgropecuario.markAllAsTouched();
     console.log(this.formAgropecuario.valid)
     if (this.formAgropecuario.valid) {
+      this.creaCampoCelular();
+      console.log(this.formAgropecuario.value)
       this.envioForm.emit(this.formAgropecuario.value);
       this.enviandoData = true
       this.formAgropecuario.reset();
@@ -43,6 +47,12 @@ export class AgropecuariosComponent {
   onInputChange(event: any, input: string) {
     const valor = event.target.value.replace(/[^0-9]/g, '');
     this.formAgropecuario.get(input)!.setValue(valor);
+  }
+
+  creaCampoCelular() {
+    this.formAgropecuario.patchValue({
+      celular: `${this.formAgropecuario.value.celularArea}-${this.formAgropecuario.value.celularNumero}`
+    })
   }
 
   onKeyDown(event: KeyboardEvent) {

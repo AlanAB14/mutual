@@ -22,7 +22,9 @@ export class EmpleadosPublicosComponent {
     monto: ['', [Validators.required,]],
     montoOtro: [{ value: '', disabled: true }, [Validators.required]],
     financiacion: ['', [Validators.required,]],
-    celular: ['', [Validators.required,]],
+    celular: [''],
+    celularArea: ['', [Validators.required,]],
+    celularNumero: ['', [Validators.required,]],
     dni: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
@@ -36,6 +38,7 @@ export class EmpleadosPublicosComponent {
     this.formEmpPublicos.markAllAsTouched();
     console.log(this.formEmpPublicos.valid)
     if (this.formEmpPublicos.valid) {
+      this.creaCampoCelular();
       this.envioForm.emit(this.formEmpPublicos.value);
       this.enviandoData = true
       this.formEmpPublicos.reset();
@@ -61,6 +64,12 @@ export class EmpleadosPublicosComponent {
       const valor = event.target.value.replace(/[^0-9]/g, '');
       this.formEmpPublicos.get(input)!.setValue(valor);
     }
+  }
+
+  creaCampoCelular() {
+    this.formEmpPublicos.patchValue({
+      celular: `${this.formEmpPublicos.value.celularArea}-${this.formEmpPublicos.value.celularNumero}`
+    })
   }
 
   onKeyDown(event: KeyboardEvent) {
