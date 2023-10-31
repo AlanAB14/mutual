@@ -1,0 +1,24 @@
+<div class="intereses">
+    <div class="intereses-section" *ngIf="!cargandoData">
+        <div class="intereses-section__title">
+            <p>Edite los intereses - TNA</p>
+        </div>
+        <div class="intereses-section__buttons">
+            <form class="example-form" *ngFor="let interes of intereses">
+                <mat-form-field class="example-full-width">
+                    <mat-label>{{ interes.tipo }}</mat-label>
+                    <input type="number" [(ngModel)]="interes.interes" [name]="interes.tipo" matInput>
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+                <button (click)="editInteres(interes.id, interes.interes)" mat-mini-fab color="primary">
+                    <mat-icon>upload</mat-icon>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="loader-admin-section" *ngIf="cargandoData">
+        <mat-spinner class="spinner"></mat-spinner>
+    </div>
+</div>

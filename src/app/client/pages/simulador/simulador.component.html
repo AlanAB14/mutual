@@ -40,7 +40,7 @@
               </mat-slider>
             </div>
           <div>
-            <button mat-button matStepperNext>Siguiente</button>
+            <button mat-button (click)="calculaCuota()" matStepperNext>Siguiente</button>
           </div>
         </form>
       </mat-step>
@@ -48,9 +48,9 @@
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>¿En cuántas cuotas querés pagarlo?</ng-template>
             <mat-radio-group class="cuotas-selection" formControlName="secondCtrl">
-              <mat-radio-button value="1"><strong>12</strong> cuotas de <br><strong>$342.925</strong></mat-radio-button>
-              <mat-radio-button value="2"><strong>24</strong> cuotas de <br><strong>$251.895</strong></mat-radio-button>
-              <mat-radio-button value="3"><strong>36</strong> cuotas de <br><strong>$221.153</strong></mat-radio-button>
+              <mat-radio-button value="1"><strong>6</strong> cuotas de <br><strong>${{ importeCuotas.seis | dotThousandSeparator }}</strong></mat-radio-button>
+              <mat-radio-button value="2"><strong>12</strong> cuotas de <br><strong>${{ importeCuotas.doce | dotThousandSeparator }}</strong></mat-radio-button>
+              <mat-radio-button value="3"><strong>24</strong> cuotas de <br><strong>${{ importeCuotas.veinticuatro | dotThousandSeparator }}</strong></mat-radio-button>
             </mat-radio-group>
           <div class="buttons-section">
             <button mat-button matStepperPrevious>Volver</button>

@@ -267,3 +267,7 @@ p {
     outline: none;
     cursor: pointer;
 }
+
+.mat-mdc-button:not(:disabled) {
+    color: var(--verde-oscuro);
+}

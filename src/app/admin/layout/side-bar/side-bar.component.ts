@@ -38,6 +38,11 @@ export class SideBarComponent {
       icon: 'fa fa-user'
     },
     {
+      texto: 'Intereses',
+      ruta: 'intereses',
+      icon: 'fa fa-percent'
+    },
+    {
       texto: 'Préstamos',
       ruta: 'prestamos',
       icon: 'fa fa-info-circle'

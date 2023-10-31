@@ -4,6 +4,12 @@ export const environment = {
     SingleSignOn: false
 };
 
+export const tna = {
+    seis: 125.38,
+    doce: 140.93,
+    veinticuatro: 144.89
+}
+
 export const montos = [
     "100.000",
     "200.000",

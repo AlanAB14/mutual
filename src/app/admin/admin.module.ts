@@ -19,6 +19,7 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { PrestamosComponent } from './pages/prestamos/prestamos.component';
 import { HeaderPageComponent } from './pages/header/header.component';
+import { InteresesComponent } from './pages/intereses/intereses.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HeaderPageComponent } from './pages/header/header.component';
     OpinionesComponent,
     NosotrosComponent,
     UsuariosComponent,
-    PrestamosComponent
+    PrestamosComponent,
+    InteresesComponent
   ],
   imports: [
     CommonModule,
