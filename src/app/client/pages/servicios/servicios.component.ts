@@ -57,13 +57,8 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
 
   goToPrestamo(tipoInversion?: string) {
     const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo, tipoInversion: tipoInversion ? tipoInversion : null };
-    console.log(data)
-    if (this.servicioSeleccionado.url === 'prestamos-prendarios') {
-      this.router.navigateByUrl("simulador");
-    }else {
-      const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
-      window.open(`/#/${url}`, '_self');
-    }
+    const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
+    window.open(`/#/${url}`, '_self');
   }
 
 }

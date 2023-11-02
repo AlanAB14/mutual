@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Filiales } from 'src/app/core/interfaces/filiales.interface';
 import { filiales, financiacion } from 'src/environments/environment';
@@ -8,8 +8,9 @@ import { filiales, financiacion } from 'src/environments/environment';
   templateUrl: './prendarios.component.html',
   styleUrls: ['./prendarios.component.scss']
 })
-export class PrendariosComponent {
+export class PrendariosComponent implements OnInit {
 
+  anios: number[] = [];
   filiales: Filiales[] = filiales;
   financiaciones: string[] = financiacion;
 
@@ -24,15 +25,21 @@ export class PrendariosComponent {
     celularNumero: ['', [Validators.required,]],
     codPostal: ['', [Validators.required]],
     ciudad: ['', Validators.required],
-    // marca: ['', [Validators.required,]],
-    // anio: ['', [Validators.required]],
-    // modelo: ['', [Validators.required,]],
-    // destino: [''],
-    // devolucion: ['', Validators.required],
+    marca: ['', [Validators.required,]],
+    anio: ['', [Validators.required]],
+    modelo: ['', [Validators.required,]],
+    destino: [''],
+    devolucion: ['', Validators.required],
     filial: ['', Validators.required],
   })
 
   constructor(private fb: FormBuilder) { }
+
+
+  ngOnInit(): void {
+    this.getLastSixYears()
+    console.log(this.anios)
+  }
 
   sendData() {
     this.formPrendario.markAllAsTouched();
@@ -63,6 +70,13 @@ export class PrendariosComponent {
 
     if (!esNumero && !esTeclaControl) {
       event.preventDefault();
+    }
+  }
+
+  getLastSixYears() {
+    const currentYear = new Date().getFullYear();
+    for (let i = 0; i < 6; i++) {
+      this.anios.push(currentYear - i);
     }
   }
 

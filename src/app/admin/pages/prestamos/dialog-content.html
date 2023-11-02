@@ -7,7 +7,7 @@
     </tr>
     <tr *ngFor="let key of data | keyvalue">
       <td *ngIf="key.key !== 'celularArea' && key.key !== 'celularNumero'">{{ capitalizeTitle(key.key) }}</td>
-      <td *ngIf="key.key !== 'celularArea' && key.key !== 'celularNumero'">{{ key.value }}</td>
+      <td *ngIf="key.key !== 'celularArea' && key.key !== 'celularNumero'"q>{{ key.value }}</td>
     </tr>
   </table>
 

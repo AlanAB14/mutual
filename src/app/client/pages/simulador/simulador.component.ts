@@ -60,7 +60,7 @@ export class SimuladorComponent implements OnInit {
   }
 
   goToPrestamo() {
-    const data = { url: 'prestamos-prendarios', titulo: 'Préstamos Prendarios', tipoInversion: null };
+    const data = { url: 'prestamos-personales', titulo: 'Préstamos Personales', tipoInversion: null };
     console.log(data)
     const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
     window.open(`/#/${url}`, '_self');
