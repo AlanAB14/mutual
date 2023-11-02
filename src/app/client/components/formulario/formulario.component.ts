@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PrestamosService } from '../../services/prestamos.service';
 import Swal from 'sweetalert2'
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'formulario',
@@ -27,7 +28,8 @@ export class FormularioComponent implements OnInit {
   })
 
   constructor(private fb: FormBuilder,
-              private prestamosService: PrestamosService) { }
+    private prestamosService: PrestamosService,
+    private emailService: EmailService) { }
 
   ngOnInit(): void {
     console.log(this.tipo)
@@ -77,17 +79,17 @@ export class FormularioComponent implements OnInit {
   }
 
   sendFormulario(data: any) {
-    console.log(data, this.titulo)
-    const tituloAEnviar = this.tipoInversion !== null ? `${ this.titulo } - ${ this.tipoInversion }` : this.titulo;
+    this.sendEmail(data);
+    const tituloAEnviar = this.tipoInversion !== null ? `${this.titulo} - ${this.tipoInversion}` : this.titulo;
     this.prestamosService.savePrestamo(tituloAEnviar, data)
-      .subscribe( (suscripcion: any) => {
+      .subscribe((suscripcion: any) => {
         if (suscripcion.id) {
           Swal.fire({
             icon: 'success',
             text: 'Tu solicitud se ha cargado con exito',
             showConfirmButton: true,
           })
-        }else {
+        } else {
           Swal.fire({
             icon: 'error',
             text: 'Ocurrió un error, comuniquesé con nosotros',
@@ -97,6 +99,19 @@ export class FormularioComponent implements OnInit {
         this.enviandoData = false;
         this.enviandoDataConsulta = false;
       })
-    
+
   }
+
+  sendEmail(datosForm: any) {
+    console.log(datosForm);
+    const data = {
+      from: datosForm.email,
+      subject: `Solicitud de ${ this.titulo ?? '' }`,
+      text: `El usuario ${ datosForm.nombre ?? '' } creó una solicitud de ${ this.titulo ?? '' }. Ingrese al sistema para obtener mas información.`
+    }
+
+    this.emailService.sendEmail(data)
+      .subscribe(console.log)
+  }
+  
 }

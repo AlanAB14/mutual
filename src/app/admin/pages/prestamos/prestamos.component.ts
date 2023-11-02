@@ -65,7 +65,9 @@ export class PrestamosComponent implements OnInit {
   }
 
   getFecha(fecha: Date) {
-    return moment(fecha).format('DD/MM/YY')
+    console.log(fecha)
+    console.log(moment(fecha).calendar())
+    return moment(fecha).utc().format('DD/MM/YYYY')
   }
 
   eliminarPrestamo(data: any) {
