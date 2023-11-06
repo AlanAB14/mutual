@@ -108,7 +108,9 @@ p {
     min-height: 47rem;
     margin-left: 6rem;
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
 
     .mat-stepper-vertical {
         background-color: transparent;
@@ -242,6 +244,17 @@ p {
     .buttons-section {
         margin-top: 1.5rem;
     }
+
+    .legales-box {
+        max-width: 35rem;
+        hr {
+            border-top: .5px solid rgb(187, 187, 187);
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+    }
+
 
 
 }

@@ -7,7 +7,7 @@
   </div>
 
   <div class="simulador-box">
-    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-stepper *ngIf="tna.seis !== 0" orientation="vertical" [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup" class="box-step">
         <form [formGroup]="firstFormGroup" (keydown.enter)="(false)">
           <ng-template matStepLabel>Elegí el monto de tu Préstamo</ng-template>
@@ -41,6 +41,18 @@
         </form>
       </mat-step>
     </mat-stepper>
+    <div class="legales-box">
+      <hr *ngIf="tea.seis !== 0">
+      <p *ngIf="tea.seis !== 0">El presente desarrollo no constituye oferta de Mutual Entre Asociados de Cooperación Mutual Patronal, sólo tiene carácter informativo y orientativo para el interesado.
+        6 cuotas    TEA {{ reemplazarPuntosPorComas(tea.seis) }}%     CFT {{ reemplazarPuntosPorComas(cft.seis) }}%
+        12 Cuotas  TEA {{ reemplazarPuntosPorComas(tea.doce) }}%     CFT {{ reemplazarPuntosPorComas(cft.doce) }}%
+        24 cuotas   TEA {{ reemplazarPuntosPorComas(tea.veinticuatro) }}%   CFT {{ reemplazarPuntosPorComas(cft.veinticuatro) }}%
+        Préstamos sujetos a las condiciones crediticias.
+        El monto acreditado puede variar según los gastos administrativos.</p>
 
+        <div *ngIf="tea.seis === 0" class="spinner-box">
+          <mat-spinner></mat-spinner>
+        </div>
+    </div>
   </div>
 </div>

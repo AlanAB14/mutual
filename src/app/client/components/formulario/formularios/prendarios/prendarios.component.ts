@@ -28,7 +28,7 @@ export class PrendariosComponent implements OnInit {
     marca: ['', [Validators.required,]],
     anio: ['', [Validators.required]],
     modelo: ['', [Validators.required,]],
-    destino: [''],
+    // destino: [''],
     devolucion: ['', Validators.required],
     filial: ['', Validators.required],
   })

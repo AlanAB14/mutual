@@ -16,6 +16,16 @@ export class SimuladorComponent implements OnInit {
     doce: 0,
     veinticuatro: 0
   };
+  tea: any = {
+    seis: 0,
+    doce: 0,
+    veinticuatro: 0
+  };
+  cft: any = {
+    seis: 0,
+    doce: 0,
+    veinticuatro: 0
+  }
   tasaServicio: any;
   importeCuotas: any = {
     seis: 0,
@@ -47,12 +57,24 @@ export class SimuladorComponent implements OnInit {
     this.interesesService.getIntereses()
       .subscribe((intereses: any) => {
         intereses.forEach((interes: any) => {
-          if (interes.tipo === '6 cuotas') {
+          if (interes.tipo === '6 cuotas TNA') {
             this.tna.seis = interes.interes
-          } else if (interes.tipo === '12 cuotas') {
+          } else if (interes.tipo === '12 cuotas TNA') {
             this.tna.doce = interes.interes
-          } else if (interes.tipo === '24 cuotas') {
+          } else if (interes.tipo === '24 cuotas TNA') {
             this.tna.veinticuatro = interes.interes
+          }else if (interes.tipo === '6 cuotas TEA') {
+            this.tea.seis = interes.interes
+          }else if (interes.tipo === '12 cuotas TEA') {
+            this.tea.doce = interes.interes
+          }else if (interes.tipo === '24 cuotas TEA') {
+            this.tea.veinticuatro = interes.interes
+          }else if (interes.tipo === '6 cuotas CFT') {
+            this.cft.seis = interes.interes
+          }else if (interes.tipo === '12 cuotas CFT') {
+            this.cft.doce = interes.interes
+          }else if (interes.tipo === '24 cuotas CFT') {
+            this.cft.veinticuatro = interes.interes
           }
         })
         console.log(this.tna)
@@ -96,6 +118,10 @@ export class SimuladorComponent implements OnInit {
 
   roundToNearest100000(num: number) {
     return Math.round(num / 100000) * 100000;
+  }
+
+  reemplazarPuntosPorComas(num: number) {
+    return num.toString().replace(/\./g, ',');
   }
 
   selectInputContent() {
