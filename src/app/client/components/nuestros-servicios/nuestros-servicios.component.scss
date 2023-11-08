@@ -2,6 +2,17 @@
     background: white;
     padding: 5.3125rem 5.3125rem 8.125rem 5.3125rem;
 
+    @media (max-width: 600px) {
+        padding: 3.3125rem 3.3125rem 4.125rem 3.3125rem;
+    }
+
+    @media (max-width: 400px) {
+        padding: 1.3125rem 1.3125rem 1.125rem 1.3125rem;
+    }
+
+    @media (max-width: 350px) {
+        padding: 1.3125rem 0rem 1.125rem 0rem;
+    }
     p {
         margin: 0;
     }
@@ -22,6 +33,10 @@
 
             span {
                 font-family: Roboto-Black;
+            }
+            @media (max-width: 600px) {
+                font-size: 2rem;
+                text-align: center;
             }
         }
     }

@@ -17,7 +17,7 @@ p {
 
     margin-top: 2.3125rem;
     margin-bottom: 3.75rem;
-    
+
     @media (max-width: 784px) {
       text-align: center;
     }
@@ -29,9 +29,11 @@ p {
       justify-content: center;
       align-items: center;
     }
+
     @media (max-width: 784px) {
       flex-direction: column;
     }
+
     .text-section-contact {
       color: #1A5C43;
       font-family: Roboto-Bold;
@@ -51,9 +53,12 @@ p {
         /* 162.5% */
         margin-top: 1rem;
 
+        @media (max-width: 600px) {
+          width: 80%;
+        }
       }
     }
-    
+
     display: flex;
 
     p {
@@ -74,6 +79,10 @@ p {
       flex-shrink: 0;
       border-radius: 15px;
       background: #F5F5F5;
+
+      @media (max-width: 600px) {
+        width: 80%;
+      }
     }
 
     &__chatbox {
@@ -82,10 +91,13 @@ p {
       @media (max-width: 1500px) {
         margin-left: 0;
       }
+
       margin-right: 2rem;
+
       @media (max-width: 1300px) {
         margin-right: 1rem;
       }
+
       @media (max-width: 784px) {
         margin-right: 0rem;
       }
@@ -93,12 +105,15 @@ p {
 
     &__whatsapp {
       margin-right: 2rem;
+
       @media (max-width: 1300px) {
         margin-right: 1rem;
       }
+
       @media (max-width: 800px) {
         margin-top: 1rem;
       }
+
       @media (max-width: 784px) {
         margin-right: 0rem;
       }
@@ -110,6 +125,7 @@ p {
       @media (max-width: 1500px) {
         margin-right: 0;
       }
+
       @media (max-width: 1176px) {
         margin-top: 1rem;
       }
@@ -121,6 +137,3 @@ p {
   max-width: 1440px;
   margin: 0 auto;
 }
-
-
-

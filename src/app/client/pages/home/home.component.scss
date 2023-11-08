@@ -26,9 +26,20 @@
             padding: 4rem 0;
         }
 
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
 
         &__image {
             position: relative;
+
+            @media (max-width: 390px) {
+                display: flex;
+                justify-content: center;
+            }
 
             .prestamo-img {
                 border-radius: 1rem;
@@ -47,6 +58,10 @@
                     width: 22.3125rem;
                 }
 
+                @media (max-width: 390px) {
+                    width: 80%;
+                }
+
             }
 
             .money-img {
@@ -57,6 +72,10 @@
 
                 @media (max-width: 1200px) {
                     width: 5rem;
+                }
+
+                @media (max-width: 390px) {
+                    width: 4rem;
                 }
             }
         }
@@ -80,6 +99,10 @@
                 display: flex;
                 flex-direction: column;
 
+                @media (max-width: 600px) {
+                    padding: 0 1rem;
+                }
+
 
 
                 .title-verde-oscuro {
@@ -95,6 +118,10 @@
                     @media (max-width: 1200px) {
                         font-size: 3rem;
                     }
+
+                    @media (max-width: 600px) {
+                        font-size: 2rem;
+                    }
                 }
 
                 .title-verde-claro {
@@ -108,12 +135,21 @@
                     @media (max-width: 1200px) {
                         font-size: 3rem;
                     }
+                    
+                    @media (max-width: 600px) {
+                        font-size: 2rem;
+                    }
                 }
             }
 
             &--text {
                 margin-top: 1.875rem;
                 width: 30.1875rem;
+
+                @media (max-width: 600px) {
+                    width: auto!important;
+                    padding: 0 1rem;
+                }
 
                 .text-prestamo {
                     color: #4E4E4E;
@@ -127,6 +163,9 @@
                     @media (max-width: 1200px) {
                         font-size: 1rem;
                     }
+                    @media (max-width: 600px) {
+                        font-size: .8rem;
+                    }
                 }
             }
 
@@ -136,17 +175,35 @@
                 margin: 3.4375rem 0;
                 height: 1px;
                 background-color: var(--verde-claro);
+                @media (max-width: 600px) {
+                    width: 80%!important;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
 
             &--button {
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                @media (max-width: 600px) {
+                    margin-left: 1rem;
+                }
+                @media (max-width: 390px) {
+                    margin-left: 0rem;
+                    flex-direction: column;
+                }
 
                 .btn-play-text {
                     margin-left: 1.3125rem;
                     display: flex;
                     flex-direction: column;
+
+                    @media (max-width: 390px) {
+                        margin-left: 0;
+                        margin-top: 1rem;
+                    }
+    
 
                     .text-bold-btn {
                         color: #231656;
@@ -227,8 +284,15 @@
                 margin-right: 0;
             }
 
+            @media (max-width: 600px) {
+                margin-left: 0;
+            }
+
             .primicia-logo {
                 width: 15.8125rem;
+                @media (max-width: 390px) {
+                    width: 70%;
+                }
             }
 
             .primicia-title {
@@ -240,6 +304,14 @@
                 line-height: 107.1%;
                 /* 64.26px */
 
+                @media (max-width: 600px) {
+                    font-size: 2.75rem;
+                }
+
+                @media (max-width: 390px) {
+                    font-size: 1.75rem;
+                }
+
                 span {
                     color: #031A44;
                     font-family: Space-Bold;
@@ -247,6 +319,13 @@
                     font-style: normal;
                     line-height: 107.1%;
                     /* 64.26px */
+                    @media (max-width: 600px) {
+                        font-size: 2.75rem;
+                    }
+
+                    @media (max-width: 390px) {
+                        font-size: 1.75rem;
+                    }
                 }
             }
 
@@ -316,6 +395,11 @@
                     width: 20rem;
                 }
             }
+            @media (max-width: 600px) {
+                img {
+                    width: 60%;
+                }
+            }
 
             .primicia-btn {
                 margin-top: 2.1875rem;
@@ -342,7 +426,12 @@
                 }
 
                 @media (max-width: 768px) {
-                    width: 80%!important;
+                    width: 100%!important;
+                }
+
+                @media (max-width: 390px) {
+                    font-size: 1rem;
+                    padding: .75rem 1.75rem;
                 }
             }
 
@@ -376,4 +465,8 @@
     font-style: normal;
     line-height: 1.75rem;
     /* 140% */
+
+    @media (max-width: 390px) {
+        font-size: 1rem!important;
+    }
 }

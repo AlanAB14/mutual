@@ -19,6 +19,9 @@ p {
         font-size: 1rem;
         font-style: normal;
         line-height: 150%;
+        @media (max-width: 390px) {
+            font-size: .8rem;
+        }
     }
 
     ::ng-deep .mat-expansion-panel-header-description {
@@ -44,6 +47,9 @@ p {
         font-size: 1rem;
         font-style: normal;
         line-height: 150%;
+        @media (max-width: 390px) {
+            font-size: .8rem;
+        }
     }
 
     .rotate {

@@ -56,7 +56,7 @@ export const filiales = [
     },
     {
         ciudad: 'Firmat',
-        direccion: 'Córdoba y  Alberdi',
+        direccion: 'Córdoba 1232',
         telefono: '03465 424545'
     },
     {
@@ -71,7 +71,7 @@ export const filiales = [
     },
     {
         ciudad: 'Villa Ramallo',
-        direccion: 'Av. San Martín 25',
+        direccion: 'Av. San Martín 236',
         telefono: '03407 480489'
     }
 ]

@@ -138,6 +138,10 @@ p {
             }
         }
 
+        @media (max-width: 300px) {
+            padding: 1.4375rem 0rem 2.0625rem 0rem;
+        }
+
         .financieros-box {
             margin-left: 1.3125rem;
             @media (max-width: 1000px) {

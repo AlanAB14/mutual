@@ -6,6 +6,11 @@ p {
     padding-bottom: 5.375rem;
     padding-top: 5.375rem;
 
+    @media (max-width: 600px) {
+        padding-top: 3.375rem;
+        padding-bottom: 3.375rem;
+    }
+
     .servicios__content {
         display: flex;
         justify-content: center;
@@ -33,6 +38,10 @@ p {
                 margin-left: 0;
             }
 
+            @media (max-width: 490px) {
+                padding: 0 1rem;
+            }
+
             &-inversiones {
                 margin-top: 1.875rem;
                 margin-bottom: 2.625rem;
@@ -55,6 +64,10 @@ p {
                 /* 162.5% */
                 letter-spacing: 0.04px;
                 margin-top: 1.6875rem;
+
+                @media (max-width: 490px) {
+                    font-size: .85rem;
+                }
             }
 
             ul {
@@ -70,6 +83,10 @@ p {
                     line-height: 1.625rem;
                     /* 162.5% */
                     letter-spacing: 0.04px;
+                
+                    @media (max-width: 490px) {
+                        font-size: .85rem;
+                    }
 
                     &::marker {
                         font-size: .65rem;
@@ -91,6 +108,12 @@ p {
                 max-width: 11.625rem;
                 margin-top: auto;
                 cursor: pointer;
+
+                @media (max-width: 490px) {
+                    font-size: .82rem;
+                    padding: 1rem 0;
+                    max-width: 9.625rem;
+                }
             }
         }
 

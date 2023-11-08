@@ -6,10 +6,20 @@ p {
     padding-top: 5.375rem;
     padding-bottom: 5.375rem;
 
+    @media (max-width: 600px) {
+        padding-top: 3.375rem;
+        padding-bottom: 3.375rem;
+    }
+
     &__title-big {
         margin-top: 2.3125rem;
         margin-bottom: 3.75rem;
         margin-left: 9rem;
+
+        @media (max-width: 650px) {
+            margin-left: 0rem;
+            padding: 0 1rem;
+        }
 
         .color {
             color: #054457 !important;
@@ -112,8 +122,21 @@ p {
     justify-content: center;
     flex-direction: column;
 
+    @media (max-width: 650px) {
+        background-image: none;
+        margin-left: 0;
+        padding: 0 1rem;
+    }
+
     .mat-stepper-vertical {
         background-color: transparent;
+
+        @media (max-width: 570px) {
+            width: 90%;
+
+            min-height: 37rem;
+
+        }
     }
 
     ::ng-deep .mat-step-header:hover {
@@ -142,6 +165,10 @@ p {
         font-weight: 700;
         line-height: 1.625rem;
         letter-spacing: 0.5px;
+
+        @media (max-width: 570px) {
+            font-size: 1.2rem;
+        }
     }
 
     ::ng-deep .mat-step-label-selected .mat-step-text-label {
@@ -164,7 +191,11 @@ p {
             font-style: normal;
             font-weight: 400;
             line-height: 1.5rem;
+
             /* 150% */
+            @media (max-width: 570px) {
+                font-size: .85rem;
+            }
         }
     }
 
@@ -186,6 +217,10 @@ p {
             text-underline-offset: 0.2em;
             display: inline;
             margin-bottom: 2.375rem;
+
+            @media (max-width: 570px) {
+                font-size: 3.2rem;
+            }
         }
 
         ::ng-deep .mat-mdc-slider.mat-primary {
@@ -236,7 +271,12 @@ p {
                 font-weight: 400;
                 line-height: 1.625rem;
                 letter-spacing: 0.055px;
+
+                @media (max-width: 570px) {
+                    font-size: 1rem;
+                }
             }
+
         }
 
     }
@@ -247,6 +287,11 @@ p {
 
     .legales-box {
         max-width: 35rem;
+
+        @media (max-width: 570px) {
+            font-size: .75rem;
+        }
+
         hr {
             border-top: .5px solid rgb(187, 187, 187);
             width: 100%;
@@ -319,4 +364,11 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     appearance: none;
     margin: 0;
+}
+
+.ml-none {
+    @media (max-width: 400px) {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
 }

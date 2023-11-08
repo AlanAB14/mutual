@@ -23,14 +23,14 @@ let dynamicRoutes: Routes = [
     path: 'prestamos-empleados-publicos',
     component: ServiciosComponent
   },
-  {
-    path: 'recaudaciones',
-    component: ServiciosComponent
-  },
-  {
-    path: 'consultorio-juridico',
-    component: ServiciosComponent
-  },
+  // {
+  //   path: 'recaudaciones',
+  //   component: ServiciosComponent
+  // },
+  // {
+  //   path: 'consultorio-juridico',
+  //   component: ServiciosComponent
+  // },
   {
     path: 'inversiones',
     component: ServiciosComponent

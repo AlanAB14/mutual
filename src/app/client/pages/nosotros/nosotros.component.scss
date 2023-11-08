@@ -10,6 +10,11 @@ p {
     padding-top: 5.375rem;
     padding-bottom: 5.375rem;
 
+    @media (max-width: 600px) {
+        padding-top: 3.375rem;
+        padding-bottom: 3.375rem;
+    }
+
     &__title-big {
         margin-top: 1rem;
         margin-bottom: 3.125rem;
@@ -34,6 +39,10 @@ p {
                 margin-bottom: 2rem;
             }
 
+            @media (max-width: 620px) {
+                width: 80%;
+            }
+
             video {
                 max-width: 603px;
                 max-height: 441px;
@@ -41,6 +50,10 @@ p {
 
                 @media (max-width: 1200px) {
                     max-width: 500px;
+                }
+
+                @media (max-width: 620px) {
+                    width: 100%;
                 }
             }
         }
@@ -53,6 +66,10 @@ p {
 
             @media (max-width: 1200px) {
                 margin-left: 0;
+            }
+
+            @media (max-width: 600px) {
+                padding: 0 1rem;
             }
 
             p:first-child {
