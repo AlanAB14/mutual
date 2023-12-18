@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ModalCaracteristicasComponent implements OnInit{
   @ViewChild('nuevaCaracteristica') nuevaCaracteristica!: ElementRef;
-  caracteristicas!: any[];
+  caracteristicas!: any;
   agregarCaracteristica: boolean = false;
   cargando: boolean = false;
 
@@ -22,6 +22,8 @@ export class ModalCaracteristicasComponent implements OnInit{
 
   ngOnInit(): void {
     this.caracteristicas = this.data.caracteristicas;
+    const arrayNuevo: any = this.caracteristicas.split('\n');
+    this.caracteristicas = JSON.parse(arrayNuevo)
     console.log(this.caracteristicas)
     console.log(this.data.id)
   }
@@ -30,6 +32,11 @@ export class ModalCaracteristicasComponent implements OnInit{
     this.caracteristicas[index] = event.target.value
     console.log(this.caracteristicas)
   }
+
+  // get caracteristicasArray(): string[] {
+  //   const arrayNuevo: any = this.caracteristicas.split('\n');
+  //   return JSON.parse(arrayNuevo);
+  // }
 
   agregarNuevaCaracteristica() {
     if (this.nuevaCaracteristica.nativeElement.value !== '') {

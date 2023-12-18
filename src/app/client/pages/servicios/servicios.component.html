@@ -15,7 +15,7 @@
             </p>
             <p class="servicios__content__text--texto">{{servicioSeleccionado.texto}}</p>
             <ul>
-                <li *ngFor="let item of servicioSeleccionado.caracteristicas">{{item}}</li>
+                <li *ngFor="let item of caracteristicasArray">{{item}}</li>
             </ul>
             <p class="button-servicios" (click)="goToPrestamo()">Pedilo aquí</p>
         </div>

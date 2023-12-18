@@ -56,6 +56,7 @@ export class SimuladorComponent implements OnInit {
   traerIntereses() {
     this.interesesService.getIntereses()
       .subscribe((intereses: any) => {
+        console.log(intereses)
         intereses.forEach((interes: any) => {
           if (interes.tipo === '6 cuotas TNA') {
             this.tna.seis = interes.interes
@@ -85,7 +86,7 @@ export class SimuladorComponent implements OnInit {
     const data = { url: 'prestamos-personales', titulo: 'Préstamos Personales', tipoInversion: null };
     console.log(data)
     const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
-    window.open(`/#/${url}`, '_self');
+    window.open(`${url}`, '_self');
   }
 
   calculaCuota() {

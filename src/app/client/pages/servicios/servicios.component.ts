@@ -36,6 +36,12 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
         console.log(dicen)
         this.dicen = dicen
       })
+
+  }
+
+  get caracteristicasArray(): string[] {
+    const arrayNuevo: any = this.servicioSeleccionado.caracteristicas.split('\n');
+    return JSON.parse(arrayNuevo);
   }
 
   ngAfterViewInit(): void {
@@ -58,7 +64,7 @@ export class ServiciosComponent implements OnInit, AfterViewInit {
   goToPrestamo(tipoInversion?: string) {
     const data = { url: this.servicioSeleccionado.url, titulo: this.servicioSeleccionado.titulo, tipoInversion: tipoInversion ? tipoInversion : null };
     const url = this.router.serializeUrl(this.router.createUrlTree(['prestamo', { c: btoa(JSON.stringify(data)) }]));
-    window.open(`/#/${url}`, '_self');
+    window.open(`${url}`, '_self');
   }
 
 }

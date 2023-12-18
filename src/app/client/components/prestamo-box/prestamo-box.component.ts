@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class PrestamoBoxComponent implements AfterViewInit {
   
   @Input() titulo: string = '';
   @Input() texto: string = '';
-  @Input() caracteristicas: string [] = [];
+  @Input() caracteristicas: string = '';
   @Input() selected: boolean = true;
   @Input() icon: string = '';
   @Input() url: string = '';
@@ -22,6 +22,11 @@ export class PrestamoBoxComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.separarTexto();
+  }
+
+  get caracteristicasArray(): string[] {
+    const arrayNuevo: any = this.caracteristicas.split('\n');
+    return JSON.parse(arrayNuevo);
   }
 
   separarTexto() {

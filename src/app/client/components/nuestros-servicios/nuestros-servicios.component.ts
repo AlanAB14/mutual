@@ -58,7 +58,7 @@ export class NuestrosServiciosComponent implements OnInit {
   ngOnInit(): void {
     this.serviciosService.getServicios()
       .subscribe((servicios) => {
-        this.servicios = servicios
+        this.servicios = servicios ?? [];
         console.log(servicios)
         this.cargandoData = false;
       })

@@ -15,9 +15,12 @@
     <div class="prestamo__body">
         <div class="prestamo__body--text" [ngClass]="selected ? 'selected-title-color' : 'unselected-title-color-body'">
             <p>{{ texto }}</p>
-                <ul>
-                    <li *ngFor="let item of caracteristicas.slice(0, 1); let i = index">{{ item }}{{ i === caracteristicas.length ? ' ...' : '' }}</li>
-                </ul>
+            <ul>
+        <li *ngFor="let item of caracteristicasArray; let i = index">
+            {{ item }}
+        </li>
+            </ul>
+            
         </div>
     </div>
     <div class="prestamo__footer">

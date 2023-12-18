@@ -112,6 +112,8 @@ export class PrestamosComponent implements OnInit {
   ]
 })
 export class DialogContent {
+  datos = JSON.parse(this.data)
+  
   constructor(
     public dialogRef: MatDialogRef<any>,
     @Inject(MAT_DIALOG_DATA) public data: any,

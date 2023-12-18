@@ -3,7 +3,7 @@ export interface Servicio {
     icon: string;
     image: string;
     texto: string;
-    caracteristicas: string[];
+    caracteristicas: string;
     selected: boolean;
     url: string;
 }

@@ -67,6 +67,7 @@ export class NavbarComponent implements OnInit {
         }
       }
     });
+
   }
 
   selectItem(item: string): void {

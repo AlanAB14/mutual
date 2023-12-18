@@ -1,6 +1,6 @@
 export const environment = {
     app: 'Mutual',
-    apiBase: 'https://backend-mutual-production.up.railway.app/api',
+    apiBase: 'https://api.owpkpamc.mon15.urltemporal.com/api',
     SingleSignOn: false
 };
 

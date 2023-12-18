@@ -27,6 +27,12 @@ p {
 
         &__box-inversiones {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            @media (max-width: 808px) {
+                flex-direction: column;
+            }
         }
 
         &__text {
@@ -37,6 +43,8 @@ p {
             @media (max-width: 1200px) {
                 margin-left: 0;
             }
+
+
 
             @media (max-width: 490px) {
                 padding: 0 1rem;
@@ -229,6 +237,23 @@ p {
     &:not(:last-of-type) {
         margin-right: 2rem;
     }
+
+
+
+    @media (max-width: 1230px) {
+        margin-right: 0!important;
+        &:first-of-type {
+            margin-right: 2rem!important;
+        }                           
+    }
+
+    @media (max-width: 808px) {
+        margin-right: 0!important;
+        &:first-of-type {
+            margin-right: 0rem!important;
+        }   
+    }
+
 }
 
 .margin-conditional {
