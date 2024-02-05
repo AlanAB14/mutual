@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
 
 @Component({
@@ -6,11 +6,10 @@ import { HeaderService } from '../../services/header.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
   header: any[] = [];
   cargandoData: boolean = true;
-
   slideConfig = {
     "enabled": true,
     "slidesToShow": 1,
@@ -40,6 +39,15 @@ export class HeaderComponent implements OnInit {
         this.header = header
         console.log(this.header)
       })
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const textFinanzasImg = document.querySelector('.text-finanzas-img') as HTMLElement;
+      if (textFinanzasImg) {
+        textFinanzasImg.classList.add('animacion-finanzas');
+      }
+    }, 1200);
   }
 
 

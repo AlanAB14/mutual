@@ -6,8 +6,9 @@
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
             (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
             <div ngxSlickItem *ngFor="let head of header" class="slide">
-                <img [src]=" head.image ? ('data:image/png;base64,' + head.image) : ('./assets/imgs/header.png')" alt="user">
-
+                <img class="imagen-header" [src]=" head.image ? ('data:image/png;base64,' + head.image) : ('./assets/imgs/header.png')" alt="user">
+                <div class="overlay"></div>
+                <img src="assets/imgs/finanzas-text.png" class="text-finanzas-img" alt="finanzas">
             </div>
         </ngx-slick-carousel>
     </div>

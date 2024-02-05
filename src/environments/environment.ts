@@ -1,6 +1,6 @@
 export const environment = {
     app: 'Mutual',
-    apiBase: 'https://api.owpkpamc.mon15.urltemporal.com/api',
+    apiBase: 'https://api.mutualentreasoc.com.ar/api',
     SingleSignOn: false
 };
 

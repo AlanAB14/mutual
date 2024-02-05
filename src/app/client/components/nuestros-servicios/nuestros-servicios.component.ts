@@ -56,7 +56,7 @@ export class NuestrosServiciosComponent implements OnInit {
   constructor(private serviciosService: ServiciosService) { }
 
   ngOnInit(): void {
-    this.serviciosService.getServicios()
+    this.serviciosService.getServiciosSinImagen()
       .subscribe((servicios) => {
         this.servicios = servicios ?? [];
         console.log(servicios)

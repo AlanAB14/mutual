@@ -27,6 +27,8 @@ p {
             align-items: center;
         }
         &__video {
+            display: flex;
+            justify-content: center;
             width: 603px;
             height: 441px;
             position: relative;
@@ -46,7 +48,6 @@ p {
             video {
                 max-width: 603px;
                 max-height: 441px;
-                border-radius: 16px;
 
                 @media (max-width: 1200px) {
                     max-width: 500px;

@@ -13,6 +13,11 @@ export class ServiciosService {
 
   constructor(private http: HttpClient) { }
 
+  getServiciosSinImagen(): Observable<Servicio[]>{
+    console.log('de aqui')
+    return this.http.get<Servicio[]>(`${ this._url }/serviciosSinImagen`)
+  }
+
   getServicios(): Observable<Servicio[]>{
     return this.http.get<Servicio[]>(`${ this._url }/servicios`)
   }

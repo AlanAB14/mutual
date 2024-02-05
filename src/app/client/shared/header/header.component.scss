@@ -18,19 +18,83 @@
         // display: flex;
         // justify-content: center;
         // align-items: center;
+        overflow: hidden;
+        position: relative;
 
         img {
-            width: 100%!important;
+            width: 100% !important;
         }
 
-    //     @media (max-width: 768px) {
-    //         img {
-    //             width: 70%;
-    //         }
-    //     }
-    // }
+        .imagen-header {
+            @media (max-width: 768px) {
+                height: 100%!important;
+                width: auto!important;
+                transform: translateX(-20%);
+            }
+            @media (max-width: 700px) {
+                transform: translateX(-25%);
+            }
+            @media (max-width: 550px) {
+                transform: translateX(-28%);
+            }
+            @media (max-width: 480px) {
+                transform: translateX(-30%);
+            }
+            @media (max-width: 450px) {
+                transform: translateX(-32%);
+            }
+            @media (max-width: 360px) {
+                transform: translateX(-35%);
+            }
+        }
+
+        .text-finanzas-img {
+            position: absolute;
+            top: 150%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35.6rem !important;
+            opacity: 0;
+            transition: all 1s;
+
+            @media (max-width: 1200px) {
+                width: 25.6rem !important;
+            }
+
+            @media (max-width: 520px) {
+                width: 15.6rem !important;
+            }
+        }
+
+        //     @media (max-width: 768px) {
+        //         img {
+        //             width: 70%;
+        //         }
+        //     }
+        // }
+
+        .animacion-finanzas {
+            top: 50%;
+            opacity: 1;
+        }
     }
 }
+
+.slide {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, black, rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+
 
 .title-big {
     color: #FFF;
