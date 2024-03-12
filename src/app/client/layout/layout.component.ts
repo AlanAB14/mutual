@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { phoneNumber } from 'src/environments/environment';
 
 @Component({
   templateUrl: './layout.component.html',
@@ -37,6 +38,13 @@ export class ClientLayoutComponent implements OnInit{
         ellipseShadowElement.classList.remove('ellipse-shadow')
       }
     }
+  }
+
+  openWhatsapp() {
+    const number = phoneNumber.number;
+    const message = 'Tengo una consulta desde la web www.mutualentreasoc.com.ar';
+    const whatsappUrl = `https://web.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   }
 
 }

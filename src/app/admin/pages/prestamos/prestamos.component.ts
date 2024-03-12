@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class PrestamosComponent implements OnInit {
   spinnerTable: boolean = true;
-  displayedColumns: string[] = ['tipo', 'fecha', 'datos'];
+  displayedColumns: string[] = ['tipo','nombre', 'email', 'telefono', 'ciudad', 'dni', 'monto', 'filial', 'fecha', 'datos'];
   dataSource!: MatTableDataSource<any>;
 
 
@@ -33,8 +33,10 @@ export class PrestamosComponent implements OnInit {
     this.prestamosService.getPrestamos()
       .subscribe((resp: any) => {
         this.spinnerTable = true
+        // resp.data = JSON.parse(resp.data)
+        const nuevosDatos = this.formateaDatos(resp)
         console.log(resp)
-        this.dataSource = new MatTableDataSource(resp);
+        this.dataSource = new MatTableDataSource(nuevosDatos);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.spinnerTable = false;
@@ -43,6 +45,15 @@ export class PrestamosComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  formateaDatos(data: any[]) {
+    const nuevosDatos: any[] = [];
+    data.forEach(dato => {
+      dato.data = JSON.parse(dato.data)
+      nuevosDatos.push(dato)
+    })
+    return nuevosDatos
   }
 
   applyFilter(event: Event) {

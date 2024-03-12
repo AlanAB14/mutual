@@ -18,6 +18,42 @@
                     </ng-container>
 
                     <!-- Name Column -->
+                    <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.nombre ? row.data.nombre : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.email ? row.data.email : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="telefono">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.telefono ? row.data.telefono : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ciudad">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.ciudad ? row.data.ciudad : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="dni">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> DNI </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.dni ? row.data.dni : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="monto">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.monto ? row.data.monto : ''}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="filial">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Filial </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.data.filial ? row.data.filial : ''}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
                     <ng-container matColumnDef="fecha">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
                         <td mat-cell *matCellDef="let row"> {{ row.fecha ? getFecha(row.fecha) : ''}} </td>
