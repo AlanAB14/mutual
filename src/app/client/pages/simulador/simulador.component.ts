@@ -133,4 +133,8 @@ export class SimuladorComponent implements OnInit {
     });
   }
 
+  imprime() {
+    console.log('asd')
+  }
+
 }
