@@ -17,10 +17,12 @@ export class PrestamosService {
         'Content-Type': 'application/json',
       })
     }
+    
     const body = {
       tipo,
       data: JSON.stringify(data)
     }
+    
     return this.http.post(`${ this._url }/prestamos`, body, httpOptions )
   }
 

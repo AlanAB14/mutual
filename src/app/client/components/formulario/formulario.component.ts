@@ -77,8 +77,8 @@ export class FormularioComponent implements OnInit {
   }
 
   sendFormulario(data: any) {
-    const tituloAEnviar = this.tipoInversion !== null ? `${this.titulo} - ${this.tipoInversion}` : this.titulo;
-    this.prestamosService.savePrestamo(tituloAEnviar, data)
+    const tituloAEnviar =  `${this.titulo} ${ this.tipoInversion ? `- ${ this.tipoInversion }` : ''}`;
+    this.prestamosService.savePrestamo(tituloAEnviar, data)!
       .subscribe((suscripcion: any) => {
         if (suscripcion.id) {
           Swal.fire({

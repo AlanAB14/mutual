@@ -1,5 +1,6 @@
 export const environment = {
     app: 'Mutual',
+    // apiBase: 'http://localhost:3001/api',
     apiBase: 'https://api.mutualentreasoc.com.ar/api',
     SingleSignOn: false
 };

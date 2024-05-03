@@ -42,6 +42,15 @@
           },
           "configurations": {
             "production": {
+
+              
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": false
+              },
+
+
               "budgets": [
                 {
                   "type": "initial",
@@ -103,9 +112,7 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": [
-
-            ]
+            "scripts": []
           }
         }
       }
