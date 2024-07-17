@@ -1,3 +1,8 @@
+.header {
+    position: relative;
+    min-height: 60vh;
+}
+
 .header-section {
     padding: 1rem;
     display: flex;
@@ -40,3 +45,10 @@
     }
 }
 
+.mat-mdc-dialog-surface  {
+    padding-top: 7vh;
+}
+
+::ng-deep .mat-mdc-dialog-content {
+    max-height: 78vh!important;
+}

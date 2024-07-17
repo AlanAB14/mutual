@@ -12,7 +12,6 @@ import { ModalEditComponent } from './components/modal-edit/modal-edit.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalCaracteristicasComponent } from './components/modal-caracteristicas/modal-caracteristicas.component';
 import { PreguntasComponent } from './pages/preguntas/preguntas.component';
-import { LimitStringPipe } from '../shared/pipes/limit-string.pipe';
 import { SharedGlobalModule } from '../shared/shared.module';
 import { OpinionesComponent } from './pages/opiniones/opiniones.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
@@ -44,7 +43,7 @@ import { InteresesComponent } from './pages/intereses/intereses.component';
     AdminRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    SharedGlobalModule,
+    SharedGlobalModule
   ]
 })
 export class AdminModule { }

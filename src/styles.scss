@@ -149,7 +149,61 @@
   src: url('./assets/fonts/Nunito_Sans/NunitoSans_10pt-SemiBold.ttf');
 }
 
+@font-face {
+  font-family: Clockmaker-Regular;
+  src: url('./assets/fonts/Clockmaker-Regular.ttf');
+}
 
+.header-title-admin {
+  font-size: 5vw;
+
+  color: #90fb6d !important;
+  text-shadow: 1.5px 1.5px 1.5px #000000;
+  * {
+    font-family: Clockmaker-Regular, sans-serif!important;
+  }
+  p {
+    margin: 0;
+    transform: skewY(-5deg);
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    img {
+      transform: skewY(5deg);
+      display: inline;
+      width: 3vw;
+      height: auto;
+      margin-right: 1vw;
+    }
+  }
+}
+
+.header-subtitle-admin {
+  font-size: 3vw;
+  line-height: 1;
+  letter-spacing: -.05rem;
+  color: white;
+  text-shadow: 1.5px 1.5px 1.5px #000000;
+  * {
+    font-family: Clockmaker-Regular, sans-serif!important;
+  }
+  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transform: skewY(-5deg);
+    img {
+      transform: skewY(5deg);
+      display: inline;
+      width: 2.3vw;
+      height: auto;
+    }
+  }
+}
+
+.dialog-header {
+  padding: 0!important;
+}
 
 * {
   margin: 0;

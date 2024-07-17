@@ -6,10 +6,16 @@
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
             (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
             <div ngxSlickItem *ngFor="let head of header" class="slide">
-                <img class="imagen-header" [src]=" head.image ? ('data:image/png;base64,' + head.image) : ('./assets/imgs/header.png')" alt="user">
-                <div class="overlay"></div>
-                <img src="assets/imgs/finanzas-text.png" class="text-finanzas-img" alt="finanzas">
+                <img class="imagen-header" (load)="cargoImagen()" [src]=" head.image ? ('data:image/png;base64,' + head.image) : ('./assets/imgs/header.png')" alt="user">
+                <div class="text-header" [ngStyle]="{'position': 'absolute', 'left': head.titulo_posicion_x + '%', 'top': head.titulo_posicion_y + '%'}">
+                    <div class="header-title-admin" [innerHTML]="head.titulo"></div>
+                    <div class="header-subtitle-admin" [innerHTML]="head.subtitulo"></div>
+                </div>
             </div>
         </ngx-slick-carousel>
     </div>
+</div>
+
+<div class="loader-mutual-box" *ngIf="cargandoData">
+    <span class="loader-mutual"></span>
 </div>

@@ -7,7 +7,7 @@
         <div class="header-section__images">
             <div *ngFor="let head of header">
                 <img (click)="updateDeleteHeader(head)" class="service-icon" [src]="head.image ? ('data:image/png;base64,' + head.image) : ''">
-                <p>{{ head.titulo }}</p>
+                <p>{{ head.header_name }}</p>
             </div>
         </div>   
     </div>

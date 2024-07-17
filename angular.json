@@ -20,6 +20,7 @@
             "outputPath": "dist/mutual",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": ["quill"],
             "polyfills": [
               "zone.js"
             ],

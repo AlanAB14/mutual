@@ -1,21 +1,41 @@
-<h2 mat-dialog-title>{{ data ? 'Editar Header' : 'Agregar Header'}}</h2>
-<mat-dialog-content class="mat-typography">
-    <form [formGroup]="formHeader" class="header-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Título</mat-label>
-            <input matInput formControlName="titulo">
-        </mat-form-field>
-        <img *ngIf="formHeader.value.image" (click)="f_input_image.click()" class="header-dialog-image"
-                [src]="formHeader.value.image ? ('data:image/png;base64,' + formHeader.value.image) : ''">
-        <button *ngIf="!formHeader.value.image" (click)="f_input_image.click()" mat-mini-fab>
-            <mat-icon fontIcon="add"></mat-icon>
-        </button>
-        <input type="file" #f_input_image accept="image/png, image/gif, image/jpeg" hidden
-            (change)="uploadFile($event, 'image')">
-    </form>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button button mat-button class="btn-guardar" [disabled]="cargando" (click)="updateHeader()"
-        cdkFocusInitial>{{data ? 'Guardar' : 'Agregar'}}</button>
-</mat-dialog-actions>
+<div style="margin-top: 7vh;">
+    <h2 mat-dialog-title>{{ data ? 'Editar Header' : 'Agregar Header'}}</h2>
+    <mat-dialog-content class="mat-typography dialog-header">
+        <form [formGroup]="formHeader" class="header-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre de Header</mat-label>
+                <input matInput formControlName="header_name">
+            </mat-form-field>
+            <h1>Título</h1>
+            <editor formControlName="titulo" [init]="editorConfigTitle" apiKey="j8kpefhl14phaugfvq3fmdjisvfphl48bspq3ryq5fqk6fah"></editor>
+        
+            <h1 style="margin-top: 1rem;">Subtítulo</h1>
+            <editor formControlName="subtitulo" [init]="editorConfigSubtitle" apiKey="j8kpefhl14phaugfvq3fmdjisvfphl48bspq3ryq5fqk6fah"></editor>
+            
+        
+            <div class="imagen-field" style="margin-top: 1rem;">
+                <mat-label>{{formHeader.value.image ? 'Cambiar' : 'Agregar'}} imágen</mat-label>
+                <button (click)="f_input_image.click()" mat-mini-fab>
+                    <mat-icon [fontIcon]="formHeader.value.image ? 'change_circle' : 'add'"></mat-icon>
+                </button>
+            </div>
+
+            <div class="header-box">
+                <img *ngIf="formHeader.value.image" class="header-dialog-image"
+                        [src]="formHeader.value.image ? ('data:image/png;base64,' + formHeader.value.image) : ''">
+                <div class="header-title-box" id="draggable"  [ngStyle]="{'position': 'absolute', 'left.%': formHeader.value.titulo_posicion_x, 'top.%': formHeader.value.titulo_posicion_y}">
+                    <div class="header-title-admin" [innerHTML]="formHeader.value.titulo" style="font-family: Rodfat, sans-serif!important"></div>
+                    <div class="header-subtitle-admin" [innerHTML]="formHeader.value.subtitulo"></div>
+                </div>
+            </div>
+
+            <input type="file" #f_input_image accept="image/png, image/gif, image/jpeg" hidden
+                (change)="uploadFile($event, 'image')">
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button button mat-button class="btn-guardar" [disabled]="cargando || formHeader.invalid" (click)="updateHeader()"
+            cdkFocusInitial>{{data ? 'Guardar' : 'Agregar'}}</button>
+    </mat-dialog-actions>
+</div>

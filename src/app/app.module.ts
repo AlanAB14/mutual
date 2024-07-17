@@ -22,7 +22,7 @@ import { HttpRequestInterceptor } from './core/interceptors/http-request.interce
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
