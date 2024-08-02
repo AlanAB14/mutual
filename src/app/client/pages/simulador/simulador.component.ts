@@ -12,25 +12,25 @@ import { InteresesService } from '../../services/intereses.service';
 
 export class SimuladorComponent implements OnInit {
   tna: any = {
-    seis: 0,
     doce: 0,
-    veinticuatro: 0
+    veinticuatro: 0,
+    treintayseis: 0
   };
   tea: any = {
-    seis: 0,
     doce: 0,
-    veinticuatro: 0
+    veinticuatro: 0,
+    treintayseis: 0
   };
   cft: any = {
-    seis: 0,
     doce: 0,
-    veinticuatro: 0
+    veinticuatro: 0,
+    treintayseis: 0
   }
   tasaServicio: any;
   importeCuotas: any = {
-    seis: 0,
     doce: 0,
-    veinticuatro: 0
+    veinticuatro: 0,
+    treintayseis: 0
   };
 
   firstFormGroup = this._formBuilder.group({
@@ -58,20 +58,20 @@ export class SimuladorComponent implements OnInit {
       .subscribe((intereses: any) => {
         console.log(intereses)
         intereses.forEach((interes: any) => {
-          if (interes.tipo === '6 cuotas TNA') {
-            this.tna.seis = interes.interes
+          if (interes.tipo === '36 cuotas TNA') {
+            this.tna.treintayseis = interes.interes
           } else if (interes.tipo === '12 cuotas TNA') {
             this.tna.doce = interes.interes
           } else if (interes.tipo === '24 cuotas TNA') {
             this.tna.veinticuatro = interes.interes
-          }else if (interes.tipo === '6 cuotas TEA') {
-            this.tea.seis = interes.interes
+          }else if (interes.tipo === '36 cuotas TEA') {
+            this.tea.treintayseis = interes.interes
           }else if (interes.tipo === '12 cuotas TEA') {
             this.tea.doce = interes.interes
           }else if (interes.tipo === '24 cuotas TEA') {
             this.tea.veinticuatro = interes.interes
-          }else if (interes.tipo === '6 cuotas CFT') {
-            this.cft.seis = interes.interes
+          }else if (interes.tipo === '36 cuotas CFT') {
+            this.cft.treintayseis = interes.interes
           }else if (interes.tipo === '12 cuotas CFT') {
             this.cft.doce = interes.interes
           }else if (interes.tipo === '24 cuotas CFT') {
@@ -91,15 +91,15 @@ export class SimuladorComponent implements OnInit {
 
   calculaCuota() {
     this.tasaServicio = {
-      seis: this.firstFormGroup.value.firstCtrl! * ((this.tna.seis / 12) / 100 * 6),
       doce: this.firstFormGroup.value.firstCtrl! * ((this.tna.doce / 12) / 100 * 12),
       veinticuatro: this.firstFormGroup.value.firstCtrl! * ((this.tna.veinticuatro / 12) / 100 * 24),
+      treintayseis: this.firstFormGroup.value.firstCtrl! * ((this.tna.treintayseis / 12) / 100 * 36)
     }
 
     this.importeCuotas = {
-      seis: Math.round((this.firstFormGroup.value.firstCtrl! + this.tasaServicio.seis) / 6),
       doce: Math.round((this.firstFormGroup.value.firstCtrl! + this.tasaServicio.doce) / 12),
-      veinticuatro: Math.round((this.firstFormGroup.value.firstCtrl! + this.tasaServicio.veinticuatro) / 24)
+      veinticuatro: Math.round((this.firstFormGroup.value.firstCtrl! + this.tasaServicio.veinticuatro) / 24),
+      treintayseis: Math.round((this.firstFormGroup.value.firstCtrl! + this.tasaServicio.treintayseis) / 36)
     }
 
   }
