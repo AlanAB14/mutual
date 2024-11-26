@@ -69,16 +69,11 @@ export const filiales = [
         ciudad: 'Villa Constitución',
         direccion: 'Entre Ríos 424',
         telefono: '03400 471500'
-    },
-    {
-        ciudad: 'Villa Ramallo',
-        direccion: 'Av. San Martín 236',
-        telefono: '03407 480489'
     }
 ]
 
 export const financiacion = [
-    "6 meses",    
+    "6 meses",
     "12 meses",
     "24 meses"
 ]
